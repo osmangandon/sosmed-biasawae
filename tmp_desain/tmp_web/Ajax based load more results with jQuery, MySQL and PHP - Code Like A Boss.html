@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+<title>
+Ajax based load more results with jQuery, MySQL and PHP - Code Like A Boss</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/style.css" type="text/css" media="screen">
+<link rel="pingback" href="https://codelikeaboss.com/xmlrpc.php">
+	<link rel="archives" title="July 2014" href="https://codelikeaboss.com/2014/07/">
+	<link rel="archives" title="January 2014" href="https://codelikeaboss.com/2014/01/">
+	<link rel="archives" title="January 2013" href="https://codelikeaboss.com/2013/01/">
+
+<!-- This site is optimized with the Yoast SEO plugin v5.0.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<title>Ajax based load more results with jQuery, MySQL and PHP - Code Like A Boss</title>
+<link rel="canonical" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax based load more results with jQuery, MySQL and PHP - Code Like A Boss">
+<meta property="og:description" content="Better user experience is the key to grab more users to your website, using ajax based user interface is a better way to interact with the user , in present scenario load more pagination is used instead of conventional pagination, this post will help you to implement ajax based load more results on your website. Database Javascript Include the latest jquery from Google Hosted Libraries rather than using locally stored jquery library to improve the ...">
+<meta property="og:url" content="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/">
+<meta property="og:site_name" content="Code Like A Boss">
+<meta property="article:author" content="https://www.facebook.com/adhunanand">
+<meta property="article:section" content="Ajax">
+<meta property="article:published_time" content="2014-01-18T14:50:20+00:00">
+<meta property="article:modified_time" content="2014-07-31T19:15:32+00:00">
+<meta property="og:updated_time" content="2014-07-31T19:15:32+00:00">
+<meta property="fb:admins" content="100002092692308">
+<meta property="og:image" content="https://codelikeaboss.com/wp-content/uploads/2014/01/ajax_based_load_more_jquery_php.jpg">
+<meta property="og:image:width" content="627">
+<meta property="og:image:height" content="280">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Code Like A Boss » Feed" href="https://codelikeaboss.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Code Like A Boss » Comments Feed" href="https://codelikeaboss.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Code Like A Boss » Ajax based load more results with jQuery, MySQL and PHP Comments Feed" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/feed/">
+		<script async="" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/analytics.txt"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/codelikeaboss.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.5"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="scheme-custom-css" href="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/custom.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-Open-Sans-css" href="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/css_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-Varela-Round-css" href="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-Droid-Serif-css" href="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/css_003.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-Droid-Sans-css" href="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/css_004.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/pagenavi-css.css" type="text/css" media="all">
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/jquery.js"></script>
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/load-scripts.txt"></script>
+<link rel="https://api.w.org/" href="https://codelikeaboss.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://codelikeaboss.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://codelikeaboss.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.8.5">
+<link rel="shortlink" href="https://codelikeaboss.com/?p=81">
+<link rel="alternate" type="application/json+oembed" href="https://codelikeaboss.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcodelikeaboss.com%2Fajax-based-load-more-results-with-jquery-mysql-and-php%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://codelikeaboss.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcodelikeaboss.com%2Fajax-based-load-more-results-with-jquery-mysql-and-php%2F&amp;format=xml">
+<link rel="stylesheet" type="text/css" href="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/shCore.css"><link rel="stylesheet" type="text/css" href="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('.show_hide_menu').click(function(){
+			jQuery('#top-menu').slideToggle('');
+			jQuery('.show_hide_menu').toggleClass('on');
+			jQuery('#header').toggleClass('menu-on');
+		});
+});
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47274085-1', 'auto');
+  ga('send', 'pageview');
+
+</script>	
+</head>
+<body class="post-template-default single single-post postid-81 single-format-standard one-sidebar-right gecko-browser linux-os">
+<div id="header">
+  <h1><a href="https://codelikeaboss.com/">
+    Code Like A Boss    </a></h1>
+  <h2>
+    Code Like A Boss  </h2>
+    <a class="top-logo" href="https://codelikeaboss.com/"><img src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/1405340448-codelikeaboss-logo.png" alt="Code Like A Boss"></a>
+    <a class="show_hide_menu" href="javascript:void(0);"><span class="fa fa-bars"></span></a>
+  <div class="clearer"></div>
+  <ul id="top-menu" class="menu sf-js-enabled sf-shadow"><li id="menu-item-4" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4"><a href="https://codelikeaboss.com/">Home</a></li>
+<li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-9"><a href="https://codelikeaboss.com/category/php/">PHP</a></li>
+<li id="menu-item-6" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-6"><a href="https://codelikeaboss.com/category/jquery/">jQuery</a></li>
+<li id="menu-item-8" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-8"><a href="https://codelikeaboss.com/category/mysql/">MySQL</a></li>
+<li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="https://codelikeaboss.com/category/seo/">SEO</a></li>
+<li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="https://codelikeaboss.com/category/wordpress/">WordPress</a></li>
+<li id="menu-item-5" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5"><a href="https://codelikeaboss.com/category/facebook/">Facebook</a></li>
+<li id="menu-item-11" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11"><a href="https://codelikeaboss.com/category/technology/">Technology</a></li>
+</ul>  <div class="clear"></div>
+</div>
+<!-- END #header -->
+<div id="main">
+  <div id="content">
+    
+	<div id="post-81" class="post-81 post type-post status-publish format-standard has-post-thumbnail hentry category-ajax category-jquery category-mysql category-php">
+  <h2 class="post-title">
+    Ajax based load more results with jQuery, MySQL and PHP  </h2>
+  <div class="post-meta"><span class="post-author">
+    by    <a href="https://codelikeaboss.com/author/aadhuniq/" title="Posts by Code Boss" rel="author">Code Boss</a>    </span>
+    <!-- .post-author -->
+    <span class="post-date">
+    on    January 18, 2014, </span>
+    <!-- .post-author -->
+    <span class="post-comments"> <a href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/#comments">
+    8 comments    </a> </span>
+    <!-- .post-author -->
+  </div>
+  <!-- END .post-meta -->
+  <div class="post-content">
+    <p>Better user experience is the key to grab more users to your 
+website, using ajax based user interface is a better way to interact 
+with the user , in present scenario load more pagination is used instead
+ of conventional pagination, this post will help you to implement ajax 
+based load more results on your website.<br>
+<a class="download-link boss-button" target="_blank" href="http://demo.codelikeaboss.com/d.php?url=https%3A%2F%2Fapp.box.com%2Fs%2Fxi7dwv2nnhf4u86s2y9w" title="Download">Download Script</a>&nbsp;&nbsp;&nbsp;&nbsp;<a class="view-link boss-button" target="_blank" href="http://demo.codelikeaboss.com/loadmore/" title="Download">Live Demo</a><br>
+<strong>Database</strong></p>
+<div><div id="highlighter_209850" class="syntaxhighlighter  sql"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="sql keyword">CREATE</code> <code class="sql keyword">TABLE</code> <code class="sql plain">IF </code><code class="sql color1">NOT</code> <code class="sql plain">EXISTS `news_feed` (</code></div><div class="line number2 index1 alt1"><code class="sql spaces">&nbsp;&nbsp;</code><code class="sql plain">`news_id` </code><code class="sql keyword">int</code><code class="sql plain">(10) </code><code class="sql color1">NOT</code> <code class="sql color1">NULL</code> <code class="sql plain">AUTO_INCREMENT,</code></div><div class="line number3 index2 alt2"><code class="sql spaces">&nbsp;&nbsp;</code><code class="sql plain">`news_title` text </code><code class="sql color1">NOT</code> <code class="sql color1">NULL</code><code class="sql plain">,</code></div><div class="line number4 index3 alt1"><code class="sql spaces">&nbsp;&nbsp;</code><code class="sql plain">`news_description` text </code><code class="sql color1">NOT</code> <code class="sql color1">NULL</code><code class="sql plain">,</code></div><div class="line number5 index4 alt2"><code class="sql spaces">&nbsp;&nbsp;</code><code class="sql keyword">PRIMARY</code> <code class="sql keyword">KEY</code> <code class="sql plain">(`news_id`)</code></div><div class="line number6 index5 alt1"><code class="sql plain">) ENGINE=MyISAM&nbsp; </code><code class="sql keyword">DEFAULT</code> <code class="sql plain">CHARSET=utf8 AUTO_INCREMENT=1 ;</code></div></div></td></tr></tbody></table></div></div>
+<p><strong>Javascript</strong><br>
+Include the latest jquery from Google Hosted Libraries rather than using
+ locally stored jquery library to improve the page loading speed.<br>
+snippet:</p>
+<div><div id="highlighter_854870" class="syntaxhighlighter  jscript"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="jscript plain">&lt;script src=</code><code class="jscript string">"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"</code><code class="jscript plain">&gt;&lt;/script&gt;</code></div><div class="line number2 index1 alt1"><code class="jscript plain">&lt;script type=</code><code class="jscript string">"text/javascript"</code><code class="jscript plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="jscript plain">$(document).on(</code><code class="jscript string">'click'</code><code class="jscript plain">,</code><code class="jscript string">'.loadmore'</code><code class="jscript plain">,</code><code class="jscript keyword">function</code> <code class="jscript plain">() {</code></div><div class="line number4 index3 alt1"><code class="jscript spaces">&nbsp;&nbsp;</code><code class="jscript plain">$(</code><code class="jscript keyword">this</code><code class="jscript plain">).text(</code><code class="jscript string">'Loading...'</code><code class="jscript plain">);</code></div><div class="line number5 index4 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript keyword">var</code> <code class="jscript plain">ele = $(</code><code class="jscript keyword">this</code><code class="jscript plain">).parent(</code><code class="jscript string">'li'</code><code class="jscript plain">);</code></div><div class="line number6 index5 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">$.ajax({</code></div><div class="line number7 index6 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">url: </code><code class="jscript string">'loadmore.php'</code><code class="jscript plain">,</code></div><div class="line number8 index7 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">type: </code><code class="jscript string">'POST'</code><code class="jscript plain">,</code></div><div class="line number9 index8 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">data: {</code></div><div class="line number10 index9 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">page:$(</code><code class="jscript keyword">this</code><code class="jscript plain">).data(</code><code class="jscript string">'page'</code><code class="jscript plain">),</code></div><div class="line number11 index10 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">},</code></div><div class="line number12 index11 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">success: </code><code class="jscript keyword">function</code><code class="jscript plain">(response){</code></div><div class="line number13 index12 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript keyword">if</code><code class="jscript plain">(response){</code></div><div class="line number14 index13 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">ele.hide();</code></div><div class="line number15 index14 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">$(</code><code class="jscript string">".news_list"</code><code class="jscript plain">).append(response);</code></div><div class="line number16 index15 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">}</code></div><div class="line number17 index16 alt2"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">}</code></div><div class="line number18 index17 alt1"><code class="jscript spaces">&nbsp;&nbsp;&nbsp;</code><code class="jscript plain">});</code></div><div class="line number19 index18 alt2"><code class="jscript plain">});</code></div><div class="line number20 index19 alt1"><code class="jscript plain">&lt;/script&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>This javascript snippet will send the page number stored in data 
+attribute of loadmore button to loadmore.php this will create response 
+based on the request and produces a response, this server response is 
+appended with “news_list”.<br>
+<strong>index.php</strong><br>
+This php file is for displaying latest news feed from database in descending order.</p>
+<div><div id="highlighter_706232" class="syntaxhighlighter  php"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;ul </code><code class="php keyword">class</code><code class="php plain">=</code><code class="php string">"news_list"</code><code class="php plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="php plain">&lt;?php</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;</code><code class="php variable">$query</code><code class="php plain">=mysql_query(</code><code class="php string">"SELECT * FROM `news_feed`ORDER BY `news_feed`.`news_id` ASC LIMIT 0 , $resultsPerPage"</code><code class="php plain">);</code></div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;</code><code class="php keyword">while</code><code class="php plain">(</code><code class="php variable">$data</code><code class="php plain">=mysql_fetch_array(</code><code class="php variable">$query</code><code class="php plain">)){</code></div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;&nbsp;</code><code class="php variable">$title</code><code class="php plain">=</code><code class="php variable">$data</code><code class="php plain">[</code><code class="php string">'news_title'</code><code class="php plain">];</code></div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;</code><code class="php variable">$content</code><code class="php plain">=</code><code class="php variable">$data</code><code class="php plain">[</code><code class="php string">'news_description'</code><code class="php plain">];</code></div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"&lt;li&gt;&lt;h3&gt;$title&lt;/h3&gt;&lt;p&gt;$content&lt;p&gt;&lt;/li&gt;"</code><code class="php plain">;</code></div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number9 index8 alt2"><code class="php plain">?&gt;</code></div><div class="line number10 index9 alt1"><code class="php plain">&lt;li </code><code class="php keyword">class</code><code class="php plain">=</code><code class="php string">"loadbutton"</code><code class="php plain">&gt;&lt;button </code><code class="php keyword">class</code><code class="php plain">=</code><code class="php string">"loadmore"</code> <code class="php plain">data-page=</code><code class="php string">"2"</code><code class="php plain">&gt;Load More&lt;/button&gt;&lt;/li&gt;</code></div><div class="line number11 index10 alt2"><code class="php plain">&lt;/ul&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p><strong>loadmore.php</strong><br>
+This contains the php code for displaying results against queried page number</p>
+<div><div id="highlighter_507018" class="syntaxhighlighter  php"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="php plain">&lt;?php </code><code class="php keyword">include</code><code class="php plain">(</code><code class="php string">'config.php'</code><code class="php plain">); ?&gt;</code></div><div class="line number2 index1 alt1"><code class="php plain">&lt;?php</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code><code class="php plain">(isset(</code><code class="php variable">$_POST</code><code class="php plain">[</code><code class="php string">'page'</code><code class="php plain">])):</code></div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$paged</code><code class="php plain">=</code><code class="php variable">$_POST</code><code class="php plain">[</code><code class="php string">'page'</code><code class="php plain">];</code></div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$sql</code><code class="php plain">=</code><code class="php string">"SELECT * FROM `news_feed`ORDER BY `news_feed`.`news_id` ASC"</code><code class="php plain">;</code></div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code><code class="php plain">(</code><code class="php variable">$paged</code><code class="php plain">&gt;0){</code></div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$page_limit</code><code class="php plain">=</code><code class="php variable">$resultsPerPage</code><code class="php plain">*(</code><code class="php variable">$paged</code><code class="php plain">-1);</code></div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$pagination_sql</code><code class="php plain">=</code><code class="php string">" LIMIT&nbsp; $page_limit, $resultsPerPage"</code><code class="php plain">;</code></div><div class="line number9 index8 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number10 index9 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">else</code><code class="php plain">{</code></div><div class="line number11 index10 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$pagination_sql</code><code class="php plain">=</code><code class="php string">" LIMIT 0 , $resultsPerPage"</code><code class="php plain">;</code></div><div class="line number12 index11 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number13 index12 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$result</code><code class="php plain">=mysql_query(</code><code class="php variable">$sql</code><code class="php plain">.</code><code class="php variable">$pagination_sql</code><code class="php plain">);</code></div><div class="line number14 index13 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$num_rows</code> <code class="php plain">= mysql_num_rows(</code><code class="php variable">$result</code><code class="php plain">);</code></div><div class="line number15 index14 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code><code class="php plain">(</code><code class="php variable">$num_rows</code><code class="php plain">&gt;0){</code></div><div class="line number16 index15 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">while</code><code class="php plain">(</code><code class="php variable">$data</code><code class="php plain">=mysql_fetch_array(</code><code class="php variable">$result</code><code class="php plain">)){</code></div><div class="line number17 index16 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$title</code><code class="php plain">=</code><code class="php variable">$data</code><code class="php plain">[</code><code class="php string">'news_title'</code><code class="php plain">];</code></div><div class="line number18 index17 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php variable">$content</code><code class="php plain">=</code><code class="php variable">$data</code><code class="php plain">[</code><code class="php string">'news_description'</code><code class="php plain">];</code></div><div class="line number19 index18 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"&lt;li&gt;&lt;h3&gt;$title&lt;/h3&gt;&lt;p&gt;$content&lt;p&gt;&lt;/li&gt;"</code><code class="php plain">;</code></div><div class="line number20 index19 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number21 index20 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number22 index21 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php keyword">if</code><code class="php plain">(</code><code class="php variable">$num_rows</code> <code class="php plain">== </code><code class="php variable">$resultsPerPage</code><code class="php plain">){?&gt;</code></div><div class="line number23 index22 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">&lt;li </code><code class="php keyword">class</code><code class="php plain">=</code><code class="php string">"loadbutton"</code><code class="php plain">&gt;&lt;button </code><code class="php keyword">class</code><code class="php plain">=</code><code class="php string">"loadmore"</code> <code class="php plain">data-page=</code><code class="php string">"&lt;?php echo&nbsp; $paged+1 ;?&gt;"</code><code class="php plain">&gt;Load More&lt;/button&gt;&lt;/li&gt;</code></div><div class="line number24 index23 alt1"><code class="php spaces">&nbsp;</code><code class="php plain">&lt;?php</code></div><div class="line number25 index24 alt2"><code class="php spaces">&nbsp;&nbsp;</code><code class="php plain">}</code><code class="php keyword">else</code><code class="php plain">{</code></div><div class="line number26 index25 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php functions">echo</code> <code class="php string">"&lt;li&gt;No More Feeds&lt;/li&gt;"</code><code class="php plain">;</code></div><div class="line number27 index26 alt2"><code class="php spaces">&nbsp;</code><code class="php plain">}</code></div><div class="line number28 index27 alt1"><code class="php spaces">&nbsp;</code><code class="php keyword">endif</code><code class="php plain">;</code></div><div class="line number29 index28 alt2"><code class="php spaces">&nbsp;</code><code class="php plain">?&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p><strong>CSS</strong></p>
+<div><div id="highlighter_649841" class="syntaxhighlighter  css"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css plain">#container{</code><code class="css keyword">width</code><code class="css plain">: </code><code class="css value">80%</code><code class="css plain">;</code><code class="css keyword">margin</code><code class="css plain">: </code><code class="css value">auto</code> <code class="css value">auto</code><code class="css plain">;}</code></div><div class="line number2 index1 alt1"><code class="css plain">.news_list {</code></div><div class="line number3 index2 alt2"><code class="css keyword">list-style</code><code class="css plain">: </code><code class="css value">none</code><code class="css plain">;</code></div><div class="line number4 index3 alt1"><code class="css plain">}</code></div><div class="line number5 index4 alt2"><code class="css plain">.loadmore {</code></div><div class="line number6 index5 alt1"><code class="css keyword">color</code><code class="css plain">: </code><code class="css value">#FFF</code><code class="css plain">;</code></div><div class="line number7 index6 alt2"><code class="css plain">border-radius: </code><code class="css value">5px</code><code class="css plain">;</code></div><div class="line number8 index7 alt1"><code class="css keyword">width</code><code class="css plain">: </code><code class="css value">50%</code><code class="css plain">;</code></div><div class="line number9 index8 alt2"><code class="css keyword">height</code><code class="css plain">: </code><code class="css value">50px</code><code class="css plain">;</code></div><div class="line number10 index9 alt1"><code class="css keyword">font-size</code><code class="css plain">: </code><code class="css value">20px</code><code class="css plain">;</code></div><div class="line number11 index10 alt2"><code class="css keyword">background</code><code class="css plain">: </code><code class="css value">#42B8DD</code><code class="css plain">;</code></div><div class="line number12 index11 alt1"><code class="css keyword">outline</code><code class="css plain">: </code><code class="css value">0</code><code class="css plain">;</code></div><div class="line number13 index12 alt2"><code class="css plain">}</code></div><div class="line number14 index13 alt1"><code class="css spaces">&nbsp;</code><code class="css plain">.loadbutton{</code></div><div class="line number15 index14 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">text-align</code><code class="css plain">: </code><code class="css value">center</code><code class="css plain">;</code></div><div class="line number16 index15 alt1"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+    <div class="clear"></div>
+      </div>
+  <!-- END .post-content -->
+  <div class="post-taxonomies">
+    <br>
+    Categories:    <span class="post-categories">
+    <a href="https://codelikeaboss.com/category/ajax/" rel="category tag">Ajax</a>, <a href="https://codelikeaboss.com/category/jquery/" rel="category tag">jQuery</a>, <a href="https://codelikeaboss.com/category/mysql/" rel="category tag">MySQL</a>, <a href="https://codelikeaboss.com/category/php/" rel="category tag">PHP</a>    </span>
+      </div>
+  <!-- END .post-taxonomies -->
+  <div class="clear"></div>
+</div>
+<!-- #post-## -->
+
+
+	
+		<div id="comments">
+							<div class="comments-top">
+					<a href="#respond" class="comment-reply-link">Leave a reply →</a>
+					<span>8 comments</span>
+				</div>
+			
+			
+
+	
+			<ul class="commentlist">
+				
+	<li class="comment even thread-even depth-1" id="li-comment-3975">
+
+		<table id="comment-3975" class="comment-wrapper"><tbody><tr>
+			<td class="comment-avatar">
+				<div style="position: relative;">
+					<img alt="" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/f00f289035cff2d42e08ede0539e81e1.jpeg" srcset="https://secure.gravatar.com/avatar/f00f289035cff2d42e08ede0539e81e1?s=116&amp;d=mm&amp;r=g 2x" class="avatar avatar-58 photo" width="58" height="58">					<span class="comment-avatar-overlay"></span>
+				</div>
+			</td><!-- END .comment-avatar -->
+			
+			<td class="comment-main">
+				<div class="comment-meta">
+					<span class="comment-author"><a href="http://www.khaial.ly/" rel="external nofollow" class="url" target="_blank">Hazim Design</a></span>
+					<span class="comment-date">on April 11, 2015 at 4:09 pm</span>	
+				</div><!-- END .comment-meta -->
+				
+				<div class="comment-content">
+						
+					<p>Thanx for this useful tutorial<br>
+but how can I use this on one page?<br>
+Best Regards</p>
+	
+					<div class="clear"></div>
+				</div><!-- END .comment-content -->
+
+				<a rel="nofollow" class="comment-reply-link" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/?replytocom=3975#respond" onclick='return addComment.moveForm( "comment-3975", "3975", "respond", "81" )' aria-label="Reply to Hazim Design">Reply →</a>				<div class="clear"></div>
+			</td><!-- END .comment-main -->
+		</tr></tbody></table><!-- #comment-3975  -->
+
+		<div class="clear"></div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-4065">
+
+		<table id="comment-4065" class="comment-wrapper"><tbody><tr>
+			<td class="comment-avatar">
+				<div style="position: relative;">
+					<img alt="" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/8025460d8397010459414250c38a8cc8.jpeg" srcset="https://secure.gravatar.com/avatar/8025460d8397010459414250c38a8cc8?s=116&amp;d=mm&amp;r=g 2x" class="avatar avatar-58 photo" width="58" height="58">					<span class="comment-avatar-overlay"></span>
+				</div>
+			</td><!-- END .comment-avatar -->
+			
+			<td class="comment-main">
+				<div class="comment-meta">
+					<span class="comment-author">Preeti</span>
+					<span class="comment-date">on July 8, 2015 at 6:43 am</span>	
+				</div><!-- END .comment-meta -->
+				
+				<div class="comment-content">
+						
+					<p>It was nyc…really helpful…thanks a lot  <img draggable="false" class="emoji" alt="🙂" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/1f642.svg"></p>
+	
+					<div class="clear"></div>
+				</div><!-- END .comment-content -->
+
+				<a rel="nofollow" class="comment-reply-link" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/?replytocom=4065#respond" onclick='return addComment.moveForm( "comment-4065", "4065", "respond", "81" )' aria-label="Reply to Preeti">Reply →</a>				<div class="clear"></div>
+			</td><!-- END .comment-main -->
+		</tr></tbody></table><!-- #comment-4065  -->
+
+		<div class="clear"></div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="li-comment-4272">
+
+		<table id="comment-4272" class="comment-wrapper"><tbody><tr>
+			<td class="comment-avatar">
+				<div style="position: relative;">
+					<img alt="" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/33101b51fd927e81c436cab66f9f732d.jpeg" srcset="https://secure.gravatar.com/avatar/33101b51fd927e81c436cab66f9f732d?s=116&amp;d=mm&amp;r=g 2x" class="avatar avatar-58 photo" width="58" height="58">					<span class="comment-avatar-overlay"></span>
+				</div>
+			</td><!-- END .comment-avatar -->
+			
+			<td class="comment-main">
+				<div class="comment-meta">
+					<span class="comment-author">Bhumika</span>
+					<span class="comment-date">on November 3, 2015 at 12:49 pm</span>	
+				</div><!-- END .comment-meta -->
+				
+				<div class="comment-content">
+						
+					<p>Superb..Perfect…Thanks a lot</p>
+	
+					<div class="clear"></div>
+				</div><!-- END .comment-content -->
+
+				<a rel="nofollow" class="comment-reply-link" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/?replytocom=4272#respond" onclick='return addComment.moveForm( "comment-4272", "4272", "respond", "81" )' aria-label="Reply to Bhumika">Reply →</a>				<div class="clear"></div>
+			</td><!-- END .comment-main -->
+		</tr></tbody></table><!-- #comment-4272  -->
+
+		<div class="clear"></div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-4414">
+
+		<table id="comment-4414" class="comment-wrapper"><tbody><tr>
+			<td class="comment-avatar">
+				<div style="position: relative;">
+					<img alt="" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/c39ca80df6397b97fbd93a3c479a742a.jpeg" srcset="https://secure.gravatar.com/avatar/c39ca80df6397b97fbd93a3c479a742a?s=116&amp;d=mm&amp;r=g 2x" class="avatar avatar-58 photo" width="58" height="58">					<span class="comment-avatar-overlay"></span>
+				</div>
+			</td><!-- END .comment-avatar -->
+			
+			<td class="comment-main">
+				<div class="comment-meta">
+					<span class="comment-author"><a href="http://ultrasamad.blogspot.com/" rel="external nofollow" class="url" target="_blank">uLtrasamad</a></span>
+					<span class="comment-date">on January 15, 2016 at 10:53 am</span>	
+				</div><!-- END .comment-meta -->
+				
+				<div class="comment-content">
+						
+					<p>That was awesome. Thanks. </p>
+<p>If I want the user to scroll to load instead of clicking the button, with a spinning icon, like fb pls how do I implement it. </p>
+<p>Thanks</p>
+	
+					<div class="clear"></div>
+				</div><!-- END .comment-content -->
+
+				<a rel="nofollow" class="comment-reply-link" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/?replytocom=4414#respond" onclick='return addComment.moveForm( "comment-4414", "4414", "respond", "81" )' aria-label="Reply to uLtrasamad">Reply →</a>				<div class="clear"></div>
+			</td><!-- END .comment-main -->
+		</tr></tbody></table><!-- #comment-4414  -->
+
+		<div class="clear"></div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment even thread-even depth-1" id="li-comment-4606">
+
+		<table id="comment-4606" class="comment-wrapper"><tbody><tr>
+			<td class="comment-avatar">
+				<div style="position: relative;">
+					<img alt="" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/ea38db9050f6130f3acd6f4b5c0d1a2a.jpeg" srcset="https://secure.gravatar.com/avatar/ea38db9050f6130f3acd6f4b5c0d1a2a?s=116&amp;d=mm&amp;r=g 2x" class="avatar avatar-58 photo" width="58" height="58">					<span class="comment-avatar-overlay"></span>
+				</div>
+			</td><!-- END .comment-avatar -->
+			
+			<td class="comment-main">
+				<div class="comment-meta">
+					<span class="comment-author"><a href="http://www.tenglehub.in/" rel="external nofollow" class="url" target="_blank">satish</a></span>
+					<span class="comment-date">on May 22, 2016 at 5:50 pm</span>	
+				</div><!-- END .comment-meta -->
+				
+				<div class="comment-content">
+						
+					<p>In this tutorial how can make new post on top order by 1 desc</p>
+	
+					<div class="clear"></div>
+				</div><!-- END .comment-content -->
+
+				<a rel="nofollow" class="comment-reply-link" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/?replytocom=4606#respond" onclick='return addComment.moveForm( "comment-4606", "4606", "respond", "81" )' aria-label="Reply to satish">Reply →</a>				<div class="clear"></div>
+			</td><!-- END .comment-main -->
+		</tr></tbody></table><!-- #comment-4606  -->
+
+		<div class="clear"></div>
+
+	<ul class="children">
+
+	<li class="comment byuser comment-author-aadhuniq bypostauthor odd alt depth-2" id="li-comment-4607">
+
+		<table id="comment-4607" class="comment-wrapper"><tbody><tr>
+			<td class="comment-avatar">
+				<div style="position: relative;">
+					<img alt="" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/e3b8e49fd6184608d1a97f433558c82d.jpeg" srcset="https://secure.gravatar.com/avatar/e3b8e49fd6184608d1a97f433558c82d?s=116&amp;d=mm&amp;r=g 2x" class="avatar avatar-58 photo" width="58" height="58">					<span class="comment-avatar-overlay"></span>
+				</div>
+			</td><!-- END .comment-avatar -->
+			
+			<td class="comment-main">
+				<div class="comment-meta">
+					<span class="comment-author">Code Boss</span>
+					<span class="comment-date">on May 23, 2016 at 6:41 am</span>	
+				</div><!-- END .comment-meta -->
+				
+				<div class="comment-content">
+						
+					<p>Hi satish,<br>
+You need to change the sql query for sorting, just change the order by clause in the sql statement.<br>
+$sql=”SELECT * FROM `news_feed`ORDER BY `news_feed`.`news_id` DESC”;</p>
+	
+					<div class="clear"></div>
+				</div><!-- END .comment-content -->
+
+				<a rel="nofollow" class="comment-reply-link" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/?replytocom=4607#respond" onclick='return addComment.moveForm( "comment-4607", "4607", "respond", "81" )' aria-label="Reply to Code Boss">Reply →</a>				<div class="clear"></div>
+			</td><!-- END .comment-main -->
+		</tr></tbody></table><!-- #comment-4607  -->
+
+		<div class="clear"></div>
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-5289">
+
+		<table id="comment-5289" class="comment-wrapper"><tbody><tr>
+			<td class="comment-avatar">
+				<div style="position: relative;">
+					<img alt="" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/b018623cf17df866bc4dca1e69aee85b.jpeg" srcset="https://secure.gravatar.com/avatar/b018623cf17df866bc4dca1e69aee85b?s=116&amp;d=mm&amp;r=g 2x" class="avatar avatar-58 photo" width="58" height="58">					<span class="comment-avatar-overlay"></span>
+				</div>
+			</td><!-- END .comment-avatar -->
+			
+			<td class="comment-main">
+				<div class="comment-meta">
+					<span class="comment-author">manh hung</span>
+					<span class="comment-date">on November 20, 2016 at 4:54 pm</span>	
+				</div><!-- END .comment-meta -->
+				
+				<div class="comment-content">
+						
+					<p>Great tutorial. It worked perfectly</p>
+	
+					<div class="clear"></div>
+				</div><!-- END .comment-content -->
+
+				<a rel="nofollow" class="comment-reply-link" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/?replytocom=5289#respond" onclick='return addComment.moveForm( "comment-5289", "5289", "respond", "81" )' aria-label="Reply to manh hung">Reply →</a>				<div class="clear"></div>
+			</td><!-- END .comment-main -->
+		</tr></tbody></table><!-- #comment-5289  -->
+
+		<div class="clear"></div>
+
+	</li><!-- #comment-## -->
+
+	<li class="comment odd alt thread-even depth-1" id="li-comment-6104">
+
+		<table id="comment-6104" class="comment-wrapper"><tbody><tr>
+			<td class="comment-avatar">
+				<div style="position: relative;">
+					<img alt="" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/920779b768be336ab33b4263546888af.jpeg" srcset="https://secure.gravatar.com/avatar/920779b768be336ab33b4263546888af?s=116&amp;d=mm&amp;r=g 2x" class="avatar avatar-58 photo" width="58" height="58">					<span class="comment-avatar-overlay"></span>
+				</div>
+			</td><!-- END .comment-avatar -->
+			
+			<td class="comment-main">
+				<div class="comment-meta">
+					<span class="comment-author"><a href="http://firrga.ga/" rel="external nofollow" class="url" target="_blank">Abe Ansah</a></span>
+					<span class="comment-date">on June 2, 2017 at 4:45 am</span>	
+				</div><!-- END .comment-meta -->
+				
+				<div class="comment-content">
+						
+					<p>Thanks a lot.<br>
+Please can you give a tutorial on comment. On a post. Commenting with php.</p>
+	
+					<div class="clear"></div>
+				</div><!-- END .comment-content -->
+
+				<a rel="nofollow" class="comment-reply-link" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/?replytocom=6104#respond" onclick='return addComment.moveForm( "comment-6104", "6104", "respond", "81" )' aria-label="Reply to Abe Ansah">Reply →</a>				<div class="clear"></div>
+			</td><!-- END .comment-main -->
+		</tr></tbody></table><!-- #comment-6104  -->
+
+		<div class="clear"></div>
+
+	</li><!-- #comment-## -->
+			</ul>
+
+	
+	<div class="clear"></div>
+
+
+
+
+
+<div id="cForm">
+
+	<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"><span>Leave a comment</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://codelikeaboss.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-notes">Your email is <em>never</em> published or shared.</p><div class="comment-form-comment"><label for="comment">your comment</label><textarea id="comment" name="comment" cols="45" rows="8" tabindex="4"></textarea></div><!-- .comment-form-comment --><dl class="form-allowed-tags"><dt>You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:</dt> <dd><code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt; </code></dd></dl><div class="comment-form-author"><label for="author">your name</label><input id="author" name="author" size="30" tabindex="1" type="text"></div><!-- .comment-form-author -->
+<div class="comment-form-email"><label for="email">e-mail address</label><input id="email" name="email" size="30" tabindex="2" type="text"></div><!-- .comment-form-email -->
+<div class="comment-form-url"><label for="url">website url</label><input id="url" name="url" size="30" tabindex="3" type="text"></div><!-- .comment-form-url -->
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="submit your reply" type="submit"> <input name="comment_post_ID" value="81" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="548041ef14" type="hidden"></p><p style="display: none;"></p>			<input id="ak_js" name="ak_js" value="1516288758347" type="hidden"></form>
+			</div><!-- #respond -->
+	</div><!-- END #cForm -->
+</div><!-- #comments -->  </div>
+  <!-- END #content -->
+  <div id="sidebar">
+	<div id="text-5" class="widget-container widget_text">			<div class="textwidget"><div class="about_me"><img class="my_face" style="float: left; margin: 0 8px 5px 0; -webkit-border-radius: 50px 50px 50px 50px; border-radius: 50px 50px 50px 50px; -webkit-box-shadow: 1px 1px 3px 1px #ccc; box-shadow: 1px 1px 3px 1px #ccc;" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/AdhunAnand.png"><p></p>
+<h3 style="margin: 0 0 4px; font-size: 18px;"><a style="text-decoration: none; color: #333;" title="Adhun Anand" href="https://plus.google.com/+AdhunAnand" target="_blank" rel="noopener">Adhun Anand</a></h3>
+<p style="margin: 0; padding-bottom: 10px; line-height: 16px; font-size: 14px;">Code Boss<br>
+Trivandrum, India</p>
+<p style="margin: 0; padding-bottom: 10px; line-height: 20px; font-size: 14px;"><a href="https://www.facebook.com/adhunanand" target="_blank" rel="noopener"><img style="margin-right: 5px; display: inline-block;" title="Adhun Anand FB" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/fb.png"></a><br>
+<a href="https://plus.google.com/+AdhunAnand" target="_blank" rel="noopener"><img style="display: inline-block; margin-right: 5px;" title="Adhun Anand gplus" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/google.png"></a> <a href="mailto:adhunanand@gmail.com" target="_blank" rel="noopener"><img style="display: inline-block;" title="Adhun Anand" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/gmail.png"></a></p>
+</div>
+</div>
+		<div class="clear"></div></div><div id="search-widget-2" class="widget-container widget_search">
+			<form method="get" id="searchform" action="https://codelikeaboss.com/">
+				<input name="s" class="s" value="enter search term" type="text">
+				<input class="b" value="Search" type="submit">
+			</form>
+
+		<div class="clear"></div></div><div id="text-4" class="widget-container widget_text">			<div class="textwidget"><iframe src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/likebox.html" scrolling="no" style="border:none; overflow:hidden; width:290px; height:258px;" allowtransparency="true" frameborder="0"></iframe></div>
+		<div class="clear"></div></div><div id="latest-posts-widget-2" class="widget-container latest-posts-widget"><h3 class="widget-title">Latest Posts</h3><ul>
+			<li>
+				<span class="post-date">31 Jul - </span>
+				<a href="https://codelikeaboss.com/how-to-create-an-ajax-based-html5-contact-form-with-notifications/" title="Read How to Create An Ajax-Based HTML5 Contact Form with notifications" class="post-title">How to Create An Ajax-Based HTML5 Contact Form with notifications</a>
+			</li>
+		
+		
+			<li>
+				<span class="post-date">07 Jul - </span>
+				<a href="https://codelikeaboss.com/everything-you-need-to-know-about-htaccess/" title="Read Everything you need to know about .htaccess" class="post-title">Everything you need to know about .htaccess</a>
+			</li>
+		
+		
+			<li>
+				<span class="post-date">18 Jan - </span>
+				<a href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/" title="Read Ajax based load more results with jQuery, MySQL and PHP" class="post-title">Ajax based load more results with jQuery, MySQL and PHP</a>
+			</li>
+		
+		
+			<li>
+				<span class="post-date">18 Jan - </span>
+				<a href="https://codelikeaboss.com/how-to-integrate-facebook-like-button-to-your-website/" title="Read How to integrate facebook like button to your website" class="post-title">How to integrate facebook like button to your website</a>
+			</li>
+		
+		</ul><div class="clear"></div></div><div id="random-posts-widget-2" class="widget-container random-posts-widget"><h3 class="widget-title">Random Posts</h3><ul>
+			<li>
+				<span class="post-date">18 Jan - </span>
+				<a href="https://codelikeaboss.com/how-to-integrate-facebook-like-button-to-your-website/" title="Read How to integrate facebook like button to your website" class="post-title">How to integrate facebook like button to your website</a>
+			</li>
+		
+		
+			<li>
+				<span class="post-date">07 Jul - </span>
+				<a href="https://codelikeaboss.com/everything-you-need-to-know-about-htaccess/" title="Read Everything you need to know about .htaccess" class="post-title">Everything you need to know about .htaccess</a>
+			</li>
+		
+		
+			<li>
+				<span class="post-date">31 Jul - </span>
+				<a href="https://codelikeaboss.com/how-to-create-an-ajax-based-html5-contact-form-with-notifications/" title="Read How to Create An Ajax-Based HTML5 Contact Form with notifications" class="post-title">How to Create An Ajax-Based HTML5 Contact Form with notifications</a>
+			</li>
+		
+		
+			<li>
+				<span class="post-date">18 Jan - </span>
+				<a href="https://codelikeaboss.com/ajax-based-load-more-results-with-jquery-mysql-and-php/" title="Read Ajax based load more results with jQuery, MySQL and PHP" class="post-title">Ajax based load more results with jQuery, MySQL and PHP</a>
+			</li>
+		
+		</ul><div class="clear"></div></div></div><!-- END #sidebar -->  <div class="clear"></div>
+</div>
+<!-- END #main -->
+<div id="footer">
+	Copyright © 2018 <a href="https://codelikeaboss.com/" title="Code Like A Boss" rel="home">Code Like A Boss</a>. All rights Reserved.<br>
+	Powered by <a href="http://wordpress.org/" title="WordPress Website" target="_blank">WordPress</a>.
+</div><!-- END #footer -->
+
+
+	<script type="text/javascript">jQuery(function(){jQuery('.frameworkad').click(function()
+ {var id = jQuery(this).attr("id");var split = 
+id.split("-");jQuery.get("https://codelikeaboss.com/wp-content/themes/codebosstheme/includes/framework/plugins/advertising/advertising.out.php?ad="+split[1]);});});</script>
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/shCore.js"></script>
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/shBrushSql.js"></script>
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/shBrushJScript.js"></script>
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/shBrushPhp.js"></script>
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/shBrushCss.js"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = 
+"https://codelikeaboss.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, 
+document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = 
+"https://codelikeaboss.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?ver=3.0.9b";
+
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		
+//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+
+		document.getElementsByTagName("head")[0].insertBefore( themecss, 
+document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t 
+configured for html-script option: ';
+	SyntaxHighlighter.defaults['auto-links'] = false;
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/comment-reply.js"></script>
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/wp-embed.js"></script>
+<script type="text/javascript" src="Ajax%20based%20load%20more%20results%20with%20jQuery,%20MySQL%20and%20PHP%20-%20Code%20Like%20A%20Boss_files/form.js"></script>
+
+</body></html>

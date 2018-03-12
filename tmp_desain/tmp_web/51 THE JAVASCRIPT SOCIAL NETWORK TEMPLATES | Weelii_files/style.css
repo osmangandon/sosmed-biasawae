@@ -1,0 +1,21 @@
+/**
+ * Theme Name: DW Argo
+ * Theme URI: http://www.designwall.com/wordpress/themes/dw-argo/
+ * Demo URI: http://demo.designwall.com/dw-argo/
+ * Author: DesignWall
+ * Author URI: http://designwall.com/
+ * Description: Responsive Magazine WordPress Theme
+ * Version: 1.0.6
+ * License: GNU General Public License v3 or later
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * Tags: fluid-layout, responsive-layout, three-columns, right-sidebar, custom-menu, left-sidebar, black, white, orange
+ * Text Domain: dw
+ **/
+
+.wp-caption {}
+.wp-caption-text {}
+.sticky {}
+.gallery-caption {}
+.bypostauthor {}
+
+small{font-weight:normal;line-height:1;color:#aaa}h1,h2,h3{line-height:24px}h1{font-size:44px}h2{font-size:16px}h3{font-size:28px}h4{font-size:20px}h5{font-size:16px}h6{font-size:13.6px}h1
