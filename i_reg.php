@@ -167,6 +167,14 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
 				require("i_reg_sql.php");
 
 
+
+
+				//entri publik
+				mysql_query("INSERT INTO m_publik_user(kd, usernamex, passwordx, nama, email, postdate) VALUES ".
+								"('$f_userkdx', '$e_user', '$e_pass', '$e_nama', '$e_email', '$today')");
+				
+				
+				
 				//entri data...
 				$yuk1 = "user";
 				$yuk1x = "$yuk1$f_userkdx";				
