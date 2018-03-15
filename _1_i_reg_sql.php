@@ -271,28 +271,4 @@ mysql_query("CREATE TABLE $yuk1x (
 
 mysql_query("ALTER TABLE $yuk1x ADD PRIMARY KEY (kd);");
 
-
-
-
-
-
-
-
-
-$yuk1 = "user_publik_status";
-$yuk1x = "$yuk1$yuk_kd";
-
-mysql_query("CREATE TABLE $yuk1x ( 
-  `kd` varchar(50) NOT NULL,
-  `kd_status` longtext,
-  `postdate` datetime DEFAULT NULL,
-  `konek` enum('true','false') NOT NULL DEFAULT 'false'
-) ENGINE=MyISAM;");
-
-mysql_query("ALTER TABLE $yuk1x ADD PRIMARY KEY (kd);");
-
-
-
-
-
 ?>
