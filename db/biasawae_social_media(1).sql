@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 15, 2018 at 04:12 AM
+-- Generation Time: Mar 16, 2018 at 05:36 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -90,7 +90,10 @@ CREATE TABLE `m_publik_user` (
 
 INSERT INTO `m_publik_user` (`kd`, `usernamex`, `passwordx`, `nama`, `postdate`, `email`) VALUES
 ('33f5c8a1e2aeb16d3059638de5d1d4af', '2', 'c81e728d9d4c2f636f067f89cc14862c', '2', '2018-01-07 03:46:55', '2'),
-('463a8b35dcf6239d02e41dfafbf2cc69', '1', 'c4ca4238a0b923820dcc509a6f75849b', '1', '2018-01-07 04:25:27', '1');
+('463a8b35dcf6239d02e41dfafbf2cc69', '1', 'c4ca4238a0b923820dcc509a6f75849b', '1', '2018-01-07 04:25:27', '1'),
+('305c372acd4cdb57f8ed89b9fc36c07880', '9x', '41d60d32d9ec705b3d3409e5c37a47ed', '9x', '2018-03-16 03:59:26', '9x'),
+('f10e55153817313d8ea2147f1e73056b182', '8', '35ceff6d0886aeb91b02882bb4e5f433', '8xstrix', '2018-03-16 04:44:16', '8xstrix'),
+('93a157e4065fe179017f0c91b28f55d9481', 'a9', '3d1e97d18e692ca5484d1abfe617b6c1', 'a9', '2018-03-16 04:44:44', 'a9');
 
 -- --------------------------------------------------------
 
@@ -151,6 +154,39 @@ CREATE TABLE `m_publik_user_status` (
   `filex` longtext NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `m_publik_user_status`
+--
+
+INSERT INTO `m_publik_user_status` (`kd`, `kd_user`, `status`, `postdate`, `filex`) VALUES
+('abd25dfbc8f14345fb0fa5b7db1d8f6c', '305c372acd4cdb57f8ed89b9fc36c07880', 'ok', '2018-03-16 04:09:29', ''),
+('0dd752739eede6e871be88e6adfb1b7c', '305c372acd4cdb57f8ed89b9fc36c07880', 'coba ya...', '2018-03-16 04:09:49', ''),
+('2bc2e3ca1fa90e2758fba7d3a8c77024', '305c372acd4cdb57f8ed89b9fc36c07880', 'ddd', '2018-03-16 04:10:36', ''),
+('66d0ebf2986f2b3eab241b20504b7a29', '305c372acd4cdb57f8ed89b9fc36c07880', 'dddd', '2018-03-16 04:12:39', ''),
+('bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'ssddd', '2018-03-16 04:13:39', ''),
+('f30de9983374143839c6512173e9efe2', '305c372acd4cdb57f8ed89b9fc36c07880', 'siapkan diri mu ya....', '2018-03-16 04:18:40', ''),
+('f2a7d38600f8b8011e2fe7da6ff9174f', '305c372acd4cdb57f8ed89b9fc36c07880', 'ddsss', '2018-03-16 04:29:46', ''),
+('8f9b3aef21ce601bc83dbaee05c523fc', '305c372acd4cdb57f8ed89b9fc36c07880', 'ddff', '2018-03-16 04:31:29', ''),
+('3aefd093c950ef579f17c97a1d36531f', '305c372acd4cdb57f8ed89b9fc36c07880', 'dssss', '2018-03-16 04:32:34', ''),
+('9d4ee6a0c0c5e6d2529224e8e46b7b96', '305c372acd4cdb57f8ed89b9fc36c07880', 'sssddd', '2018-03-16 04:33:42', ''),
+('199dbaa5dba41fc0e28b4ac11986d4c9', '305c372acd4cdb57f8ed89b9fc36c07880', 'wwwwwwww', '2018-03-16 04:35:36', ''),
+('20988f91206d2667cec45a191bfee2a6', '305c372acd4cdb57f8ed89b9fc36c07880', 'dddd', '2018-03-16 04:36:53', ''),
+('fcdce98edcbfae1e4df29b571a669aba', '305c372acd4cdb57f8ed89b9fc36c07880', 'sssssss', '2018-03-16 04:38:06', ''),
+('a6af77d2d9bc1ad78852353e29c62908', '305c372acd4cdb57f8ed89b9fc36c07880', 'siap.........', '2018-03-16 04:41:14', ''),
+('dfed1631df980c8574167b8ecc2e599a', '305c372acd4cdb57f8ed89b9fc36c07880', 'saddd', '2018-03-16 04:41:53', ''),
+('8556dfc2a0f08c3dc03832e463b343a6', '305c372acd4cdb57f8ed89b9fc36c07880', 'ssddddffffff', '2018-03-16 04:43:25', ''),
+('531f36ade01598bc7f4bdce281c76176', '93a157e4065fe179017f0c91b28f55d9481', 'dsddd', '2018-03-16 04:49:45', ''),
+('77c95f19aaa81c530257d9f4c78c5e4d', '93a157e4065fe179017f0c91b28f55d9481', 'dsssssssssssssss', '2018-03-16 04:52:53', ''),
+('abe46db40e4f283708185993cc51cd74', '93a157e4065fe179017f0c91b28f55d9481', 'ok', '2018-03-16 04:53:26', ''),
+('801cf3cd3d0615bfda014f2e03047867', '93a157e4065fe179017f0c91b28f55d9481', 'sddd', '2018-03-16 04:54:38', ''),
+('92dccf2fb75992a177230a2b4aa5363d', '93a157e4065fe179017f0c91b28f55d9481', 'sudah ya...', '2018-03-16 04:54:51', ''),
+('908aad2ed7cd3b425061780f7041eeec', '93a157e4065fe179017f0c91b28f55d9481', 'ok deh...', '2018-03-16 04:55:41', ''),
+('87aa886f2f3495436a7315439265a933', '93a157e4065fe179017f0c91b28f55d9481', 'diam saja ya...', '2018-03-16 04:56:38', ''),
+('f96826c08a8fd79e5745bc3194e690e5', '93a157e4065fe179017f0c91b28f55d9481', 'pokoknya coba saja ya....', '2018-03-16 04:56:52', ''),
+('52bf3dee42469ed6a07a7b62cf49ec6a', '93a157e4065fe179017f0c91b28f55d9481', 'ok deh.', '2018-03-16 04:58:21', ''),
+('9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'diam itu emas... katanya.....', '2018-03-16 05:02:49', ''),
+('3aa41eb02ec1bd08edc2b3d75ed92658', '93a157e4065fe179017f0c91b28f55d9481', 'siap...', '2018-03-16 05:34:33', '');
+
 -- --------------------------------------------------------
 
 --
@@ -177,6 +213,24 @@ CREATE TABLE `m_publik_user_status_msg` (
   `msg` varchar(255) DEFAULT NULL,
   `postdate` datetime DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `m_publik_user_status_msg`
+--
+
+INSERT INTO `m_publik_user_status_msg` (`kd`, `kd_user_status`, `dari`, `msg`, `postdate`) VALUES
+('d39e3a769c3fd9ba7cb43a915aaa3308', 'bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'dd', '2018-03-16 04:15:06'),
+('d39e3a769c3fd9ba7cb43a915aaa3308', 'bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'dd', '2018-03-16 04:15:06'),
+('9528b29e0a172b16337a4078762aa5d0', 'bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'ssss', '2018-03-16 04:15:37'),
+('1518100fb73e8a4dd7622bf2cd20da81', 'bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'AAA', '2018-03-16 04:16:01'),
+('ef02d471c9e1ef01b7e6e8f08ab94007', 'bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'efefef', '2018-03-16 04:16:30'),
+('7505746b2a91fa69720fd20ca0fadf2e', 'f30de9983374143839c6512173e9efe2', '305c372acd4cdb57f8ed89b9fc36c07880', 'aq yakin bisa...', '2018-03-16 04:18:46'),
+('110365913c76e1e35e745770018544a7', 'f30de9983374143839c6512173e9efe2', '305c372acd4cdb57f8ed89b9fc36c07880', 'mau gimana lagi sih...', '2018-03-16 04:18:54'),
+('8136c580b7519e35b243e5d297dbcd14', '52bf3dee42469ed6a07a7b62cf49ec6a', '93a157e4065fe179017f0c91b28f55d9481', 'setuju aja ya...', '2018-03-16 05:01:21'),
+('ad88b5c9289e13b6c0f3e2a699f1da97', '52bf3dee42469ed6a07a7b62cf49ec6a', '93a157e4065fe179017f0c91b28f55d9481', 'yakin saja deh...', '2018-03-16 05:02:14'),
+('2a591ee6ec9cd5880ee63f25642ed5d9', '9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'ok deh...', '2018-03-16 05:03:03'),
+('04709d6a1c7560c827104ef0430bf7ec', '9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'ok ya...', '2018-03-16 05:34:45'),
+('c3aa404af20217fe3ee21af31764d59a', '9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'sip', '2018-03-16 05:35:22');
 
 -- --------------------------------------------------------
 
@@ -286,6 +340,50 @@ CREATE TABLE `user9bdd8b736adbb50c697d3b40556726e8926` (
   `postdate` datetime DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `usernamex` varchar(100) DEFAULT NULL,
+  `passwordx` varchar(50) DEFAULT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user93a157e4065fe179017f0c91b28f55d9481`
+--
+
+INSERT INTO `user93a157e4065fe179017f0c91b28f55d9481` (`kd`, `usernamex`, `passwordx`, `nama`, `postdate`, `email`) VALUES
+('93a157e4065fe179017f0c91b28f55d9481', 'a9', '3d1e97d18e692ca5484d1abfe617b6c1', 'a9', '2018-03-16 04:44:44', 'a9');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user305c372acd4cdb57f8ed89b9fc36c07880` (
+  `kd` varchar(50) NOT NULL,
+  `usernamex` varchar(100) DEFAULT NULL,
+  `passwordx` varchar(50) DEFAULT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+INSERT INTO `user305c372acd4cdb57f8ed89b9fc36c07880` (`kd`, `usernamex`, `passwordx`, `nama`, `postdate`, `email`) VALUES
+('305c372acd4cdb57f8ed89b9fc36c07880', '9x', '41d60d32d9ec705b3d3409e5c37a47ed', '9x', '2018-03-16 03:59:26', '9x');
 
 -- --------------------------------------------------------
 
@@ -409,6 +507,28 @@ CREATE TABLE `usere785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `userf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `userf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `usernamex` varchar(100) DEFAULT NULL,
+  `passwordx` varchar(50) DEFAULT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userf10e55153817313d8ea2147f1e73056b182`
+--
+
+INSERT INTO `userf10e55153817313d8ea2147f1e73056b182` (`kd`, `usernamex`, `passwordx`, `nama`, `postdate`, `email`) VALUES
+('f10e55153817313d8ea2147f1e73056b182', '8', '35ceff6d0886aeb91b02882bb4e5f433', '8xstrix', '2018-03-16 04:44:16', '8xstrix');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_chat`
 --
 
@@ -455,6 +575,34 @@ CREATE TABLE `user_chat6ce3e2ac010dd8a5d2526761bbac141a611` (
 --
 
 CREATE TABLE `user_chat6e42858c9c381f3f014da704ad82829b160` (
+  `kd` varchar(50) NOT NULL,
+  `untuk` varchar(50) DEFAULT NULL,
+  `isi` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `dibaca` enum('true','false') DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_chat93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_chat93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `untuk` varchar(50) DEFAULT NULL,
+  `isi` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `dibaca` enum('true','false') DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_chat305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_chat305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `untuk` varchar(50) DEFAULT NULL,
   `isi` longtext,
@@ -563,6 +711,20 @@ CREATE TABLE `user_chate785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_chatf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_chatf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `untuk` varchar(50) DEFAULT NULL,
+  `isi` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `dibaca` enum('true','false') DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_event`
 --
 
@@ -595,6 +757,34 @@ CREATE TABLE `user_event6ce3e2ac010dd8a5d2526761bbac141a611` (
 --
 
 CREATE TABLE `user_event6e42858c9c381f3f014da704ad82829b160` (
+  `kd` varchar(50) NOT NULL,
+  `judul` varchar(100) DEFAULT NULL,
+  `tgl_mulai` datetime DEFAULT NULL,
+  `tgl_selesai` datetime DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_event93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_event93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `judul` varchar(100) DEFAULT NULL,
+  `tgl_mulai` datetime DEFAULT NULL,
+  `tgl_selesai` datetime DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_event305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_event305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `judul` varchar(100) DEFAULT NULL,
   `tgl_mulai` datetime DEFAULT NULL,
@@ -703,6 +893,20 @@ CREATE TABLE `user_evente785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_eventf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_eventf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `judul` varchar(100) DEFAULT NULL,
+  `tgl_mulai` datetime DEFAULT NULL,
+  `tgl_selesai` datetime DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_event_like`
 --
 
@@ -733,6 +937,32 @@ CREATE TABLE `user_event_like6ce3e2ac010dd8a5d2526761bbac141a611` (
 --
 
 CREATE TABLE `user_event_like6e42858c9c381f3f014da704ad82829b160` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_event` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_event_like93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_event_like93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_event` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_event_like305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_event_like305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `kd_user_event` varchar(50) DEFAULT NULL,
   `dari` varchar(50) DEFAULT NULL,
@@ -820,6 +1050,19 @@ CREATE TABLE `user_event_likee785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_event_likef10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_event_likef10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_event` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_event_msg`
 --
 
@@ -852,6 +1095,34 @@ CREATE TABLE `user_event_msg6ce3e2ac010dd8a5d2526761bbac141a611` (
 --
 
 CREATE TABLE `user_event_msg6e42858c9c381f3f014da704ad82829b160` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_event` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `msg` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_event_msg93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_event_msg93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_event` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `msg` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_event_msg305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_event_msg305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `kd_user_event` varchar(50) DEFAULT NULL,
   `dari` varchar(50) DEFAULT NULL,
@@ -946,6 +1217,20 @@ CREATE TABLE `user_event_msge785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_event_msgf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_event_msgf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_event` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `msg` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_keahlian`
 --
 
@@ -974,6 +1259,30 @@ CREATE TABLE `user_keahlian6ce3e2ac010dd8a5d2526761bbac141a611` (
 --
 
 CREATE TABLE `user_keahlian6e42858c9c381f3f014da704ad82829b160` (
+  `kd` varchar(50) NOT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_keahlian93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_keahlian93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_keahlian305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_keahlian305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `nama` varchar(100) DEFAULT NULL,
   `postdate` datetime DEFAULT NULL
@@ -1054,6 +1363,18 @@ CREATE TABLE `user_keahliane785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_keahlianf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_keahlianf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_minat`
 --
 
@@ -1082,6 +1403,30 @@ CREATE TABLE `user_minat6ce3e2ac010dd8a5d2526761bbac141a611` (
 --
 
 CREATE TABLE `user_minat6e42858c9c381f3f014da704ad82829b160` (
+  `kd` varchar(50) NOT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_minat93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_minat93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_minat305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_minat305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `nama` varchar(100) DEFAULT NULL,
   `postdate` datetime DEFAULT NULL
@@ -1162,6 +1507,18 @@ CREATE TABLE `user_minate785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_minatf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_minatf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_profil`
 --
 
@@ -1228,6 +1585,68 @@ CREATE TABLE `user_profil6ce3e2ac010dd8a5d2526761bbac141a611` (
 --
 
 CREATE TABLE `user_profil6e42858c9c381f3f014da704ad82829b160` (
+  `kd` varchar(50) NOT NULL,
+  `filex_foto` varchar(255) DEFAULT NULL,
+  `tmp_lahir` varchar(100) DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `situs` varchar(255) DEFAULT NULL,
+  `telp` varchar(100) DEFAULT NULL,
+  `agama` varchar(30) DEFAULT NULL,
+  `hobi` varchar(100) DEFAULT NULL,
+  `aktivitas` varchar(100) DEFAULT NULL,
+  `makanan` varchar(100) DEFAULT NULL,
+  `minuman` varchar(100) DEFAULT NULL,
+  `musik` varchar(100) DEFAULT NULL,
+  `film` varchar(100) DEFAULT NULL,
+  `buku` varchar(100) DEFAULT NULL,
+  `idola` varchar(100) DEFAULT NULL,
+  `pend_akhir` varchar(100) DEFAULT NULL,
+  `pend_thnlulus` varchar(4) DEFAULT NULL,
+  `moto` varchar(255) DEFAULT NULL,
+  `kata_mutiara` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_profil93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_profil93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `filex_foto` varchar(255) DEFAULT NULL,
+  `tmp_lahir` varchar(100) DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `situs` varchar(255) DEFAULT NULL,
+  `telp` varchar(100) DEFAULT NULL,
+  `agama` varchar(30) DEFAULT NULL,
+  `hobi` varchar(100) DEFAULT NULL,
+  `aktivitas` varchar(100) DEFAULT NULL,
+  `makanan` varchar(100) DEFAULT NULL,
+  `minuman` varchar(100) DEFAULT NULL,
+  `musik` varchar(100) DEFAULT NULL,
+  `film` varchar(100) DEFAULT NULL,
+  `buku` varchar(100) DEFAULT NULL,
+  `idola` varchar(100) DEFAULT NULL,
+  `pend_akhir` varchar(100) DEFAULT NULL,
+  `pend_thnlulus` varchar(4) DEFAULT NULL,
+  `moto` varchar(255) DEFAULT NULL,
+  `kata_mutiara` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_profil305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_profil305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `filex_foto` varchar(255) DEFAULT NULL,
   `tmp_lahir` varchar(100) DEFAULT NULL,
@@ -1441,6 +1860,76 @@ CREATE TABLE `user_profile785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_profilf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_profilf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `filex_foto` varchar(255) DEFAULT NULL,
+  `tmp_lahir` varchar(100) DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `situs` varchar(255) DEFAULT NULL,
+  `telp` varchar(100) DEFAULT NULL,
+  `agama` varchar(30) DEFAULT NULL,
+  `hobi` varchar(100) DEFAULT NULL,
+  `aktivitas` varchar(100) DEFAULT NULL,
+  `makanan` varchar(100) DEFAULT NULL,
+  `minuman` varchar(100) DEFAULT NULL,
+  `musik` varchar(100) DEFAULT NULL,
+  `film` varchar(100) DEFAULT NULL,
+  `buku` varchar(100) DEFAULT NULL,
+  `idola` varchar(100) DEFAULT NULL,
+  `pend_akhir` varchar(100) DEFAULT NULL,
+  `pend_thnlulus` varchar(4) DEFAULT NULL,
+  `moto` varchar(255) DEFAULT NULL,
+  `kata_mutiara` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_publik_status93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_publik_status93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `kd_status` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `konek` enum('true','false') NOT NULL DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_publik_status305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_publik_status305c372acd4cdb57f8ed89b9fc36c07880` (
+  `kd` varchar(50) NOT NULL,
+  `kd_status` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `konek` enum('true','false') NOT NULL DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_publik_statusf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_publik_statusf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `kd_status` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `konek` enum('true','false') NOT NULL DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_status`
 --
 
@@ -1448,25 +1937,20 @@ CREATE TABLE `user_status` (
   `kd` varchar(50) NOT NULL,
   `status` longtext,
   `postdate` datetime DEFAULT NULL,
-  `filex` longtext NOT NULL
+  `filex` longtext NOT NULL,
+  `kd_user` varchar(50) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 --
 -- Dumping data for table `user_status`
 --
 
-INSERT INTO `user_status` (`kd`, `status`, `postdate`, `filex`) VALUES
-('50796c0fd47ed5a3230e802940d661ef', 'sadar', '2018-01-07 04:10:51', ''),
-('e58fc83f62c3762e91d0a17677b5f4db', 'okkk', '2018-01-07 04:11:20', ''),
-('5df3263fbe5d028b80f985c0fbbae417', 'adem ayem', '2018-01-16 14:14:43', ''),
-('43fa8a84dd8fbf566b811e4230eb50b7', 'ok...', '2018-01-16 15:20:05', ''),
-('d6bf121c2c9c3467bd7a0d6f1f0a9a86', 'coba lagi, kalau bisa... wkwkwkwkkkk', '2018-01-16 15:25:23', ''),
-('a151040f6ff1952dc2d19447f31198a7', 'siap deh...', '2018-01-16 15:35:26', ''),
-('f6ae93a17013533a18b2d9430606a5bd', 'sepertinya mudah ya', '2018-01-16 15:41:46', ''),
-('bdbd18ed9fae03d83438c9b036576572', 'v', '2018-01-18 16:12:03', ''),
-('895c2ccbccd66cbe1b192692c277f663', 'awws', '2018-01-18 16:55:50', ''),
-('9a40790e8f79c1fdac9be1aac40ec95b', 'aqqww', '2018-01-18 16:56:03', ''),
-('0ca974fde4ef704d595d8001be8eb2c7', 'weeeee', '2018-01-18 16:56:17', '');
+INSERT INTO `user_status` (`kd`, `status`, `postdate`, `filex`, `kd_user`) VALUES
+('df066c8bc6864f637cef8c41b986ee0d', 'sswwwww', '2018-03-16 04:48:51', '', '93a157e4065fe179017f0c91b28f55d9481'),
+('bf07c72bc13876f6174a6596f27ad6a3', 'sddddeeeeeeee', '2018-03-16 04:48:33', '', '93a157e4065fe179017f0c91b28f55d9481'),
+('42beb7677d313e577d94c70004b9db5f', 'dddsss', '2018-03-16 04:47:25', '', '93a157e4065fe179017f0c91b28f55d9481'),
+('eabf0a04e4d21d43f14f0f3146323138', 'ae', '2018-03-16 04:45:35', '', '93a157e4065fe179017f0c91b28f55d9481'),
+('89fa2e25a3adceb4aaca5d037506d942', 'dffff', '2018-03-16 04:07:20', '', '305c372acd4cdb57f8ed89b9fc36c07880');
 
 -- --------------------------------------------------------
 
@@ -1493,6 +1977,67 @@ CREATE TABLE `user_status6e42858c9c381f3f014da704ad82829b160` (
   `postdate` datetime DEFAULT NULL,
   `filex` longtext NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_status93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_status93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `status` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `filex` longtext NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_status93a157e4065fe179017f0c91b28f55d9481`
+--
+
+INSERT INTO `user_status93a157e4065fe179017f0c91b28f55d9481` (`kd`, `status`, `postdate`, `filex`) VALUES
+('531f36ade01598bc7f4bdce281c76176', 'dsddd', '2018-03-16 04:49:45', ''),
+('77c95f19aaa81c530257d9f4c78c5e4d', 'dsssssssssssssss', '2018-03-16 04:52:53', ''),
+('abe46db40e4f283708185993cc51cd74', 'ok', '2018-03-16 04:53:26', ''),
+('801cf3cd3d0615bfda014f2e03047867', 'sddd', '2018-03-16 04:54:38', ''),
+('92dccf2fb75992a177230a2b4aa5363d', 'sudah ya...', '2018-03-16 04:54:51', ''),
+('908aad2ed7cd3b425061780f7041eeec', 'ok deh...', '2018-03-16 04:55:41', ''),
+('87aa886f2f3495436a7315439265a933', 'diam saja ya...', '2018-03-16 04:56:38', ''),
+('f96826c08a8fd79e5745bc3194e690e5', 'pokoknya coba saja ya....', '2018-03-16 04:56:52', ''),
+('52bf3dee42469ed6a07a7b62cf49ec6a', 'ok deh.', '2018-03-16 04:58:21', ''),
+('9c179b431a20a4b84240cb3bc4c82efc', 'diam itu emas... katanya.....', '2018-03-16 05:02:49', ''),
+('3aa41eb02ec1bd08edc2b3d75ed92658', 'siap...', '2018-03-16 05:34:33', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_status305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_status305c372acd4cdb57f8ed89b9fc36c07880` (
+  `kd` varchar(50) NOT NULL,
+  `status` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `filex` longtext NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_status305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+INSERT INTO `user_status305c372acd4cdb57f8ed89b9fc36c07880` (`kd`, `status`, `postdate`, `filex`) VALUES
+('bea9f0a0a932454ead8c444a8af634b3', 'ssddd', '2018-03-16 04:13:39', ''),
+('f30de9983374143839c6512173e9efe2', 'siapkan diri mu ya....', '2018-03-16 04:18:40', ''),
+('f2a7d38600f8b8011e2fe7da6ff9174f', 'ddsss', '2018-03-16 04:29:46', ''),
+('8f9b3aef21ce601bc83dbaee05c523fc', 'ddff', '2018-03-16 04:31:29', ''),
+('3aefd093c950ef579f17c97a1d36531f', 'dssss', '2018-03-16 04:32:34', ''),
+('9d4ee6a0c0c5e6d2529224e8e46b7b96', 'sssddd', '2018-03-16 04:33:42', ''),
+('199dbaa5dba41fc0e28b4ac11986d4c9', 'wwwwwwww', '2018-03-16 04:35:36', ''),
+('20988f91206d2667cec45a191bfee2a6', 'dddd', '2018-03-16 04:36:53', ''),
+('fcdce98edcbfae1e4df29b571a669aba', 'sssssss', '2018-03-16 04:38:06', ''),
+('a6af77d2d9bc1ad78852353e29c62908', 'siap.........', '2018-03-16 04:41:14', ''),
+('dfed1631df980c8574167b8ecc2e599a', 'saddd', '2018-03-16 04:41:53', ''),
+('8556dfc2a0f08c3dc03832e463b343a6', 'ssddddffffff', '2018-03-16 04:43:25', '');
 
 -- --------------------------------------------------------
 
@@ -1575,6 +2120,19 @@ CREATE TABLE `user_statuse785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_statusf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_statusf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `status` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `filex` longtext NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_status_like`
 --
 
@@ -1605,6 +2163,32 @@ CREATE TABLE `user_status_like6ce3e2ac010dd8a5d2526761bbac141a611` (
 --
 
 CREATE TABLE `user_status_like6e42858c9c381f3f014da704ad82829b160` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_status` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_status_like93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_status_like93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_status` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_status_like305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_status_like305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `kd_user_status` varchar(50) DEFAULT NULL,
   `dari` varchar(50) DEFAULT NULL,
@@ -1692,6 +2276,19 @@ CREATE TABLE `user_status_likee785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_status_likef10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_status_likef10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_status` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_status_msg`
 --
 
@@ -1761,6 +2358,56 @@ CREATE TABLE `user_status_msg6e42858c9c381f3f014da704ad82829b160` (
   `msg` varchar(255) DEFAULT NULL,
   `postdate` datetime DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_status_msg93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_status_msg93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_status` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `msg` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_status_msg93a157e4065fe179017f0c91b28f55d9481`
+--
+
+INSERT INTO `user_status_msg93a157e4065fe179017f0c91b28f55d9481` (`kd`, `kd_user_status`, `dari`, `msg`, `postdate`) VALUES
+('8136c580b7519e35b243e5d297dbcd14', '52bf3dee42469ed6a07a7b62cf49ec6a', '93a157e4065fe179017f0c91b28f55d9481', 'setuju aja ya...', '2018-03-16 05:01:21'),
+('ad88b5c9289e13b6c0f3e2a699f1da97', '52bf3dee42469ed6a07a7b62cf49ec6a', '93a157e4065fe179017f0c91b28f55d9481', 'yakin saja deh...', '2018-03-16 05:02:14'),
+('2a591ee6ec9cd5880ee63f25642ed5d9', '9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'ok deh...', '2018-03-16 05:03:03'),
+('04709d6a1c7560c827104ef0430bf7ec', '9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'ok ya...', '2018-03-16 05:34:45'),
+('c3aa404af20217fe3ee21af31764d59a', '9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'sip', '2018-03-16 05:35:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_status_msg305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_status_msg305c372acd4cdb57f8ed89b9fc36c07880` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_status` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `msg` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_status_msg305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+INSERT INTO `user_status_msg305c372acd4cdb57f8ed89b9fc36c07880` (`kd`, `kd_user_status`, `dari`, `msg`, `postdate`) VALUES
+('9528b29e0a172b16337a4078762aa5d0', 'bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'ssss', '2018-03-16 04:15:37'),
+('1518100fb73e8a4dd7622bf2cd20da81', 'bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'AAA', '2018-03-16 04:16:01'),
+('ef02d471c9e1ef01b7e6e8f08ab94007', 'bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'efefef', '2018-03-16 04:16:30'),
+('7505746b2a91fa69720fd20ca0fadf2e', 'f30de9983374143839c6512173e9efe2', '305c372acd4cdb57f8ed89b9fc36c07880', 'aq yakin bisa...', '2018-03-16 04:18:46'),
+('110365913c76e1e35e745770018544a7', 'f30de9983374143839c6512173e9efe2', '305c372acd4cdb57f8ed89b9fc36c07880', 'mau gimana lagi sih...', '2018-03-16 04:18:54');
 
 -- --------------------------------------------------------
 
@@ -1849,6 +2496,20 @@ CREATE TABLE `user_status_msge785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_status_msgf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_status_msgf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_status` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `msg` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_status_msg_dibaca`
 --
 
@@ -1879,6 +2540,32 @@ CREATE TABLE `user_status_msg_dibaca6ce3e2ac010dd8a5d2526761bbac141a611` (
 --
 
 CREATE TABLE `user_status_msg_dibaca6e42858c9c381f3f014da704ad82829b160` (
+  `kd` varchar(50) NOT NULL,
+  `kd_msg` varchar(50) DEFAULT NULL,
+  `dibaca` enum('true','false') NOT NULL DEFAULT 'false',
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_status_msg_dibaca93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_status_msg_dibaca93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `kd_msg` varchar(50) DEFAULT NULL,
+  `dibaca` enum('true','false') NOT NULL DEFAULT 'false',
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_status_msg_dibaca305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_status_msg_dibaca305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `kd_msg` varchar(50) DEFAULT NULL,
   `dibaca` enum('true','false') NOT NULL DEFAULT 'false',
@@ -1966,6 +2653,19 @@ CREATE TABLE `user_status_msg_dibacae785b867a2aaf3d81b7ac953a2dd5fb9654` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_status_msg_dibacaf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_status_msg_dibacaf10e55153817313d8ea2147f1e73056b182` (
+  `kd` varchar(50) NOT NULL,
+  `kd_msg` varchar(50) DEFAULT NULL,
+  `dibaca` enum('true','false') NOT NULL DEFAULT 'false',
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_teman`
 --
 
@@ -1996,6 +2696,32 @@ CREATE TABLE `user_teman6ce3e2ac010dd8a5d2526761bbac141a611` (
 --
 
 CREATE TABLE `user_teman6e42858c9c381f3f014da704ad82829b160` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_teman` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL,
+  `konek` enum('true','false') NOT NULL DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_teman93a157e4065fe179017f0c91b28f55d9481`
+--
+
+CREATE TABLE `user_teman93a157e4065fe179017f0c91b28f55d9481` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_teman` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL,
+  `konek` enum('true','false') NOT NULL DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_teman305c372acd4cdb57f8ed89b9fc36c07880`
+--
+
+CREATE TABLE `user_teman305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `kd_user_teman` varchar(50) DEFAULT NULL,
   `postdate` datetime DEFAULT NULL,
@@ -2074,6 +2800,19 @@ CREATE TABLE `user_temancf0628be7a02684290f1cfb8a16f89ea532` (
 --
 
 CREATE TABLE `user_temane785b867a2aaf3d81b7ac953a2dd5fb9654` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_teman` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL,
+  `konek` enum('true','false') NOT NULL DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_temanf10e55153817313d8ea2147f1e73056b182`
+--
+
+CREATE TABLE `user_temanf10e55153817313d8ea2147f1e73056b182` (
   `kd` varchar(50) NOT NULL,
   `kd_user_teman` varchar(50) DEFAULT NULL,
   `postdate` datetime DEFAULT NULL,
@@ -2275,6 +3014,18 @@ ALTER TABLE `user9bdd8b736adbb50c697d3b40556726e8926`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user305c372acd4cdb57f8ed89b9fc36c07880`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user434cac91625a5c8752f63dcee13d8664178`
 --
 ALTER TABLE `user434cac91625a5c8752f63dcee13d8664178`
@@ -2317,6 +3068,12 @@ ALTER TABLE `usere785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `userf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `userf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_chat`
 --
 ALTER TABLE `user_chat`
@@ -2338,6 +3095,18 @@ ALTER TABLE `user_chat6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_chat6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_chat6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_chat93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_chat93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_chat305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_chat305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2383,6 +3152,12 @@ ALTER TABLE `user_chate785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_chatf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_chatf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_event`
 --
 ALTER TABLE `user_event`
@@ -2398,6 +3173,18 @@ ALTER TABLE `user_event6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_event6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_event6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_event93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_event93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_event305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_event305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2443,6 +3230,12 @@ ALTER TABLE `user_evente785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_eventf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_eventf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_event_like`
 --
 ALTER TABLE `user_event_like`
@@ -2458,6 +3251,18 @@ ALTER TABLE `user_event_like6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_event_like6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_event_like6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_event_like93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_event_like93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_event_like305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_event_like305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2497,6 +3302,12 @@ ALTER TABLE `user_event_likee785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_event_likef10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_event_likef10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_event_msg`
 --
 ALTER TABLE `user_event_msg`
@@ -2512,6 +3323,18 @@ ALTER TABLE `user_event_msg6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_event_msg6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_event_msg6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_event_msg93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_event_msg93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_event_msg305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_event_msg305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2551,6 +3374,12 @@ ALTER TABLE `user_event_msge785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_event_msgf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_event_msgf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_keahlian`
 --
 ALTER TABLE `user_keahlian`
@@ -2566,6 +3395,18 @@ ALTER TABLE `user_keahlian6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_keahlian6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_keahlian6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_keahlian93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_keahlian93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_keahlian305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_keahlian305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2605,6 +3446,12 @@ ALTER TABLE `user_keahliane785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_keahlianf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_keahlianf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_minat`
 --
 ALTER TABLE `user_minat`
@@ -2620,6 +3467,18 @@ ALTER TABLE `user_minat6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_minat6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_minat6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_minat93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_minat93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_minat305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_minat305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2659,6 +3518,12 @@ ALTER TABLE `user_minate785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_minatf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_minatf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_profil`
 --
 ALTER TABLE `user_profil`
@@ -2674,6 +3539,18 @@ ALTER TABLE `user_profil6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_profil6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_profil6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_profil93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_profil93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_profil305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_profil305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2713,6 +3590,30 @@ ALTER TABLE `user_profile785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_profilf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_profilf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_publik_status93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_publik_status93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_publik_status305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_publik_status305c372acd4cdb57f8ed89b9fc36c07880`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_publik_statusf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_publik_statusf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_status`
 --
 ALTER TABLE `user_status`
@@ -2728,6 +3629,18 @@ ALTER TABLE `user_status6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_status6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_status6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_status93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_status93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_status305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_status305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2767,6 +3680,12 @@ ALTER TABLE `user_statuse785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_statusf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_statusf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_status_like`
 --
 ALTER TABLE `user_status_like`
@@ -2782,6 +3701,18 @@ ALTER TABLE `user_status_like6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_status_like6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_status_like6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_status_like93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_status_like93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_status_like305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_status_like305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2821,6 +3752,12 @@ ALTER TABLE `user_status_likee785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_status_likef10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_status_likef10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_status_msg`
 --
 ALTER TABLE `user_status_msg`
@@ -2836,6 +3773,18 @@ ALTER TABLE `user_status_msg6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_status_msg6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_status_msg6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_status_msg93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_status_msg93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_status_msg305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_status_msg305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2875,6 +3824,12 @@ ALTER TABLE `user_status_msge785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_status_msgf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_status_msgf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_status_msg_dibaca`
 --
 ALTER TABLE `user_status_msg_dibaca`
@@ -2890,6 +3845,18 @@ ALTER TABLE `user_status_msg_dibaca6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_status_msg_dibaca6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_status_msg_dibaca6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_status_msg_dibaca93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_status_msg_dibaca93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_status_msg_dibaca305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_status_msg_dibaca305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2929,6 +3896,12 @@ ALTER TABLE `user_status_msg_dibacae785b867a2aaf3d81b7ac953a2dd5fb9654`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_status_msg_dibacaf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_status_msg_dibacaf10e55153817313d8ea2147f1e73056b182`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_teman`
 --
 ALTER TABLE `user_teman`
@@ -2944,6 +3917,18 @@ ALTER TABLE `user_teman6ce3e2ac010dd8a5d2526761bbac141a611`
 -- Indexes for table `user_teman6e42858c9c381f3f014da704ad82829b160`
 --
 ALTER TABLE `user_teman6e42858c9c381f3f014da704ad82829b160`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_teman93a157e4065fe179017f0c91b28f55d9481`
+--
+ALTER TABLE `user_teman93a157e4065fe179017f0c91b28f55d9481`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_teman305c372acd4cdb57f8ed89b9fc36c07880`
+--
+ALTER TABLE `user_teman305c372acd4cdb57f8ed89b9fc36c07880`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -2980,6 +3965,12 @@ ALTER TABLE `user_temancf0628be7a02684290f1cfb8a16f89ea532`
 -- Indexes for table `user_temane785b867a2aaf3d81b7ac953a2dd5fb9654`
 --
 ALTER TABLE `user_temane785b867a2aaf3d81b7ac953a2dd5fb9654`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_temanf10e55153817313d8ea2147f1e73056b182`
+--
+ALTER TABLE `user_temanf10e55153817313d8ea2147f1e73056b182`
   ADD PRIMARY KEY (`kd`);
 
 --
