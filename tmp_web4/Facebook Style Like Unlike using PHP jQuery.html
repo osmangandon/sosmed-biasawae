@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Facebook Style Like Unlike using PHP jQuery</title>
+<meta name="description" content="This tutorial has an example code for doing like unlike which we have seen in many websites like Facebook. We are using jQuery AJAX to call PHP for updating likes count in the database. We are using the IP address of the visitors to compute the like or unlike status. View DemoDownload Database Results to [&#8230;]" />
+<meta name="keywords" content="Facebook Style Like Unlike using PHP jQuery" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow" /><link rel="next" href="https://phppot.com/demo/facebook-style-like-unlike-using-php-jquery/" />
+<link rel="shortcut icon" href="https://phppot.com/favicon.ico" type="image/x-icon" />
+<link rel='stylesheet' id='solandra-style-css'  href='https://phppot.com/wp-content/themes/solandra/papers_080220182.css' type='text/css' media='all' />
+<link rel="canonical" href="https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40067115-1']);
+  _gaq.push(['_setDomainName', 'phppot.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script></head>
+<body onload="prettyPrint()">
+<div id="site_header"><div class="content"><a href="/" title="PhpPot Home"><img id="site-logo" src="https://phppot.com/wp-content/themes/solandra/images/phppot.png" alt="PhpPot Home"></a>
+<div class="search-container">
+	<form method="get" action="/" class="search-form">
+		<input name="s" class="search" placeholder="Search PHP Pot" title="Search PhpPot" autocomplete="off">
+		<button type="submit" title="Search PhpPot" id="search-button">
+		<img src="https://phppot.com/wp-content/themes/solandra/images/search.png" alt="Search"></button>
+	</form>
+</div>
+<div class="header-link-container">
+<a class="header-link" style="float:none;" href="/demo/">Demo &amp; Download</a>
+<a id="header-contact-navigation" href="/contact/">Contact</a>
+</div>
+</div>
+</div>
+<div class="content"><div id="menu-icon" ><a href="#tutorial-menu" title="Tutorial Menu"><img src="https://phppot.com/wp-content/themes/solandra/images/tutorial-menu.png" alt="Tutorial Menu" /></a></div><div id="tutorial-body"><div id="tutorial">
+<h1>Facebook Style Like Unlike using PHP jQuery</h1>
+<div class="share">
+    <ul>
+	    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/"><img src="https://phppot.com/wp-content/themes/solandra/images/facebook-social.png" title="Share on Facebook" /></a></li>
+        <li><a href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=Facebook Style Like Unlike using PHP jQuery;url=https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/&amp;via=phppot" ><img src="https://phppot.com/wp-content/themes/solandra/images/twitter-social.png" title="Share on Twitter" /></a></li>
+        <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/&media=Facebook Style Like Unlike using PHP jQuery"><img src="https://phppot.com/wp-content/themes/solandra/images/linkedin-social.png" title="Share on Linkedin" /></a></li>
+		<li><a href="mailto:?Subject=Sharing%20you%20about%20Facebook Style Like Unlike using PHP jQuery&amp;Body=This %20is%20interesting %20to%20learn.%20Just%20check%20out%20https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/"><img src="https://phppot.com/wp-content/themes/solandra/images/email-social.png" title="Share on Email" /></a></li>
+    </ul>
+</div>
+<p>This tutorial has an example code for doing like unlike which we have seen in many websites like Facebook. We are using jQuery AJAX to call PHP for updating likes count in the database. We are using the IP address of the visitors to compute the like or unlike status.</p>
+<p><img style="display: inline; border-width: 0px;" title="php-jquery-like-unlike" src="https://phppot.com/wp-content/uploads/2014/11/phpjquerylikeunlike.jpg" alt="php-jquery-like-unlike" width="500" height="359" border="0" /></p>
+<p><a class="demo" href="/demo/facebook-style-like-unlike-using-php-jquery/">View Demo</a><a class="download" href="/demo/facebook-style-like-unlike-using-php-jquery/facebook-style-like-unlike-using-php-jquery.zip">Download</a></p>
+<h2>Database Results to Like Unlike</h2>
+<p>This code is for listing database results with <em>like unlike </em>icons based on the <em>likes</em> status.</p>
+<pre class="prettyprint lang-php">&lt;table class="demo-table"&gt;
+	&lt;tbody&gt;
+	&lt;tr&gt;
+	&lt;th&gt;&lt;strong&gt;Tutorials&lt;/strong&gt;&lt;/th&gt;
+	&lt;/tr&gt;
+	&lt;?php
+	if(!empty($result)) {
+	$ip_address = $_SERVER['REMOTE_ADDR'];
+	foreach ($result as $tutorial) {
+	?&gt;
+	&lt;tr&gt;
+	&lt;td valign="top"&gt;
+		&lt;div class="feed_title"&gt;&lt;?php echo $tutorial["title"]; ?&gt;&lt;/div&gt;
+		&lt;div id="tutorial-&lt;?php echo $tutorial["id"]; ?&gt;"&gt;
+		&lt;input type="hidden" id="likes-&lt;?php echo $tutorial["id"]; ?&gt;" value="&lt;?php echo $tutorial["likes"]; ?&gt;"&gt;
+		&lt;?php
+		$query ="SELECT * FROM ipaddress_likes_map WHERE tutorial_id = '" . $tutorial["id"] . "' and ip_address = '" . $ip_address . "'";
+		$count = $db_handle-&gt;numRows($query);
+		$str_like = "like";
+		if(!empty($count)) {
+		$str_like = "unlike";
+		}
+		?&gt;
+		&lt;div class="btn-likes"&gt;&lt;input type="button" title="&lt;?php echo ucwords($str_like); ?&gt;" class="&lt;?php echo $str_like; ?&gt;" onClick="addLikes(&lt;?php echo $tutorial["id"]; ?&gt;,'&lt;?php echo $str_like; ?&gt;')" /&gt;&lt;/div&gt;
+		&lt;div class="label-likes"&gt;&lt;?php if(!empty($tutorial["likes"])) { echo $tutorial["likes"] . " Like(s)"; } ?&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class="desc"&gt;&lt;?php echo $tutorial["description"]; ?&gt;&lt;/div&gt;
+	&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;?php		
+	}
+	}
+	?&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+<h2>jQuery Call for Like Unlike Update</h2>
+<p>This function will be called on the click event of like, unlike thumb icons. This will execute PHP code via AJAX and update database based on the requested action. On receiving successful AJAX response, this function will update the <em>likes</em> status and count. The script is,</p>
+<pre class="prettyprint lang-php">function addLikes(id,action) {
+	$('.demo-table #tutorial-'+id+' li').each(function(index) {
+		$(this).addClass('selected');
+		$('#tutorial-'+id+' #rating').val((index+1));
+		if(index == $('.demo-table #tutorial-'+id+' li').index(obj)) {
+			return false;	
+		}
+	});
+	$.ajax({
+	url: "add_likes.php",
+	data:'id='+id+'&amp;action='+action,
+	type: "POST",
+	beforeSend: function(){
+		$('#tutorial-'+id+' .btn-likes').html("&lt;img src='LoaderIcon.gif' /&gt;");
+	},
+	success: function(data){
+	var likes = parseInt($('#likes-'+id).val());
+	switch(action) {
+		case "like":
+		$('#tutorial-'+id+' .btn-likes').html('&lt;input type="button" title="Unlike" class="unlike" onClick="addLikes('+id+',\'unlike\')" /&gt;');
+		likes = likes+1;
+		break;
+		case "unlike":
+		$('#tutorial-'+id+' .btn-likes').html('&lt;input type="button" title="Like" class="like"  onClick="addLikes('+id+',\'like\')" /&gt;')
+		likes = likes-1;
+		break;
+	}
+	$('#likes-'+id).val(likes);
+	if(likes&gt;0) {
+		$('#tutorial-'+id+' .label-likes').html(likes+" Like(s)");
+	} else {
+		$('#tutorial-'+id+' .label-likes').html('');
+	}
+	}
+	});
+}
+</pre>
+<h2>PHP MySQL Like Unlike Update Query Handling</h2>
+<p>This PHP code receives action from the AJAX call and performs database likes update based on this action. The code is,</p>
+<pre class="prettyprint lang-php">&lt;?php
+if(!empty($_POST["id"])) {
+require_once("dbcontroller.php");
+$db_handle = new DBController();
+switch($_POST["action"]){
+case "like":
+	$query = "INSERT INTO ipaddress_likes_map (ip_address,tutorial_id) VALUES ('" . $_SERVER['REMOTE_ADDR'] . "','" . $_POST["id"] . "')";
+	$result = $db_handle-&gt;insertQuery($query);
+	if(!empty($result)) {
+		$query ="UPDATE tutorial SET likes = likes + 1 WHERE id='" . $_POST["id"] . "'";
+		$result = $db_handle-&gt;updateQuery($query);				
+	}			
+break;		
+case "unlike":
+	$query = "DELETE FROM ipaddress_likes_map WHERE ip_address = '" . $_SERVER['REMOTE_ADDR'] . "' and tutorial_id = '" . $_POST["id"] . "'";
+	$result = $db_handle-&gt;deleteQuery($query);
+	if(!empty($result)) {
+		$query ="UPDATE tutorial SET likes = likes - 1 WHERE id='" . $_POST["id"] . "' and likes &gt; 0";
+		$result = $db_handle-&gt;updateQuery($query);
+	}
+break;		
+}
+}
+?&gt;
+</pre>
+<p><a class="demo" href="/demo/facebook-style-like-unlike-using-php-jquery/">View Demo</a><a class="download" href="/demo/facebook-style-like-unlike-using-php-jquery/facebook-style-like-unlike-using-php-jquery.zip">Download</a></p>
+<p>This jQuery code tutorial was published on November 11, 2014.</p>
+
+<div class="share">
+    <ul>
+	    <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/"><img src="https://phppot.com/wp-content/themes/solandra/images/facebook-social.png" title="Share on Facebook" /></a></li>
+        <li><a href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=Facebook Style Like Unlike using PHP jQuery;url=https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/&amp;via=phppot" ><img src="https://phppot.com/wp-content/themes/solandra/images/twitter-social.png" title="Share on Twitter" /></a></li>
+        <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/&media=Facebook Style Like Unlike using PHP jQuery"><img src="https://phppot.com/wp-content/themes/solandra/images/linkedin-social.png" title="Share on Linkedin" /></a></li>
+		<li><a href="mailto:?Subject=Sharing%20you%20about%20Facebook Style Like Unlike using PHP jQuery&amp;Body=This %20is%20interesting %20to%20learn.%20Just%20check%20out%20https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/"><img src="https://phppot.com/wp-content/themes/solandra/images/email-social.png" title="Share on Email" /></a></li>
+    </ul>
+</div>
+
+<div id="tutorial-navigation">
+<div id='previous-tutorial'><div class='navigation-label'>Previous:</div><a href="https://phppot.com/jquery/dynamic-star-rating-with-php-and-jquery/" rel="prev">Dynamic Star Rating with PHP and jQuery</a></div><div id='next-tutorial'><div class='navigation-label'>Next:</div><a href="https://phppot.com/jquery/read-display-json-data-using-jquery-ajax/" rel="next">Read Display JSON Data using jQuery AJAX</a></div></div>
+<p><a href="#top" class="top">&#8593; Back to Top</a></p>
+</div>
+<div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/category/php/">PHP</a></li><li class="cat-item cat-item-73"><a href="https://phppot.com/category/jquery/">jQuery</a><ul class="sub-menu"><li class="cat-item cat-item-56"><a href="https://phppot.com/category/jquery/jquery-tutorials/">jQuery Tutorials</a></li><li class="cat-item cat-item-93"><a href="https://phppot.com/category/jquery/jquery-bootstrap/">jQuery Bootstrap</a></li><li class="cat-item cat-item-82"><a href="https://phppot.com/category/jquery/jquery-effects/">jQuery Effects</a></li><li class="cat-item cat-item-87"><a href="https://phppot.com/category/jquery/jquery-animation/">jQuery Animation</a></li><li class="cat-item cat-item-86"><a href="https://phppot.com/category/jquery/jquery-menu/">jQuery Menu</a></li><li class="cat-item cat-item-80"><a href="https://phppot.com/category/jquery/jquery-ajax-form/">jQuery AJAX Form</a></li><li class="cat-item cat-item-81"><a href="https://phppot.com/category/jquery/jquery-form-validation/">jQuery Form Validation</a></li><li class="cat-item cat-item-85"><a href="https://phppot.com/category/jquery/jquery-file-upload/">jQuery File Upload</a></li><li class="cat-item cat-item-16"><a href="https://phppot.com/category/jquery/jquery-ajax/">jQuery AJAX</a></li><li class="cat-item cat-item-84"><a href="https://phppot.com/category/jquery/jquery-ajax-crud/">jQuery AJAX CRUD</a></li><li class="cat-item cat-item-83"><a href="https://phppot.com/category/jquery/jquery-social-media-effects/">jQuery Social Media Effects</a><ul class="post-list"><li><a class= "post-menu" href="https://phppot.com/jquery/load-data-dynamically-on-page-scroll-using-jquery-ajax-and-php/">Load Data Dynamically on Page Scroll using jQuery AJAX and PHP</a></li><li><a class= "post-menu" href="https://phppot.com/jquery/sticky-social-icons-in-sidebar-using-jquery/">Sticky Social Icons in Sidebar using jQuery</a></li><li><a class= "post-menu" href="https://phppot.com/jquery/dynamic-star-rating-with-php-and-jquery/">Dynamic Star Rating with PHP and jQuery</a></li><li class="current-post">Facebook Style Like Unlike using PHP jQuery</li><li><a class= "post-menu" href="https://phppot.com/jquery/php-voting-system-with-jquery-ajax/">PHP Voting System with jQuery AJAX</a></li><li><a class= "post-menu" href="https://phppot.com/jquery/facebook-style-url-extract-with-php-and-jquery-ajax/">Facebook Style URL Extract with PHP and jQuery AJAX</a></li></ul></li></ul></li><li class="cat-item cat-item-74"><a href="https://phppot.com/category/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/category/mysql/">MySQL</a></li><li class="cat-item cat-item-76"><a href="https://phppot.com/category/css/">CSS</a></li></ul></div>
+
+<div id="social-icon">
+    <ul>
+        <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/"><img src="https://phppot.com/wp-content/themes/solandra/images/facebook-social.png" title="Share on Facebook" /></a></li>
+        <li><a href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=Facebook Style Like Unlike using PHP jQuery;url=https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/&amp;via=phppot" ><img src="https://phppot.com/wp-content/themes/solandra/images/twitter-social.png" title="Share on Twitter" /></a></li>
+        <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/&media=Facebook Style Like Unlike using PHP jQuery"><img src="https://phppot.com/wp-content/themes/solandra/images/linkedin-social.png" title="Share on Linkedin" /></a></li>
+        <li><a href="mailto:?Subject=Sharing%20you%20about%20Facebook Style Like Unlike using PHP jQuery&amp;Body=This %20is%20interesting %20to%20learn.%20Just%20check%20out%20https://phppot.com/jquery/facebook-style-like-unlike-using-php-jquery/"><img src="https://phppot.com/wp-content/themes/solandra/images/email-social.png" title="Share on Email" /></a></li>
+    </ul>
+</div>
+</div>
+<div id="sidebar">
+	<div id="aboutcntnt"><div id="photo"><img src="https://phppot.com/wp-content/themes/solandra/images/Vincy.jpg" alt="Vincy" width="100" height="100" title="Vincy"></div><div id="aboutdesc"><p>Hello! I am Vincy, a PHP Developer and PHP Pot is my programming blog. I'm fond of developing modern web applications.</p>
+<p><a href="mailto:vincy@phppot.com" title="Contact Me">Contact me</a>, I accept paid work.</p></div><div id="contactMe"><a href="mailto:vincy@phppot.com" title="Contact Me">vincy@phppot.com</a></div></div>
+<div class="hiadcomponent"><div class="heading">Free Email Updates</div>	<div>
+	<form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=phppot', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+	<p>
+	<input placeholder="Enter your email here" type="text" class="feedb-email" name="email">
+	<input type="hidden" value="phppot" name="uri"/>
+	<input type="hidden" name="loc" value="en_US"/>
+	<input type="submit" value="Subscribe" class="subscribe" /></p></form>
+	</div>
+	<div>
+	</div>
+</div>
+
+<div id="php-freelancer-list">
+<p class="sub-heading">PHP Freelancer</p>
+<ul>
+<li><a href="https://phppot.com/php/how-to-become-a-full-time-freelance-php-developer-and-consultant/">
+<img src="https://phppot.com/wp-content/uploads/2016/06/PHP-Freelance-Developer-1-300x185.jpg" alt="Freelancer">How to Become a Full Time Freelance PHP Developer
+</a></li>
+<li><a href="https://phppot.com/php/top-10-skills-to-be-a-successful-freelancer/">
+<img src="https://phppot.com/wp-content/uploads/2017/03/race-300x185.jpg" alt="Successful Freelancer">Top 10 Skills to be a Successful Freelancer
+</a></li>
+<li><a href="https://phppot.com/php/importance-of-quality-communication-in-freelance/">
+<img src="https://phppot.com/wp-content/uploads/2017/03/mike-300x185.jpg" alt="Communication">Importance of Quality Communication in Freelance
+</a></li>
+<li><a href="https://phppot.com/php/freelancers-5-point-guide-to-excellent-client-satisfaction/">
+<img src="https://phppot.com/wp-content/uploads/2017/12/reliable-300x185.jpg" alt="Freelancer's Guide">Freelancer's 5 Point Guide to Excellent Client Satisfaction
+</a></li>
+<li><a href="https://phppot.com/php/skills-every-php-freelancer-must-have/">
+<img src="https://phppot.com/wp-content/uploads/2017/12/dart-300x185.jpg" alt="Freelancer Skills">Skills Every PHP Freelancer Must Have
+</a></li>
+</ul>
+</div>
+<div id="recommended">
+<div class="heading">Recommended Code</div>
+<ul>
+<li><a href="https://phppot.com/php/php-restful-web-service/">PHP RESTful Web Service</a>
+<div class="recommended-taxonomy">under <a href="https://phppot.com/category/php/restful-api/">RESTful API</a></div></li>
+<li><a href="https://phppot.com/jquery/highcharts-compare-data-using-column-chart/">Highcharts - Compare Data using Column Chart</a>
+<div class="recommended-taxonomy">under <a href="https://phppot.com/category/jquery/jquery-tutorials/">jQuery Tutorials</a></div>
+</li>
+<li><a href="https://phppot.com/php/ajax-pagination-with-php/">AJAX Pagination with PHP</a>
+<div class="recommended-taxonomy">under <a href="https://phppot.com/category/php/php-ajax/">PHP AJAX</a></div>
+</li>
+<li><a href="https://phppot.com/php/simple-php-shopping-cart/">Simple PHP Shopping Cart</a>
+<div class="recommended-taxonomy">under <a href="https://phppot.com/category/php/php-shopping-cart/">PHP Shopping Cart</a></div></li>
+<li><a href="https://phppot.com/jquery/jquery-ajax-inline-crud-with-php/">jQuery AJAX Inline CRUD with PHP</a>
+<div class="recommended-taxonomy">under <a href="https://phppot.com/category/jquery/jquery-ajax-crud/">jQuery AJAX CRUD</a></div>
+</li>
+</ul>
+</div>
+</div></div>
+<div id="footer-contact-note">
+	<div class="footer-contact-banner-title">Let's get to work.</div>
+	<div id="footer-photo">
+		<img src="https://phppot.com/wp-content/themes/solandra/images/Vincy.jpg"
+			alt="Vincy" width="100" height="100" title="Vincy">
+	</div>
+	<div id="footer-intro">I love the web and passionate in software
+		development. I have been programming non-stop for a decade. I provide
+		application development, enhancement, and problem-solving services.</div>
+	<div id="footer-button-container">
+		<a id="footer-contact-navigation" href="/contact/">Contact Me</a>
+	</div>
+</div>
+<div id="footer">
+	<ul id="footer-menu">
+		<li class="cat-item cat-item-2"><a
+			href="https://phppot.com/category/php/">PHP</a></li>
+		<li class="cat-item cat-item-8"><a
+			href="https://phppot.com/category/jquery/">jQuery</a></li>
+		<li class="cat-item cat-item-4"><a
+			href="https://phppot.com/category/mysql/">MySQL</a></li>
+		<li class="cat-item cat-item-3"><a
+			href="https://phppot.com/category/wordpress/">Wordpress</a></li>
+		<li class="cat-item cat-item-10"><a
+			href="https://phppot.com/category/css/">CSS</a></li>
+	</ul>
+
+	<div class="follow">
+		<a class="linkedin" href="https://www.linkedin.com/in/vincya/
+"
+			title="LinkedIn" target="_blank"><img
+			src="https://phppot.com/wp-content/themes/solandra/images/linkedin.png"
+			alt="LinkedIn"></a><a
+			href="https://plus.google.com/100835954832081019478/posts"
+			title="Google Plus"><img
+			src="https://phppot.com/wp-content/themes/solandra/images/googleplus.png"
+			alt="Google Plus"></a><a class="facebook"
+			href="https://www.facebook.com/pages/phppotcom/1428212654057945"
+			title="Facebook" target="_blank"><img
+			src="https://phppot.com/wp-content/themes/solandra/images/facebook.png"
+			alt="Facebook"></a><a class="twitter"
+			href="https://twitter.com/phppot" title="Twitter" target="_blank"><img
+			src="https://phppot.com/wp-content/themes/solandra/images/twitter.png"
+			alt="Twitter"></a><a class="feed" href="/feed/" title="Feed"><img
+			src="https://phppot.com/wp-content/themes/solandra/images/feed.png"
+			alt="Feed"></a>
+	</div>
+	<div id="footer-bottom">
+		<p>
+			&copy; 2017 <a href="/" title="PhpPot Home">phppot.com</a>. The
+			design and content are copyrighted to Vincy and may not be reproduced
+			in any form.
+		</p>
+	</div>
+</div>
+<script type='text/javascript' src='https://phppot.com/wp-includes/js/wp-embed.min.js?ver=4.8.5'></script>
+<script src="https://phppot.com/wp-content/themes/solandra/prettify.js"></script>
+</body></html>
