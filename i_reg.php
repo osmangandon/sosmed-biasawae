@@ -1,5 +1,4 @@
 <?
-sleep(1);
 session_start();
 
 require("inc/config.php");

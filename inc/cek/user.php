@@ -3,6 +3,8 @@
 $hajirobe_session = nosql($_SESSION['hajirobe_session']);
 $kd6_session = nosql($_SESSION['kd6_session']);
 $user_session = balikin($_SESSION['user_session']);
+$username6_session = balikin($_SESSION['username6_session']);
+
 
 $yuk1 = "user";
 $yuk1x = "$yuk1$kd6_session";				
