@@ -6,7 +6,6 @@ require("../inc/fungsi.php");
 require("../inc/koneksi.php");
 require("../inc/koneksi.php");
 require("../inc/cek/user.php");
-require("../inc/class/simple_html_dom.php");
 	
 
 
@@ -112,131 +111,6 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
 		}	
 
 	
-	
-	//detek alamat web
-	$estatuskuu = balikin($estatusku);
-	
-	$pecahku = explode("http", $estatuskuu);
-	$pecah1 = $pecahku[0];
-	$pecah2 = $pecahku[1];
-
-	$nilkuya = "http$pecah1$pecah2";
-	
-		
-	//selesaikan satu baris, sebelum ada spasi lagi...
-	$pecahku = explode(" ", $nilkuya);
-	$pecah1 = $pecahku[0];
-	$link = $pecah1;
-	
-	echo "-> $pecah1
-	<hr>";
-
-	
-	
-	
-
-	
-	
-	//fetches HTML data from a URL
-	function getData($url)
-		{ 	
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-		curl_setopt($ch, CURLOPT_HEADER,0);
-		curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.7) Gecko/20091221 Firefox/3.5.7 GTB6 (.NET CLR 3.0.4506.2152)");
-		curl_setopt($ch, CURLOPT_FOLLOWLOCATION,1);
-		curl_setopt($ch, CURLOPT_URL, $url);	
-		$content = curl_exec($ch);
-		curl_close($ch);
-	
-		return $content;
-		}
-
-
-	
-	
-	$source = getData($link);
-
-    // DOM document Creation
-    $doc = new DOMDocument;
-    libxml_use_internal_errors(true);
-    $doc->loadHTML($source);
-    libxml_clear_errors();
-
-    // DOM XPath Creation
-    $xpath = new DOMXPath($doc);
-
-    // Gets title
-    $title = $xpath->query('//title')->item(0)->textContent;
-
-    if(empty($title))
-		$title = "No title found";
-
-    // Gets all Open Graph images
-    $events = $xpath->query('//meta[@property="og:image"]/@content');
-
-    $image = "";
-    for($i = 0; $i < ($events->length); $i++) {
-	    $event = $events->item($i);
-	    $des = $xpath->evaluate('//meta[@property="og:image"]/@content', $event);
-	    if ($des->length > 0) {
-	        $image = $des->item(0)->value;
-	        break;
-	    }
-	}
-
-	if(empty($image))
-		$image = "image-not-found.gif";
-
-
-	// Gets all Open Graph descriptions
-    $events = $xpath->query('//meta[@property="og:description"]/@content');
-
-    $description = "";
-    for($i = 0; $i < ($events->length); $i++) {
-	    $event = $events->item($i);
-	    $des = $xpath->evaluate('//meta[@property="og:description"]/@content', $event);
-	    if ($des->length > 0) {
-	        $description = $des->item(0)->value;
-	        break;
-	    }
-	}
-
-	if(empty($description))
-		$description = "-- No description found --";
-
-	
-
-
-
-
-	echo '<table border="1">
-	<tr valign="top">
-	<td>
-	
-	<table border="0">
-	<tr valign="top">
-	<td width="100">
-	<img src="'.$image.'" alt="'.$title.'" width="100" height="100">
-	</td>
-	
-	<td>
-	<h3>'.$title.'</h3>
-	<p><i>'.$description.'</i></p>
-	</td>
-	</tr>
-	</table>
-	
-	</td>
-	</tr>
-	</table>';
-	
-		
-	$doc->clear(); 
-	unset($doc);
-	
-		
-		
 	exit();
 	}
 
@@ -402,37 +276,9 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar'))
 			<br>
 			'.$ku_postdate.'
 			<br>
-			<b>'.$ku_status.'</b>';
-			
-			
-
-			
-			
-			
-				echo '<table border="1">
-				<tr valign="top">
-				<td>
-				
-				<table border="0">
-				<tr valign="top">
-				<td width="100">
-				<img src="'.$image.'" alt="'.$title.'" width="100" height="100">
-				</td>
-				
-				<td>
-				<h3>'.$title.'</h3>
-				<p><i>'.$description.'</i></p>
-				</td>
-				</tr>
-				</table>
-				
-				</td>
-				</tr>
-				</table>';
-
+			<b>'.$ku_status.'</b>
 			 
-			 
-			echo '<br> 
+			<br> 
 			[IKUTI]. [jumlah pengikut]
 			</td>
 			</tr>
