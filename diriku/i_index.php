@@ -91,27 +91,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
 
 
 
-	//gak empty
-	if (!empty($estatusku))
-		{
-		//cek
-		if ($estatusku1 != $estatusku)
-			{
-			//simpan ke publik
-			mysql_query("INSERT INTO m_publik_user_status(kd, kd_user, status, postdate, filex) VALUES ".
-							"('$statuskd', '$kd6_session', '$estatusku', '$today', '$efilex')");
 
-			//simpan ke diri
-			$tablenya = "user_status$kd6_session";
-			mysql_query("INSERT INTO $tablenya(kd, status, postdate, filex) VALUES ".
-							"('$statuskd', '$estatusku', '$today', '$efilex')");
-
-				
-			$_SESSION['estatusku'] = $estatusku;
-			}
-		}	
-
-	
 	
 	//detek alamat web
 	$estatuskuu = balikin($estatusku);
@@ -127,6 +107,12 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
 	$pecahku = explode(" ", $nilkuya);
 	$pecah1 = $pecahku[0];
 	$link = $pecah1;
+	
+	//jika null
+	if ($nilkuya == "http")
+		{
+		$link = "";
+		}
 	
 	echo "-> $pecah1
 	<hr>";
@@ -170,7 +156,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
     $title = $xpath->query('//title')->item(0)->textContent;
 
     if(empty($title))
-		$title = "No title found";
+		$title = "";
 
     // Gets all Open Graph images
     $events = $xpath->query('//meta[@property="og:image"]/@content');
@@ -186,7 +172,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
 	}
 
 	if(empty($image))
-		$image = "image-not-found.gif";
+		$image = "";
 
 
 	// Gets all Open Graph descriptions
@@ -203,8 +189,37 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
 	}
 
 	if(empty($description))
-		$description = "-- No description found --";
+		$description = "";
 
+
+
+
+
+
+
+
+
+	//gak empty
+	if (!empty($estatusku))
+		{
+		//cek
+		if ($estatusku1 != $estatusku)
+			{
+			//simpan ke publik
+			mysql_query("INSERT INTO m_publik_user_status(kd, kd_user, status, urlnya, urlnya_judul, urlnya_image, urlnya_deskripsi, postdate, filex) VALUES ".
+							"('$statuskd', '$kd6_session', '$estatusku', '$link', '$title', '$image', '$description', '$today', '$efilex')");
+
+			//simpan ke diri
+			$tablenya = "user_status$kd6_session";
+			mysql_query("INSERT INTO $tablenya(kd, status, urlnya, urlnya_judul, urlnya_image, urlnya_deskripsi, postdate, filex) VALUES ".
+							"('$statuskd', '$estatusku', '$link', '$title', '$image', '$description', '$today', '$efilex')");
+
+				
+			$_SESSION['estatusku'] = $estatusku;
+			}
+		}	
+
+	
 	
 
 
@@ -344,6 +359,10 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar'))
 			$ku_userkd = nosql($rku['kd_user']);
 			$ku_postdate = $rku['postdate'];
 			$ku_status = balikin($rku['status']);
+			$ku_urlnya = balikin($rku['urlnya']);
+			$ku_urlnya_judul = balikin($rku['urlnya_judul']);
+			$ku_urlnya_image = balikin($rku['urlnya_image']);
+			$ku_urlnya_deskripsi = balikin($rku['urlnya_deskripsi']);
 			
 			
 			?>
@@ -402,13 +421,14 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar'))
 			<br>
 			'.$ku_postdate.'
 			<br>
-			<b>'.$ku_status.'</b>';
+			<h3>'.$ku_status.'</h3>';
 			
 			
 
 			
-			
-			
+			//jika ada
+			if (!empty($ku_urlnya_judul))
+				{
 				echo '<table border="1">
 				<tr valign="top">
 				<td>
@@ -416,12 +436,12 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar'))
 				<table border="0">
 				<tr valign="top">
 				<td width="100">
-				<img src="'.$image.'" alt="'.$title.'" width="100" height="100">
+				<img src="'.$ku_urlnya_image.'" alt="'.$ku_urlnya_judul.'" width="100" height="100">
 				</td>
 				
 				<td>
-				<h3>'.$title.'</h3>
-				<p><i>'.$description.'</i></p>
+				<h3>'.$ku_urlnya_judul.'</h3>
+				<p><i>'.$ku_urlnya_deskripsi.'</i></p>
 				</td>
 				</tr>
 				</table>
@@ -429,7 +449,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar'))
 				</td>
 				</tr>
 				</table>';
-
+				}
 			 
 			 
 			echo '<br> 

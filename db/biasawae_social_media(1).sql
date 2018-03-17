@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 16, 2018 at 05:36 AM
+-- Generation Time: Mar 17, 2018 at 04:23 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -93,7 +93,8 @@ INSERT INTO `m_publik_user` (`kd`, `usernamex`, `passwordx`, `nama`, `postdate`,
 ('463a8b35dcf6239d02e41dfafbf2cc69', '1', 'c4ca4238a0b923820dcc509a6f75849b', '1', '2018-01-07 04:25:27', '1'),
 ('305c372acd4cdb57f8ed89b9fc36c07880', '9x', '41d60d32d9ec705b3d3409e5c37a47ed', '9x', '2018-03-16 03:59:26', '9x'),
 ('f10e55153817313d8ea2147f1e73056b182', '8', '35ceff6d0886aeb91b02882bb4e5f433', '8xstrix', '2018-03-16 04:44:16', '8xstrix'),
-('93a157e4065fe179017f0c91b28f55d9481', 'a9', '3d1e97d18e692ca5484d1abfe617b6c1', 'a9', '2018-03-16 04:44:44', 'a9');
+('93a157e4065fe179017f0c91b28f55d9481', 'a9', '3d1e97d18e692ca5484d1abfe617b6c1', 'a9', '2018-03-16 04:44:44', 'a9'),
+('c06ace5be20e5fa845f11285c44900fb123', '113', '73278a4a86960eeb576a8fd4c9ec6997', '113', '2018-03-17 04:20:46', '113');
 
 -- --------------------------------------------------------
 
@@ -151,41 +152,25 @@ CREATE TABLE `m_publik_user_status` (
   `kd_user` varchar(50) NOT NULL,
   `status` longtext,
   `postdate` datetime DEFAULT NULL,
-  `filex` longtext NOT NULL
+  `filex` longtext NOT NULL,
+  `urlnya` longtext NOT NULL,
+  `urlnya_judul` longtext NOT NULL,
+  `urlnya_image` longtext NOT NULL,
+  `urlnya_deskripsi` longtext NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `m_publik_user_status`
 --
 
-INSERT INTO `m_publik_user_status` (`kd`, `kd_user`, `status`, `postdate`, `filex`) VALUES
-('abd25dfbc8f14345fb0fa5b7db1d8f6c', '305c372acd4cdb57f8ed89b9fc36c07880', 'ok', '2018-03-16 04:09:29', ''),
-('0dd752739eede6e871be88e6adfb1b7c', '305c372acd4cdb57f8ed89b9fc36c07880', 'coba ya...', '2018-03-16 04:09:49', ''),
-('2bc2e3ca1fa90e2758fba7d3a8c77024', '305c372acd4cdb57f8ed89b9fc36c07880', 'ddd', '2018-03-16 04:10:36', ''),
-('66d0ebf2986f2b3eab241b20504b7a29', '305c372acd4cdb57f8ed89b9fc36c07880', 'dddd', '2018-03-16 04:12:39', ''),
-('bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'ssddd', '2018-03-16 04:13:39', ''),
-('f30de9983374143839c6512173e9efe2', '305c372acd4cdb57f8ed89b9fc36c07880', 'siapkan diri mu ya....', '2018-03-16 04:18:40', ''),
-('f2a7d38600f8b8011e2fe7da6ff9174f', '305c372acd4cdb57f8ed89b9fc36c07880', 'ddsss', '2018-03-16 04:29:46', ''),
-('8f9b3aef21ce601bc83dbaee05c523fc', '305c372acd4cdb57f8ed89b9fc36c07880', 'ddff', '2018-03-16 04:31:29', ''),
-('3aefd093c950ef579f17c97a1d36531f', '305c372acd4cdb57f8ed89b9fc36c07880', 'dssss', '2018-03-16 04:32:34', ''),
-('9d4ee6a0c0c5e6d2529224e8e46b7b96', '305c372acd4cdb57f8ed89b9fc36c07880', 'sssddd', '2018-03-16 04:33:42', ''),
-('199dbaa5dba41fc0e28b4ac11986d4c9', '305c372acd4cdb57f8ed89b9fc36c07880', 'wwwwwwww', '2018-03-16 04:35:36', ''),
-('20988f91206d2667cec45a191bfee2a6', '305c372acd4cdb57f8ed89b9fc36c07880', 'dddd', '2018-03-16 04:36:53', ''),
-('fcdce98edcbfae1e4df29b571a669aba', '305c372acd4cdb57f8ed89b9fc36c07880', 'sssssss', '2018-03-16 04:38:06', ''),
-('a6af77d2d9bc1ad78852353e29c62908', '305c372acd4cdb57f8ed89b9fc36c07880', 'siap.........', '2018-03-16 04:41:14', ''),
-('dfed1631df980c8574167b8ecc2e599a', '305c372acd4cdb57f8ed89b9fc36c07880', 'saddd', '2018-03-16 04:41:53', ''),
-('8556dfc2a0f08c3dc03832e463b343a6', '305c372acd4cdb57f8ed89b9fc36c07880', 'ssddddffffff', '2018-03-16 04:43:25', ''),
-('531f36ade01598bc7f4bdce281c76176', '93a157e4065fe179017f0c91b28f55d9481', 'dsddd', '2018-03-16 04:49:45', ''),
-('77c95f19aaa81c530257d9f4c78c5e4d', '93a157e4065fe179017f0c91b28f55d9481', 'dsssssssssssssss', '2018-03-16 04:52:53', ''),
-('abe46db40e4f283708185993cc51cd74', '93a157e4065fe179017f0c91b28f55d9481', 'ok', '2018-03-16 04:53:26', ''),
-('801cf3cd3d0615bfda014f2e03047867', '93a157e4065fe179017f0c91b28f55d9481', 'sddd', '2018-03-16 04:54:38', ''),
-('92dccf2fb75992a177230a2b4aa5363d', '93a157e4065fe179017f0c91b28f55d9481', 'sudah ya...', '2018-03-16 04:54:51', ''),
-('908aad2ed7cd3b425061780f7041eeec', '93a157e4065fe179017f0c91b28f55d9481', 'ok deh...', '2018-03-16 04:55:41', ''),
-('87aa886f2f3495436a7315439265a933', '93a157e4065fe179017f0c91b28f55d9481', 'diam saja ya...', '2018-03-16 04:56:38', ''),
-('f96826c08a8fd79e5745bc3194e690e5', '93a157e4065fe179017f0c91b28f55d9481', 'pokoknya coba saja ya....', '2018-03-16 04:56:52', ''),
-('52bf3dee42469ed6a07a7b62cf49ec6a', '93a157e4065fe179017f0c91b28f55d9481', 'ok deh.', '2018-03-16 04:58:21', ''),
-('9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'diam itu emas... katanya.....', '2018-03-16 05:02:49', ''),
-('3aa41eb02ec1bd08edc2b3d75ed92658', '93a157e4065fe179017f0c91b28f55d9481', 'siap...', '2018-03-16 05:34:33', '');
+INSERT INTO `m_publik_user_status` (`kd`, `kd_user`, `status`, `postdate`, `filex`, `urlnya`, `urlnya_judul`, `urlnya_image`, `urlnya_deskripsi`) VALUES
+('284043dad04d0113f9ea27c79e56faae', '305c372acd4cdb57f8ed89b9fc36c07880', 'coba ya...', '2018-03-17 04:14:47', '', 'httpcoba', 'No title found', 'image-not-found.gif', '-- No description found --'),
+('55a026128749c3431ef9838dfcc1d9f1', '305c372acd4cdb57f8ed89b9fc36c07880', 'http:xgmringxxgmringxkompas.com', '2018-03-17 04:15:04', '', 'http://kompas.com', 'Berita Terkini Hari Ini, Kabar Akurat Tepercaya - Kompas.com', 'https://asset.kompas.com/data/2017/wp/images/og_facebook.jpg', 'Kompas.com - Berita Indonesia dan Dunia Terkini Hari Ini, Kabar Harian Terbaru Tepercaya Terlengkap Seputar Politik, Ekonomi, Travel, Teknologi, Otomotif, Bola'),
+('ae0225b3265786ff5825635d8cce2a8b', '305c372acd4cdb57f8ed89b9fc36c07880', 'sip...', '2018-03-17 04:16:31', '', 'httpsip...', 'No title found', 'image-not-found.gif', '-- No description found --'),
+('10891f56110feb6b26dcf3cc9b5932ee', '305c372acd4cdb57f8ed89b9fc36c07880', 'http:xgmringxxgmringxkompas.com', '2018-03-17 04:18:25', '', 'http://kompas.com', 'Berita Terkini Hari Ini, Kabar Akurat Tepercaya - Kompas.com', 'https://asset.kompas.com/data/2017/wp/images/og_facebook.jpg', 'Kompas.com - Berita Indonesia dan Dunia Terkini Hari Ini, Kabar Harian Terbaru Tepercaya Terlengkap Seputar Politik, Ekonomi, Travel, Teknologi, Otomotif, Bola'),
+('2d54e79112fe4dec2d3766897c1c0394', '305c372acd4cdb57f8ed89b9fc36c07880', 'oke ya..... saya akan balikan...', '2018-03-17 04:18:45', '', 'httpoke', '', '', ''),
+('d99fe3842421b598166cd094cac6d675', 'c06ace5be20e5fa845f11285c44900fb123', 'http:xgmringxxgmringxbaliwae.com ini milik temen kuliah ya...', '2018-03-17 04:21:48', '', 'http://baliwae.com', 'BALIWAE - TOKO LINUX LEGO T-SHIRT AND WIRELESS INTERNET NETWORKING BALI - UBIQUITI BALI - TP-LINK BALI - D-LINK BALI - TENDA BALI - SANDISK BALI - KINGSTON BALI - RASPBERRY BALI - ENGENIUS BALI - SCHNEIDER BALI - AMP BALI - BELDEN BALI - KENBOTONG BALI - MIKROTIK BALI - HUAWEI BALI - BAFO BALI - NETGEAR BALI - XIAOMI BALI', '', ''),
+('14fbd4ee16024020bad229367525f558', 'c06ace5be20e5fa845f11285c44900fb123', 'http:xgmringxxgmringxdetik.com', '2018-03-17 04:22:37', '', 'http://detik.com', 'detikcom - Informasi Berita Terupdate Hari Ini', 'https://cdn.detik.net.id/detik2/images/logo.jpg', 'Indeks berita terbaru hari ini dari peristiwa, kecelakaan, kriminal, hukum, berita unik, Politik, dan liputan khusus di Indonesia dan Internasional');
 
 -- --------------------------------------------------------
 
@@ -230,7 +215,12 @@ INSERT INTO `m_publik_user_status_msg` (`kd`, `kd_user_status`, `dari`, `msg`, `
 ('ad88b5c9289e13b6c0f3e2a699f1da97', '52bf3dee42469ed6a07a7b62cf49ec6a', '93a157e4065fe179017f0c91b28f55d9481', 'yakin saja deh...', '2018-03-16 05:02:14'),
 ('2a591ee6ec9cd5880ee63f25642ed5d9', '9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'ok deh...', '2018-03-16 05:03:03'),
 ('04709d6a1c7560c827104ef0430bf7ec', '9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'ok ya...', '2018-03-16 05:34:45'),
-('c3aa404af20217fe3ee21af31764d59a', '9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'sip', '2018-03-16 05:35:22');
+('c3aa404af20217fe3ee21af31764d59a', '9c179b431a20a4b84240cb3bc4c82efc', '93a157e4065fe179017f0c91b28f55d9481', 'sip', '2018-03-16 05:35:22'),
+('2ad2c282cb2f9cc1b96fb095d55420a9', '8556dfc2a0f08c3dc03832e463b343a6', '305c372acd4cdb57f8ed89b9fc36c07880', 'ddddaawwwwww', '2018-03-16 14:57:39'),
+('887e88570c5cc37eb6c18aeded35994f', '10891f56110feb6b26dcf3cc9b5932ee', '305c372acd4cdb57f8ed89b9fc36c07880', 'mantap...', '2018-03-17 04:19:37'),
+('453455c32975f6c2e088e191fb44b774', '10891f56110feb6b26dcf3cc9b5932ee', '305c372acd4cdb57f8ed89b9fc36c07880', 'berita yang asyik ya..', '2018-03-17 04:19:43'),
+('ff3e0100d3df028d3e4701c56294f466', 'ae0225b3265786ff5825635d8cce2a8b', '305c372acd4cdb57f8ed89b9fc36c07880', 'jangan bilang gitu deh..', '2018-03-17 04:19:52'),
+('c0036b83a6aa55956e92e2afdbacdf95', '55a026128749c3431ef9838dfcc1d9f1', '305c372acd4cdb57f8ed89b9fc36c07880', 'pokoknya bisa', '2018-03-17 04:20:03');
 
 -- --------------------------------------------------------
 
@@ -470,6 +460,28 @@ INSERT INTO `userb19fda858159ea9d8fad417efdf554dd942` (`kd`, `usernamex`, `passw
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `userc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `userc06ace5be20e5fa845f11285c44900fb123` (
+  `kd` varchar(50) NOT NULL,
+  `usernamex` varchar(100) DEFAULT NULL,
+  `passwordx` varchar(50) DEFAULT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `userc06ace5be20e5fa845f11285c44900fb123`
+--
+
+INSERT INTO `userc06ace5be20e5fa845f11285c44900fb123` (`kd`, `usernamex`, `passwordx`, `nama`, `postdate`, `email`) VALUES
+('c06ace5be20e5fa845f11285c44900fb123', '113', '73278a4a86960eeb576a8fd4c9ec6997', '113', '2018-03-17 04:20:46', '113');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `usercf0628be7a02684290f1cfb8a16f89ea532`
 --
 
@@ -683,6 +695,20 @@ CREATE TABLE `user_chatb19fda858159ea9d8fad417efdf554dd942` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_chatc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_chatc06ace5be20e5fa845f11285c44900fb123` (
+  `kd` varchar(50) NOT NULL,
+  `untuk` varchar(50) DEFAULT NULL,
+  `isi` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `dibaca` enum('true','false') DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_chatcf0628be7a02684290f1cfb8a16f89ea532`
 --
 
@@ -865,6 +891,20 @@ CREATE TABLE `user_eventb19fda858159ea9d8fad417efdf554dd942` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_eventc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_eventc06ace5be20e5fa845f11285c44900fb123` (
+  `kd` varchar(50) NOT NULL,
+  `judul` varchar(100) DEFAULT NULL,
+  `tgl_mulai` datetime DEFAULT NULL,
+  `tgl_selesai` datetime DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_eventcf0628be7a02684290f1cfb8a16f89ea532`
 --
 
@@ -1015,6 +1055,19 @@ CREATE TABLE `user_event_likea280a1476afa79d4f67e5435de109a0a648` (
 --
 
 CREATE TABLE `user_event_likeb19fda858159ea9d8fad417efdf554dd942` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_event` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_event_likec06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_event_likec06ace5be20e5fa845f11285c44900fb123` (
   `kd` varchar(50) NOT NULL,
   `kd_user_event` varchar(50) DEFAULT NULL,
   `dari` varchar(50) DEFAULT NULL,
@@ -1189,6 +1242,20 @@ CREATE TABLE `user_event_msgb19fda858159ea9d8fad417efdf554dd942` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_event_msgc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_event_msgc06ace5be20e5fa845f11285c44900fb123` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_event` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `msg` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_event_msgcf0628be7a02684290f1cfb8a16f89ea532`
 --
 
@@ -1339,6 +1406,18 @@ CREATE TABLE `user_keahlianb19fda858159ea9d8fad417efdf554dd942` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_keahlianc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_keahlianc06ace5be20e5fa845f11285c44900fb123` (
+  `kd` varchar(50) NOT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_keahliancf0628be7a02684290f1cfb8a16f89ea532`
 --
 
@@ -1475,6 +1554,18 @@ CREATE TABLE `user_minata280a1476afa79d4f67e5435de109a0a648` (
 --
 
 CREATE TABLE `user_minatb19fda858159ea9d8fad417efdf554dd942` (
+  `kd` varchar(50) NOT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_minatc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_minatc06ace5be20e5fa845f11285c44900fb123` (
   `kd` varchar(50) NOT NULL,
   `nama` varchar(100) DEFAULT NULL,
   `postdate` datetime DEFAULT NULL
@@ -1798,6 +1889,37 @@ CREATE TABLE `user_profilb19fda858159ea9d8fad417efdf554dd942` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_profilc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_profilc06ace5be20e5fa845f11285c44900fb123` (
+  `kd` varchar(50) NOT NULL,
+  `filex_foto` varchar(255) DEFAULT NULL,
+  `tmp_lahir` varchar(100) DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `situs` varchar(255) DEFAULT NULL,
+  `telp` varchar(100) DEFAULT NULL,
+  `agama` varchar(30) DEFAULT NULL,
+  `hobi` varchar(100) DEFAULT NULL,
+  `aktivitas` varchar(100) DEFAULT NULL,
+  `makanan` varchar(100) DEFAULT NULL,
+  `minuman` varchar(100) DEFAULT NULL,
+  `musik` varchar(100) DEFAULT NULL,
+  `film` varchar(100) DEFAULT NULL,
+  `buku` varchar(100) DEFAULT NULL,
+  `idola` varchar(100) DEFAULT NULL,
+  `pend_akhir` varchar(100) DEFAULT NULL,
+  `pend_thnlulus` varchar(4) DEFAULT NULL,
+  `moto` varchar(255) DEFAULT NULL,
+  `kata_mutiara` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_profilcf0628be7a02684290f1cfb8a16f89ea532`
 --
 
@@ -1917,6 +2039,19 @@ CREATE TABLE `user_publik_status305c372acd4cdb57f8ed89b9fc36c07880` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_publik_statusc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_publik_statusc06ace5be20e5fa845f11285c44900fb123` (
+  `kd` varchar(50) NOT NULL,
+  `kd_status` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `konek` enum('true','false') NOT NULL DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_publik_statusf10e55153817313d8ea2147f1e73056b182`
 --
 
@@ -1946,11 +2081,13 @@ CREATE TABLE `user_status` (
 --
 
 INSERT INTO `user_status` (`kd`, `status`, `postdate`, `filex`, `kd_user`) VALUES
+('49d8c40054b81d2b67aea6b0f36cf4ea', 'belajar nih.....', '2018-03-17 04:21:01', '', 'c06ace5be20e5fa845f11285c44900fb123'),
 ('df066c8bc6864f637cef8c41b986ee0d', 'sswwwww', '2018-03-16 04:48:51', '', '93a157e4065fe179017f0c91b28f55d9481'),
 ('bf07c72bc13876f6174a6596f27ad6a3', 'sddddeeeeeeee', '2018-03-16 04:48:33', '', '93a157e4065fe179017f0c91b28f55d9481'),
 ('42beb7677d313e577d94c70004b9db5f', 'dddsss', '2018-03-16 04:47:25', '', '93a157e4065fe179017f0c91b28f55d9481'),
 ('eabf0a04e4d21d43f14f0f3146323138', 'ae', '2018-03-16 04:45:35', '', '93a157e4065fe179017f0c91b28f55d9481'),
-('89fa2e25a3adceb4aaca5d037506d942', 'dffff', '2018-03-16 04:07:20', '', '305c372acd4cdb57f8ed89b9fc36c07880');
+('89fa2e25a3adceb4aaca5d037506d942', 'dffff', '2018-03-16 04:07:20', '', '305c372acd4cdb57f8ed89b9fc36c07880'),
+('5f10d2d41130eed763654998fedc1be1', 'http:xgmringxxgmringxbaliwae.com ini dari denpasar bali. teman kuliah...', '2018-03-17 04:21:20', '', 'c06ace5be20e5fa845f11285c44900fb123');
 
 -- --------------------------------------------------------
 
@@ -2018,26 +2155,23 @@ CREATE TABLE `user_status305c372acd4cdb57f8ed89b9fc36c07880` (
   `kd` varchar(50) NOT NULL,
   `status` longtext,
   `postdate` datetime DEFAULT NULL,
-  `filex` longtext NOT NULL
+  `filex` longtext NOT NULL,
+  `urlnya` longtext NOT NULL,
+  `urlnya_judul` longtext NOT NULL,
+  `urlnya_image` longtext NOT NULL,
+  `urlnya_deskripsi` longtext NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_status305c372acd4cdb57f8ed89b9fc36c07880`
 --
 
-INSERT INTO `user_status305c372acd4cdb57f8ed89b9fc36c07880` (`kd`, `status`, `postdate`, `filex`) VALUES
-('bea9f0a0a932454ead8c444a8af634b3', 'ssddd', '2018-03-16 04:13:39', ''),
-('f30de9983374143839c6512173e9efe2', 'siapkan diri mu ya....', '2018-03-16 04:18:40', ''),
-('f2a7d38600f8b8011e2fe7da6ff9174f', 'ddsss', '2018-03-16 04:29:46', ''),
-('8f9b3aef21ce601bc83dbaee05c523fc', 'ddff', '2018-03-16 04:31:29', ''),
-('3aefd093c950ef579f17c97a1d36531f', 'dssss', '2018-03-16 04:32:34', ''),
-('9d4ee6a0c0c5e6d2529224e8e46b7b96', 'sssddd', '2018-03-16 04:33:42', ''),
-('199dbaa5dba41fc0e28b4ac11986d4c9', 'wwwwwwww', '2018-03-16 04:35:36', ''),
-('20988f91206d2667cec45a191bfee2a6', 'dddd', '2018-03-16 04:36:53', ''),
-('fcdce98edcbfae1e4df29b571a669aba', 'sssssss', '2018-03-16 04:38:06', ''),
-('a6af77d2d9bc1ad78852353e29c62908', 'siap.........', '2018-03-16 04:41:14', ''),
-('dfed1631df980c8574167b8ecc2e599a', 'saddd', '2018-03-16 04:41:53', ''),
-('8556dfc2a0f08c3dc03832e463b343a6', 'ssddddffffff', '2018-03-16 04:43:25', '');
+INSERT INTO `user_status305c372acd4cdb57f8ed89b9fc36c07880` (`kd`, `status`, `postdate`, `filex`, `urlnya`, `urlnya_judul`, `urlnya_image`, `urlnya_deskripsi`) VALUES
+('2d54e79112fe4dec2d3766897c1c0394', 'oke ya..... saya akan balikan...', '2018-03-17 04:18:45', '', 'httpoke', '', '', ''),
+('10891f56110feb6b26dcf3cc9b5932ee', 'http:xgmringxxgmringxkompas.com', '2018-03-17 04:18:25', '', 'http://kompas.com', 'Berita Terkini Hari Ini, Kabar Akurat Tepercaya - Kompas.com', 'https://asset.kompas.com/data/2017/wp/images/og_facebook.jpg', 'Kompas.com - Berita Indonesia dan Dunia Terkini Hari Ini, Kabar Harian Terbaru Tepercaya Terlengkap Seputar Politik, Ekonomi, Travel, Teknologi, Otomotif, Bola'),
+('ae0225b3265786ff5825635d8cce2a8b', 'sip...', '2018-03-17 04:16:31', '', 'httpsip...', 'No title found', 'image-not-found.gif', '-- No description found --'),
+('55a026128749c3431ef9838dfcc1d9f1', 'http:xgmringxxgmringxkompas.com', '2018-03-17 04:15:04', '', 'http://kompas.com', 'Berita Terkini Hari Ini, Kabar Akurat Tepercaya - Kompas.com', 'https://asset.kompas.com/data/2017/wp/images/og_facebook.jpg', 'Kompas.com - Berita Indonesia dan Dunia Terkini Hari Ini, Kabar Harian Terbaru Tepercaya Terlengkap Seputar Politik, Ekonomi, Travel, Teknologi, Otomotif, Bola'),
+('284043dad04d0113f9ea27c79e56faae', 'coba ya...', '2018-03-17 04:14:47', '', 'httpcoba', 'No title found', 'image-not-found.gif', '-- No description found --');
 
 -- --------------------------------------------------------
 
@@ -2090,6 +2224,31 @@ CREATE TABLE `user_statusb19fda858159ea9d8fad417efdf554dd942` (
   `postdate` datetime DEFAULT NULL,
   `filex` longtext NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_statusc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_statusc06ace5be20e5fa845f11285c44900fb123` (
+  `kd` varchar(50) NOT NULL,
+  `status` longtext,
+  `urlnya` longtext,
+  `urlnya_judul` longtext,
+  `urlnya_image` longtext,
+  `urlnya_deskripsi` longtext,
+  `postdate` datetime DEFAULT NULL,
+  `filex` longtext NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_statusc06ace5be20e5fa845f11285c44900fb123`
+--
+
+INSERT INTO `user_statusc06ace5be20e5fa845f11285c44900fb123` (`kd`, `status`, `urlnya`, `urlnya_judul`, `urlnya_image`, `urlnya_deskripsi`, `postdate`, `filex`) VALUES
+('d99fe3842421b598166cd094cac6d675', 'http:xgmringxxgmringxbaliwae.com ini milik temen kuliah ya...', 'http://baliwae.com', 'BALIWAE - TOKO LINUX LEGO T-SHIRT AND WIRELESS INTERNET NETWORKING BALI - UBIQUITI BALI - TP-LINK BALI - D-LINK BALI - TENDA BALI - SANDISK BALI - KINGSTON BALI - RASPBERRY BALI - ENGENIUS BALI - SCHNEIDER BALI - AMP BALI - BELDEN BALI - KENBOTONG BALI - MIKROTIK BALI - HUAWEI BALI - BAFO BALI - NETGEAR BALI - XIAOMI BALI', '', '', '2018-03-17 04:21:48', ''),
+('14fbd4ee16024020bad229367525f558', 'http:xgmringxxgmringxdetik.com', 'http://detik.com', 'detikcom - Informasi Berita Terupdate Hari Ini', 'https://cdn.detik.net.id/detik2/images/logo.jpg', 'Indeks berita terbaru hari ini dari peristiwa, kecelakaan, kriminal, hukum, berita unik, Politik, dan liputan khusus di Indonesia dan Internasional', '2018-03-17 04:22:37', '');
 
 -- --------------------------------------------------------
 
@@ -2241,6 +2400,19 @@ CREATE TABLE `user_status_likea280a1476afa79d4f67e5435de109a0a648` (
 --
 
 CREATE TABLE `user_status_likeb19fda858159ea9d8fad417efdf554dd942` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_status` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_status_likec06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_status_likec06ace5be20e5fa845f11285c44900fb123` (
   `kd` varchar(50) NOT NULL,
   `kd_user_status` varchar(50) DEFAULT NULL,
   `dari` varchar(50) DEFAULT NULL,
@@ -2407,7 +2579,12 @@ INSERT INTO `user_status_msg305c372acd4cdb57f8ed89b9fc36c07880` (`kd`, `kd_user_
 ('1518100fb73e8a4dd7622bf2cd20da81', 'bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'AAA', '2018-03-16 04:16:01'),
 ('ef02d471c9e1ef01b7e6e8f08ab94007', 'bea9f0a0a932454ead8c444a8af634b3', '305c372acd4cdb57f8ed89b9fc36c07880', 'efefef', '2018-03-16 04:16:30'),
 ('7505746b2a91fa69720fd20ca0fadf2e', 'f30de9983374143839c6512173e9efe2', '305c372acd4cdb57f8ed89b9fc36c07880', 'aq yakin bisa...', '2018-03-16 04:18:46'),
-('110365913c76e1e35e745770018544a7', 'f30de9983374143839c6512173e9efe2', '305c372acd4cdb57f8ed89b9fc36c07880', 'mau gimana lagi sih...', '2018-03-16 04:18:54');
+('110365913c76e1e35e745770018544a7', 'f30de9983374143839c6512173e9efe2', '305c372acd4cdb57f8ed89b9fc36c07880', 'mau gimana lagi sih...', '2018-03-16 04:18:54'),
+('2ad2c282cb2f9cc1b96fb095d55420a9', '8556dfc2a0f08c3dc03832e463b343a6', '305c372acd4cdb57f8ed89b9fc36c07880', 'ddddaawwwwww', '2018-03-16 14:57:39'),
+('887e88570c5cc37eb6c18aeded35994f', '10891f56110feb6b26dcf3cc9b5932ee', '305c372acd4cdb57f8ed89b9fc36c07880', 'mantap...', '2018-03-17 04:19:37'),
+('453455c32975f6c2e088e191fb44b774', '10891f56110feb6b26dcf3cc9b5932ee', '305c372acd4cdb57f8ed89b9fc36c07880', 'berita yang asyik ya..', '2018-03-17 04:19:43'),
+('ff3e0100d3df028d3e4701c56294f466', 'ae0225b3265786ff5825635d8cce2a8b', '305c372acd4cdb57f8ed89b9fc36c07880', 'jangan bilang gitu deh..', '2018-03-17 04:19:52'),
+('c0036b83a6aa55956e92e2afdbacdf95', '55a026128749c3431ef9838dfcc1d9f1', '305c372acd4cdb57f8ed89b9fc36c07880', 'pokoknya bisa', '2018-03-17 04:20:03');
 
 -- --------------------------------------------------------
 
@@ -2458,6 +2635,20 @@ CREATE TABLE `user_status_msga280a1476afa79d4f67e5435de109a0a648` (
 --
 
 CREATE TABLE `user_status_msgb19fda858159ea9d8fad417efdf554dd942` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_status` varchar(50) DEFAULT NULL,
+  `dari` varchar(50) DEFAULT NULL,
+  `msg` varchar(255) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_status_msgc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_status_msgc06ace5be20e5fa845f11285c44900fb123` (
   `kd` varchar(50) NOT NULL,
   `kd_user_status` varchar(50) DEFAULT NULL,
   `dari` varchar(50) DEFAULT NULL,
@@ -2627,6 +2818,19 @@ CREATE TABLE `user_status_msg_dibacab19fda858159ea9d8fad417efdf554dd942` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `user_status_msg_dibacac06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_status_msg_dibacac06ace5be20e5fa845f11285c44900fb123` (
+  `kd` varchar(50) NOT NULL,
+  `kd_msg` varchar(50) DEFAULT NULL,
+  `dibaca` enum('true','false') NOT NULL DEFAULT 'false',
+  `postdate` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_status_msg_dibacacf0628be7a02684290f1cfb8a16f89ea532`
 --
 
@@ -2774,6 +2978,19 @@ CREATE TABLE `user_temana280a1476afa79d4f67e5435de109a0a648` (
 --
 
 CREATE TABLE `user_temanb19fda858159ea9d8fad417efdf554dd942` (
+  `kd` varchar(50) NOT NULL,
+  `kd_user_teman` varchar(50) DEFAULT NULL,
+  `postdate` datetime DEFAULT NULL,
+  `konek` enum('true','false') NOT NULL DEFAULT 'false'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_temanc06ace5be20e5fa845f11285c44900fb123`
+--
+
+CREATE TABLE `user_temanc06ace5be20e5fa845f11285c44900fb123` (
   `kd` varchar(50) NOT NULL,
   `kd_user_teman` varchar(50) DEFAULT NULL,
   `postdate` datetime DEFAULT NULL,
@@ -3056,6 +3273,12 @@ ALTER TABLE `userb19fda858159ea9d8fad417efdf554dd942`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `userc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `userc06ace5be20e5fa845f11285c44900fb123`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `usercf0628be7a02684290f1cfb8a16f89ea532`
 --
 ALTER TABLE `usercf0628be7a02684290f1cfb8a16f89ea532`
@@ -3140,6 +3363,12 @@ ALTER TABLE `user_chatb19fda858159ea9d8fad417efdf554dd942`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_chatc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_chatc06ace5be20e5fa845f11285c44900fb123`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_chatcf0628be7a02684290f1cfb8a16f89ea532`
 --
 ALTER TABLE `user_chatcf0628be7a02684290f1cfb8a16f89ea532`
@@ -3218,6 +3447,12 @@ ALTER TABLE `user_eventb19fda858159ea9d8fad417efdf554dd942`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_eventc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_eventc06ace5be20e5fa845f11285c44900fb123`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_eventcf0628be7a02684290f1cfb8a16f89ea532`
 --
 ALTER TABLE `user_eventcf0628be7a02684290f1cfb8a16f89ea532`
@@ -3287,6 +3522,12 @@ ALTER TABLE `user_event_likea280a1476afa79d4f67e5435de109a0a648`
 -- Indexes for table `user_event_likeb19fda858159ea9d8fad417efdf554dd942`
 --
 ALTER TABLE `user_event_likeb19fda858159ea9d8fad417efdf554dd942`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_event_likec06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_event_likec06ace5be20e5fa845f11285c44900fb123`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -3362,6 +3603,12 @@ ALTER TABLE `user_event_msgb19fda858159ea9d8fad417efdf554dd942`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_event_msgc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_event_msgc06ace5be20e5fa845f11285c44900fb123`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_event_msgcf0628be7a02684290f1cfb8a16f89ea532`
 --
 ALTER TABLE `user_event_msgcf0628be7a02684290f1cfb8a16f89ea532`
@@ -3431,6 +3678,12 @@ ALTER TABLE `user_keahliana280a1476afa79d4f67e5435de109a0a648`
 -- Indexes for table `user_keahlianb19fda858159ea9d8fad417efdf554dd942`
 --
 ALTER TABLE `user_keahlianb19fda858159ea9d8fad417efdf554dd942`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_keahlianc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_keahlianc06ace5be20e5fa845f11285c44900fb123`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -3506,6 +3759,12 @@ ALTER TABLE `user_minatb19fda858159ea9d8fad417efdf554dd942`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_minatc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_minatc06ace5be20e5fa845f11285c44900fb123`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_minatcf0628be7a02684290f1cfb8a16f89ea532`
 --
 ALTER TABLE `user_minatcf0628be7a02684290f1cfb8a16f89ea532`
@@ -3578,6 +3837,12 @@ ALTER TABLE `user_profilb19fda858159ea9d8fad417efdf554dd942`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_profilc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_profilc06ace5be20e5fa845f11285c44900fb123`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_profilcf0628be7a02684290f1cfb8a16f89ea532`
 --
 ALTER TABLE `user_profilcf0628be7a02684290f1cfb8a16f89ea532`
@@ -3605,6 +3870,12 @@ ALTER TABLE `user_publik_status93a157e4065fe179017f0c91b28f55d9481`
 -- Indexes for table `user_publik_status305c372acd4cdb57f8ed89b9fc36c07880`
 --
 ALTER TABLE `user_publik_status305c372acd4cdb57f8ed89b9fc36c07880`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_publik_statusc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_publik_statusc06ace5be20e5fa845f11285c44900fb123`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -3665,6 +3936,12 @@ ALTER TABLE `user_statusa280a1476afa79d4f67e5435de109a0a648`
 -- Indexes for table `user_statusb19fda858159ea9d8fad417efdf554dd942`
 --
 ALTER TABLE `user_statusb19fda858159ea9d8fad417efdf554dd942`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_statusc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_statusc06ace5be20e5fa845f11285c44900fb123`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -3740,6 +4017,12 @@ ALTER TABLE `user_status_likeb19fda858159ea9d8fad417efdf554dd942`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_status_likec06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_status_likec06ace5be20e5fa845f11285c44900fb123`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_status_likecf0628be7a02684290f1cfb8a16f89ea532`
 --
 ALTER TABLE `user_status_likecf0628be7a02684290f1cfb8a16f89ea532`
@@ -3809,6 +4092,12 @@ ALTER TABLE `user_status_msga280a1476afa79d4f67e5435de109a0a648`
 -- Indexes for table `user_status_msgb19fda858159ea9d8fad417efdf554dd942`
 --
 ALTER TABLE `user_status_msgb19fda858159ea9d8fad417efdf554dd942`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_status_msgc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_status_msgc06ace5be20e5fa845f11285c44900fb123`
   ADD PRIMARY KEY (`kd`);
 
 --
@@ -3884,6 +4173,12 @@ ALTER TABLE `user_status_msg_dibacab19fda858159ea9d8fad417efdf554dd942`
   ADD PRIMARY KEY (`kd`);
 
 --
+-- Indexes for table `user_status_msg_dibacac06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_status_msg_dibacac06ace5be20e5fa845f11285c44900fb123`
+  ADD PRIMARY KEY (`kd`);
+
+--
 -- Indexes for table `user_status_msg_dibacacf0628be7a02684290f1cfb8a16f89ea532`
 --
 ALTER TABLE `user_status_msg_dibacacf0628be7a02684290f1cfb8a16f89ea532`
@@ -3953,6 +4248,12 @@ ALTER TABLE `user_temana280a1476afa79d4f67e5435de109a0a648`
 -- Indexes for table `user_temanb19fda858159ea9d8fad417efdf554dd942`
 --
 ALTER TABLE `user_temanb19fda858159ea9d8fad417efdf554dd942`
+  ADD PRIMARY KEY (`kd`);
+
+--
+-- Indexes for table `user_temanc06ace5be20e5fa845f11285c44900fb123`
+--
+ALTER TABLE `user_temanc06ace5be20e5fa845f11285c44900fb123`
   ADD PRIMARY KEY (`kd`);
 
 --

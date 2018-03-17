@@ -179,6 +179,10 @@ $yuk1x = "$yuk1$yuk_kd";
 mysql_query("CREATE TABLE $yuk1x ( 
   `kd` varchar(50) NOT NULL,
   `status` longtext,
+  `urlnya` longtext,
+  `urlnya_judul` longtext,
+  `urlnya_image` longtext,
+  `urlnya_deskripsi` longtext,
   `postdate` datetime DEFAULT NULL,
   `filex` longtext NOT NULL
 ) ENGINE=MyISAM;");
