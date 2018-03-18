@@ -61,9 +61,6 @@ ob_start();
 ?>
 
 
-
-
-
 <?php
 //isi
 $isi = ob_get_contents();

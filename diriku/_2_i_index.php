@@ -30,11 +30,10 @@ $(document).ready(function(){
 				data:$(this).serialize(),
 				success:function(data){					
 					$("#itulisresult").html(data);
+					setTimeout('$("#loadingku").hide()',1000);
 					
 					$("#idaftar").load("<?php echo $filenyax;?>?aksi=daftar");
-					$("#itulis").load("<?php echo $filenyax;?>?aksi=form");
-					
-					setTimeout('$("#loadingku").hide()',1000);
+					document.formx2.e_statusku.value='';
 					}
 				});
 			return false;
@@ -339,6 +338,18 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan2'))
 //jika daftar
 if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar'))
 	{
+	?>
+		
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="../inc/js/jquery.mentions.css">
+
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="../inc/js/jquery.mentions.js"></script>
+
+	
+    
+	<?php	
 	//daftar
 	$tablenya = "user_status$kd6_session";
 	$qku = mysql_query("SELECT * FROM $tablenya ".
@@ -369,11 +380,32 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar'))
 			<script language='javascript'>
 			//membuat document jquery
 			$(document).ready(function(){
-
-
-				$("#idaftarkom<?php echo $ku_kd;?>").load("<?php echo $filenyax;?>?aksi=daftarkom&kdnya=<?php echo $ku_kd;?>");			
 			
-						
+			
+				$("#btnKOM<?php echo $ku_kd;?>").on('click', function(){
+					$('#loading<?php echo $ku_kd;?>').show();
+			
+					$("#formx<?php echo $ku_kd;?>").submit(function(){
+						$.ajax({
+							url: "<?php echo $filenyax;?>?aksi=simpan2&kdnya=<?php echo $ku_kd;?>",
+							type:$(this).attr("method"),
+							data:$(this).serialize(),
+							success:function(data){					
+								$("#itulisresult<?php echo $ku_kd;?>").html(data);
+								setTimeout('$("#loading<?php echo $ku_kd;?>").hide()',1000);
+								
+								$("#idaftarkom<?php echo $ku_kd;?>").load("<?php echo $filenyax;?>?aksi=daftarkom&kdnya=<?php echo $ku_kd;?>");
+								
+								document.formx<?php echo $ku_kd;?>.e_kom<?php echo $ku_kd;?>.value='';
+								}
+							});
+						return false;
+					});
+				
+				
+				});	
+	
+			
 			});
 			
 			</script>
@@ -443,22 +475,104 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar'))
 				<td width="50"></td>
 				<td>
 	
-				<div id="idaftarkom'.$ku_kd.'"></div>
+				<div id="idaftarkom'.$ku_kd.'">';
+				
+				//daftar komentar...
+				$tablenya = "user_status_msg$kd6_session";
+				$qku2 = mysql_query("SELECT * FROM $tablenya ".
+										"WHERE kd_user_status = '$ku_kd' ".
+										"ORDER BY postdate ASC");
+				$rku2 = mysql_fetch_assoc($qku2);
+				$tku2 = mysql_num_rows($qku2);
+				
+				//jika gak null
+				if (!empty($tku2))
+					{
+					
+					do
+						{
+						$ku2_kd = nosql($rku2['kd']);
+						$ku2_dari = nosql($rku2['dari']);
+						$ku2_komentar = balikin($rku2['msg']);
+						$ku2_postdate = $rku2['postdate'];
+						
+						
+						//jika sama
+						if ($ku2_dari == $kd6_session)
+							{
+							echo '<div class="panel panel-default">
+						    <div class="panel-body panel-body-custom">
+						    <p>
+							'.$ku2_komentar.'
+							<br>
+							['.$ku2_postdate.']
+							</p>
+							
+							</div>
+							</div>';
+							}
+						
+						else
+							{
+							//detail user
+							$qyuk = mysql_query("SELECT * FROM m_user ".
+													"WHERE kd = '$ku2_dari'");
+							$ryuk = mysql_fetch_assoc($qyuk);
+							$yuk_nama = balikin($ryuk['nama']);
+							
+							echo '<div class="panel panel-default">
+						    <div class="panel-body panel-body-custom">
+			    			<p>
+							[<b>'.$yuk_nama.'</b>]. 
+							<br>
+							'.$ku2_komentar.'
+							<br>
+							['.$ku2_postdate.']
+							</p>
+							
+							</div>
+							</div>';						
+							}
+						}
+					while ($rku2 = mysql_fetch_assoc($qku2));
+					}						
+		
+				echo '</div>
+				
+				<div id="loading'.$ku_kd.'" style="display:none">
+				<img src="'.$sumber.'/img/ajax-loading.gif" width="16" height="16">
+				</div>';
+				?>
+				
+				<script>
+			        $('#<?php echo "e_kom$ku_kd";?>').mentionsInput({source: 'i_user.php'});
+			    </script>
+			    
+				
+				
+				<?php
+				echo '<p>
+				<textarea name="e_kom'.$ku_kd.'" id="e_kom'.$ku_kd.'" rows="3" cols="30"></textarea>
+				<br>
+	
+				<input name="btnKOM'.$ku_kd.'" id="btnKOM'.$ku_kd.'" type="submit" value=" >>">
+				</p>
+					 
+				<hr>
 				
 				
 				</td>
 				</tr>
-				</table>';
+				</table>
+				
+	
+				
+				</div>';
 				}
 				
 			echo '</div>
 			</div>
-			</form>
-
-			
-			</td>
-			</tr>
-			</table>';
+			</form>';
 			}
 		while ($rku = mysql_fetch_assoc($qku));
 		}	
@@ -478,65 +592,9 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar'))
 //jika daftar komentar...
 if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 	{
-	//$ekdnya = cegah($_GET['kdnya']);
-	$ekdnya = cegah($_REQUEST['kdnya']);
-
-	?>
-
-		
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="../inc/js/jquery.mentions.css">
-
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script src="../inc/js/jquery.mentions.js"></script>
+	$ekdnya = cegah($_GET['kdnya']);
 
 	
-
-	
-
-	<script language='javascript'>
-	//membuat document jquery
-	$(document).ready(function(){
-
-
-		$("#btnKOM<?php echo $ekdnya;?>").on('click', function(){
-		$('#loading<?php echo $ekdnya;?>').show();
-
-		$("#formx<?php echo $ekdnya;?>").submit(function(){
-			$.ajax({
-				url: "<?php echo $filenyax;?>?aksi=simpan2&kdnya=<?php echo $ekdnya;?>",
-				type:$(this).attr("method"),
-				data:$(this).serialize(),
-				success:function(data){					
-					$("#itulisresult<?php echo $ekdnya;?>").html(data);
-					
-					$("#idaftarkom<?php echo $ekdnya;?>").load("<?php echo $filenyax;?>?aksi=daftarkom&kdnya=<?php echo $ekdnya;?>");
-					
-					setTimeout('$("#loading<?php echo $ekdnya;?>").hide()',1000);
-					}
-				});
-			return false;
-		});
-	
-	
-	});	
-
-
-		
-				
-	});
-	
-	</script>
-
-			
-
-
-
-
-	<?php	
-	
-	/*
 	//daftar komentar...
 	$tablenya = "user_status_msg$kd6_session";
 	$qku2 = mysql_query("SELECT * FROM $tablenya ".
@@ -559,8 +617,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 		
 		echo '<div class="panel panel-default">
 	    <div class="panel-body panel-body-custom">
-		
-		x
+
 		<p>
 		[<b>'.$yuk_nama.'</b>]
 		<br>
@@ -574,95 +631,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 		</div>';	
 		}
 	while ($rku2 = mysql_fetch_assoc($qku2));
-	*/
-	
-	
-					
-	//daftar komentar...
-	$tablenya = "user_status_msg$kd6_session";
-	$qku2 = mysql_query("SELECT * FROM $tablenya ".
-							"WHERE kd_user_status = '$ekdnya' ".
-							"ORDER BY postdate ASC");
-	$rku2 = mysql_fetch_assoc($qku2);
-	$tku2 = mysql_num_rows($qku2);
-	
-	//jika gak null
-	if (!empty($tku2))
-		{
-		
-		do
-			{
-			$ku2_kd = nosql($rku2['kd']);
-			$ku2_dari = nosql($rku2['dari']);
-			$ku2_komentar = balikin($rku2['msg']);
-			$ku2_postdate = $rku2['postdate'];
-			
-			
-			//jika sama
-			if ($ku2_dari == $kd6_session)
-				{
-				echo '<div class="panel panel-default">
-			    <div class="panel-body panel-body-custom">
-			    <p>
-				'.$ku2_komentar.'
-				<br>
-				['.$ku2_postdate.']
-				</p>
-				
-				</div>
-				</div>';
-				}
-			
-			else
-				{
-				//detail user
-				$qyuk = mysql_query("SELECT * FROM m_user ".
-										"WHERE kd = '$ku2_dari'");
-				$ryuk = mysql_fetch_assoc($qyuk);
-				$yuk_nama = balikin($ryuk['nama']);
-				
-				echo '<div class="panel panel-default">
-			    <div class="panel-body panel-body-custom">
-    			<p>
-				[<b>'.$yuk_nama.'</b>]. 
-				<br>
-				'.$ku2_komentar.'
-				<br>
-				['.$ku2_postdate.']
-				</p>
-				
-				</div>
-				</div>';						
-				}
-			}
-		while ($rku2 = mysql_fetch_assoc($qku2));
-		}						
-
-	echo '</div>
-	
-	<div id="loading'.$ekdnya.'" style="display:none">
-	<img src="'.$sumber.'/img/ajax-loading.gif" width="16" height="16">
-	</div>';
-	?>
-	
-	<script>
-        $('#<?php echo "e_kom$ekdnya";?>').mentionsInput({source: 'i_user.php'});
-    </script>
-    
-	
-	
-	<?php
-	echo '<p>
-	<textarea name="e_kom'.$ekdnya.'" id="e_kom'.$ekdnya.'" rows="3" cols="30"></textarea>
-	<br>
-
-	<input name="btnKOM'.$ekdnya.'" id="btnKOM'.$ekdnya.'" type="submit" value=" >>">
-	</p>
-		 
-	<hr>';
-	
-
-				
+						
 	exit();
 	}
 

@@ -20,7 +20,7 @@ function seo_webnya($string){
 //untuk mencegah si jahil #1
 function cegah($str)
 	{
-    	$str = trim(htmlentities(htmlspecialchars($str)));
+    $str = trim(htmlentities(htmlspecialchars($str)));
 	$search = array ("'\''",
 						"'%'",
 						"'@'",
@@ -28,8 +28,8 @@ function cegah($str)
 						"'1=1'",
 						"'/'",
 						"'!'",
-						"'<'",
-						"'>'",
+	//					"'<'",
+	//					"'>'",
 						"'\('",
 						"'\)'",
 						"';'",
@@ -43,8 +43,8 @@ function cegah($str)
 						"x1smdgan1x",
 						"xgmringx",
 						"xpentungx",
-						"xkkirix",
-						"xkkananx",
+	//					"xkkirix",
+	//					"xkkananx",
 						"xkkurix",
 						"xkkurnanx",
 						"xkommax",
@@ -60,7 +60,7 @@ function cegah($str)
 //untuk mencegah si jahil #2
 function cegah2($str)
 	{
-    	$str = trim($str);
+    $str = trim($str);
 	$search = array ("'\''",
 						"'%'",
 						"'@'",
@@ -68,8 +68,8 @@ function cegah2($str)
 						"'1=1'",
 						"'/'",
 						"'!'",
-						"'<'",
-						"'>'",
+	//					"'<'",
+	//					"'>'",
 						"'\('",
 						"'\)'",
 						"';'",
@@ -83,8 +83,8 @@ function cegah2($str)
 						"x1smdgan1x",
 						"xgmringx",
 						"xpentungx",
-						"xkkirix",
-						"xkkananx",
+	//					"xkkirix",
+	//					"xkkananx",
 						"xkkurix",
 						"xkkurnanx",
 						"xkommax",
@@ -154,6 +154,9 @@ function nosql($str)
 function balikin($str)
 	{
 	$search = array ("'xpsijix'",
+						"'&ampxkommaxltxkommaxa href='",
+						"'&ampxkommaxltxkommaxxgmringxa&ampxkommaxgtxkommax'",
+						"'&ampxkommaxgtxkommax'",
 						"'xpersenx'",
 						"'xtkeongx'",
 						"'xgwahx'",
@@ -169,6 +172,9 @@ function balikin($str)
 						"'xstripbwhx'");
 
 	$replace = array ("'",
+						"<a href=",
+						"</a>",
+						">", 
 						"%",
 						"@",
 						"_",
