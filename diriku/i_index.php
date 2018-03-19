@@ -659,16 +659,12 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'form'))
 					success:function(data){					
 						$("#itulisresult").html(data);
 						
-						$("#idaftar2").load("<?php echo $filenyax;?>?aksi=daftar");
-						$("#itulis2").load("<?php echo $filenyax;?>?aksi=form");
+						$("#idaftar").load("<?php echo $filenyax;?>?aksi=daftar");
+						$("#itulis").load("<?php echo $filenyax;?>?aksi=form");
 		
-						
+				
 
-						$("#idaftar").prepend("<b>Prepended text</b>. ");							
 
-						if ($('#idaftar').length > 0) { 
-						    $("#idaftar").prepend("<b>sudah ada...</b>. ");
-							}				
 				
 						setTimeout('$("#loadingku").hide()',1000);
 						}
@@ -710,6 +706,9 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'form'))
 	<script>
         $('#e_statusku').mentionsInput({source: 'i_user.php'});
     </script>
+    
+    
+    
 	<?php
 	echo '<form name="formx2" id="formx2">
 
