@@ -4,58 +4,12 @@ session_start();
 require("../inc/config.php");
 require("../inc/fungsi.php");
 require("../inc/koneksi.php");
-require("../inc/koneksi.php");
 require("../inc/cek/user.php");
 require("../inc/class/simple_html_dom.php");
 	
 
 
 $filenyax = "i_index.php";
-?>
-
-
-
-<script language='javascript'>
-//membuat document jquery
-$(document).ready(function(){
-
-
-	$("#btnKRM").on('click', function(){
-		$('#loadingku').show();
-
-		$("#formx2").submit(function(){
-			$.ajax({
-				url: "<?php echo $filenyax;?>?aksi=simpan",
-				type:$(this).attr("method"),
-				data:$(this).serialize(),
-				success:function(data){					
-					$("#itulisresult").html(data);
-					
-					$("#idaftar").load("<?php echo $filenyax;?>?aksi=daftar");
-					$("#itulis").load("<?php echo $filenyax;?>?aksi=form");
-					
-					setTimeout('$("#loadingku").hide()',1000);
-					}
-				});
-			return false;
-		});
-	
-	
-	});	
-
-
-
-
-
-
-});
-
-</script>
-
-
-
-
-<?php
 
 
 
@@ -484,14 +438,24 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 	?>
 
 		
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="../inc/js/jquery.mentions.css">
 
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-    <script src="../inc/js/jquery.mentions.js"></script>
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="../template/vendor/jquery/jquery.min.js"></script>
+	<script src="../template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	
+	
+	<!-- Bootstrap core CSS -->
+	<link href="../template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../inc/js/jquery-ui-1.10.3/themes/black-tie/jquery-ui.css">
+    <link rel="stylesheet" href="../inc/js/jquery.mentions.css">
+    <script src="../inc/js/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+    <script src="../inc/js/jquery.mentions.js"></script>
+
 
 	
 
@@ -656,7 +620,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 	<textarea name="e_kom'.$ekdnya.'" id="e_kom'.$ekdnya.'" rows="3" cols="30"></textarea>
 	<br>
 
-	<input name="btnKOM'.$ekdnya.'" id="btnKOM'.$ekdnya.'" type="submit" value=" >>">
+	<input name="btnKOM'.$ekdnya.'" id="btnKOM'.$ekdnya.'" type="submit" class="btn btn-info" value="KIRIM >>">
 	</p>
 		 
 	<hr>';
@@ -678,13 +642,70 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'form'))
 	{
 	?>
 	
-	
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" href="../inc/js/jquery.mentions.css">
 
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script language='javascript'>
+	//membuat document jquery
+	$(document).ready(function(){
+	
+	
+		$("#btnKRM").on('click', function(){
+			$('#loadingku').show();
+	
+			$("#formx2").submit(function(){
+				$.ajax({
+					url: "<?php echo $filenyax;?>?aksi=simpan",
+					type:$(this).attr("method"),
+					data:$(this).serialize(),
+					success:function(data){					
+						$("#itulisresult").html(data);
+						
+						$("#idaftar2").load("<?php echo $filenyax;?>?aksi=daftar");
+						$("#itulis2").load("<?php echo $filenyax;?>?aksi=form");
+		
+						
+
+						$("#idaftar").prepend("<b>Prepended text</b>. ");							
+
+						if ($('#idaftar').length > 0) { 
+						    $("#idaftar").prepend("<b>sudah ada...</b>. ");
+							}				
+				
+						setTimeout('$("#loadingku").hide()',1000);
+						}
+					});
+				return false;
+			});
+		
+		
+		});	
+	
+	
+	
+	
+	
+	
+	});
+	
+	</script>
+	
+	
+
+	
+	<!-- Bootstrap core JavaScript -->
+	<script src="../template/vendor/jquery/jquery.min.js"></script>
+	<script src="../template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	
+	
+	<!-- Bootstrap core CSS -->
+	<link href="../template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="../inc/js/jquery-ui-1.10.3/themes/black-tie/jquery-ui.css">
+    <link rel="stylesheet" href="../inc/js/jquery.mentions.css">
+    <script src="../inc/js/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
     <script src="../inc/js/jquery.mentions.js"></script>
+
 
 	<script>
         $('#e_statusku').mentionsInput({source: 'i_user.php'});
@@ -709,7 +730,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'form'))
 	</div>
 	
 	<p>
-	<input name="btnKRM" id="btnKRM" type="submit" value="SUBMIT >>">
+	<input name="btnKRM" id="btnKRM" type="submit" class="btn btn-info" value="KIRIM >>">
 	</p>
 
 	</div>
