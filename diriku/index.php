@@ -196,7 +196,11 @@ do
 	$(document).ready(function(){
 
 
-	$("#idaftarkom<?php echo $ku_kd;?>").load("<?php echo $filenyax;?>?aksi=daftarkom&kdnya=<?php echo $ku_kd;?>");			
+
+
+
+	$("#idaftarkom<?php echo $ku_kd;?>").load("<?php echo $filenyax;?>?aksi=daftarkom&kdnya=<?php echo $ku_kd;?>");
+	$("#iformkom<?php echo $ku_kd;?>").load("<?php echo $filenyax;?>?aksi=formkom&kdnya=<?php echo $ku_kd;?>");			
 			
 	});
 	
@@ -249,6 +253,7 @@ do
 
 
 	<div id="idaftarkom'.$ku_kd.'"></div>
+	<div id="iformkom'.$ku_kd.'"></div>
 	
 	
 	</td>

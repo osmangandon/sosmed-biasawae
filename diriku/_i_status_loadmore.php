@@ -348,57 +348,211 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan2'))
 			$_SESSION['komentarku'] = $enilnya;
 			
 	
-			//echo "$enilnya [$komentarku].";
-			
-			
-			echo '<table border="0" cellspading="3" cellspacing="3">
-			<tr>
-			<td width="50"></td>
-			<td>';
-			
-			//daftar komentar...
-			$tablenya = "user_status_msg$kd6_session";
-			$qku2 = mysql_query("SELECT * FROM $tablenya ".
-									"WHERE kd_user_status = '$ekdnya' ".
-									"ORDER BY postdate DESC");
-			$rku2 = mysql_fetch_assoc($qku2);
-			$tku2 = mysql_num_rows($qku2);			
-			$ku2_kd = nosql($rku2['kd']);
-			$ku2_dari = nosql($rku2['dari']);
-			$ku2_komentar = balikin($rku2['msg']);
-			$ku2_postdate = $rku2['postdate'];
-					
-
-			//detail user
-			$qyuk = mysql_query("SELECT * FROM m_user ".
-									"WHERE kd = '$ku2_dari'");
-			$ryuk = mysql_fetch_assoc($qyuk);
-			$yuk_nama = balikin($ryuk['nama']);
-			
-			echo '<div class="panel panel-default">
-		    <div class="panel-body panel-body-custom">
-			<p>
-			[<b>'.$yuk_nama.'</b>]. 
-			<br>
-			'.$ku2_komentar.'
-			<br>
-			['.$ku2_postdate.']
-			</p>
-			
-			</div>
-			</div>
-
-			
-			</div>';
-
-			
-			
+			echo "$enilnya [$komentarku].";
 			}	
 		}	
 
 	
 	exit();
 	}
+
+
+
+
+
+
+//jika daftar status
+if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar'))
+	{
+	?>
+	
+
+	<script language='javascript'>
+	//membuat document jquery
+	$(document).ready(function(){
+	
+		$.ajax({
+			url: "<?php echo $filenyax;?>?aksi=daftar2",
+			type:$(this).attr("method"),
+			data:$(this).serialize(),
+			success:function(data){			
+			    
+			    $("#idaftar").prepend(data);
+
+				}
+			});
+		return false;
+
+	
+	});
+	
+	</script>
+	
+	
+
+	<?php
+	exit();
+	}
+
+
+
+
+
+
+
+
+
+//jika daftar
+if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar2'))
+	{
+	?>		
+		
+	<script language='javascript'>
+	//membuat document jquery
+	$(document).ready(function(){
+
+	$("#linknya").on('click', function(){
+
+				
+		$.ajax({
+			url: "<?php echo $filenyax;?>?aksi=daftar2",
+			type:$(this).attr("method"),
+			data:$(this).serialize(),
+			success:function(data){			
+			    
+			    $("#idaftar").append(data);
+				
+				}
+			});
+		return false;
+		})
+			
+	});
+	
+	</script>
+
+			
+	<?php		
+	//daftar
+	$tablenya = "user_status$kd6_session";
+	$qku = mysql_query("SELECT * FROM $tablenya ".
+							"ORDER BY postdate DESC LIMIT 0,5");
+	$rku = mysql_fetch_assoc($qku);
+	$tku = mysql_num_rows($qku);
+	
+	
+	//jika gak null
+	if (!empty($tku))
+		{
+		do
+			{
+			$ku_kd = nosql($rku['kd']);
+			$ku_userkd = nosql($rku['kd_user']);
+			$ku_postdate = $rku['postdate'];
+			$ku_status = balikin($rku['status']);
+			$ku_urlnya = balikin($rku['urlnya']);
+			$ku_urlnya_judul = balikin($rku['urlnya_judul']);
+			$ku_urlnya_image = balikin($rku['urlnya_image']);
+			$ku_urlnya_deskripsi = balikin($rku['urlnya_deskripsi']);
+			
+			
+			?>
+			
+			
+		
+			<script language='javascript'>
+			//membuat document jquery
+			$(document).ready(function(){
+
+
+			$("#idaftarkom<?php echo $ku_kd;?>").load("<?php echo $filenyax;?>?aksi=daftarkom&kdnya=<?php echo $ku_kd;?>");			
+					
+			});
+			
+			</script>
+	
+			
+			<?php		
+			//usernya
+			//detail user
+			$qyukx = mysql_query("SELECT * FROM m_user ".
+									"WHERE kd = '$ku_userkd'");
+			$ryukx = mysql_fetch_assoc($qyukx);
+			$yukx_nama = balikin($ryukx['nama']);
+			
+			echo '<form name="formx'.$ku_kd.'" id="formx'.$ku_kd.'">
+			<div class="panel panel-default">
+		    <div class="panel-heading panel-heading-custom">
+			<table border="0" cellspading="3" cellspacing="3">
+			<tr>
+			<td>		
+			'.$yukx_nama.'
+			<br>
+			'.$ku_postdate.'
+			<br>
+			<h3>'.$ku_status.'</h3>';
+			
+			
+
+			
+			//jika ada
+			if (!empty($ku_urlnya_judul))
+				{
+				echo '<table border="1">
+				<tr valign="top">
+				<td>
+				
+				<table border="0">
+				<tr valign="top">
+				<td width="100">
+				<img src="'.$ku_urlnya_image.'" alt="'.$ku_urlnya_judul.'" width="100" height="100">
+				</td>
+				
+				<td>
+				<h3>'.$ku_urlnya_judul.'</h3>
+				<p><i>'.$ku_urlnya_deskripsi.'</i></p>
+				</td>
+				</tr>
+				</table>
+				
+				</td>
+				</tr>
+				</table>';
+				}
+			
+			 
+			echo '[<a href="#">IKUTI</a>].
+			<br>
+	
+	
+			<div id="idaftarkom'.$ku_kd.'"></div>';
+	
+			
+			
+			echo '</div>
+			</div>
+			</form>
+
+			
+			</td>
+			</tr>
+			</table>';
+			}
+		while ($rku = mysql_fetch_assoc($qku));
+		
+		
+		
+			
+			
+		echo '<br>
+		<br>';
+		}	
+	
+	exit();
+	}
+
+
+
 
 
 
@@ -529,7 +683,6 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'ikutkomen'))
 
 
 		$("#idaftarkom<?php echo $ekdnya;?>").load("<?php echo $filenyax;?>?aksi=daftarkom&kdnya=<?php echo $ekdnya;?>");			
-		$("#iformkom<?php echo $ekdnya;?>").load("<?php echo $filenyax;?>?aksi=formkom&kdnya=<?php echo $ekdnya;?>");
 	
 				
 	});
@@ -543,8 +696,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'ikutkomen'))
 	<br>
 	
 	
-	<div id="idaftarkom'.$ekdnya.'"></div>
-	<div id="iformkom'.$ekdnya.'"></div>';
+	<div id="idaftarkom'.$ekdnya.'"></div>';
 	
 	exit();
 	}
@@ -604,7 +756,6 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'loadmore'))
 		$(document).ready(function(){
 	
 	
-		$("#iformkom<?php echo $id;?>").load("<?php echo $filenyax;?>?aksi=formkom&kdnya=<?php echo $id;?>");
 		$("#idaftarkom<?php echo $id;?>").load("<?php echo $filenyax;?>?aksi=daftarkom&kdnya=<?php echo $id;?>");			
 				
 		});
@@ -657,10 +808,11 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'loadmore'))
 		<br>
 	
 	
-		<div id="idaftarkom'.$ku_kd.'"></div>
-		<div id="iformkom'.$ku_kd.'"></div>
+		<div id="idaftarkom'.$ku_kd.'"></div>';
+	
 		
-		</td>
+		
+		echo '</td>
 		</tr>
 		</table>
 		
@@ -701,8 +853,50 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 
 
 	//echo "komentar ya : $ekdnya";
+	
+	
+	?>
 
 
+
+	<script language='javascript'>
+	//membuat document jquery
+	$(document).ready(function(){
+
+
+		$("#btnKOM<?php echo $ekdnya;?>").on('click', function(){
+		$('#loading<?php echo $ekdnya;?>').show();
+
+		$("#formx<?php echo $ekdnya;?>").submit(function(){
+			$.ajax({
+				url: "<?php echo $filenyax;?>?aksi=simpan2&kdnya=<?php echo $ekdnya;?>",
+				type:$(this).attr("method"),
+				data:$(this).serialize(),
+				success:function(data){					
+					$("#idaftarkom<?php echo $ekdnya;?>").load("<?php echo $filenyax;?>?aksi=daftarkom&kdnya=<?php echo $ekdnya;?>");
+					
+					setTimeout('$("#loading<?php echo $ekdnya;?>").hide()',1000);
+					}
+				});
+			return false;
+		});
+	
+	
+	});	
+
+
+		
+				
+	});
+	
+	</script>
+
+			
+
+
+
+
+	<?php	
 	echo '<table border="0" cellspading="3" cellspacing="3">
 	<tr>
 	<td width="50"></td>
@@ -772,94 +966,6 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 	
 	<div id="loading'.$ekdnya.'" style="display:none">
 	<img src="'.$sumber.'/img/ajax-loading.gif" width="16" height="16">
-	</div>
-
-	<br>
-	
-	
-	</td>
-	
-	</tr>
-	</table>';
-	
-
-				
-	exit();
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-//jika form komentar...
-if ((isset($_GET['aksi']) && $_GET['aksi'] == 'formkom'))
-	{
-	$ekdnya = cegah($_REQUEST['kdnya']);
-
-
-	//echo "komentar ya : $ekdnya";
-	
-	
-	?>
-
-
-
-	<script language='javascript'>
-	//membuat document jquery
-	$(document).ready(function(){
-
-
-		$("#btnKOM<?php echo $ekdnya;?>").on('click', function(){
-			$('#loading<?php echo $ekdnya;?>').show();
-	
-
-
-		$("#formx<?php echo $ekdnya;?>").submit(function(){
-			$.ajax({
-				url: "<?php echo $filenyax;?>?aksi=simpan2&kdnya=<?php echo $ekdnya;?>",
-				type:$(this).attr("method"),
-				data:$(this).serialize(),
-				success:function(data){
-					
-					$("#idaftarkom<?php echo $ekdnya;?>").append(data);
-					$("#iformkom<?php echo $ekdnya;?>").load("<?php echo $filenyax;?>?aksi=formkom&kdnya=<?php echo $ekdnya;?>");
-					
-					setTimeout('$("#loading<?php echo $ekdnya;?>").hide()',1000);
-					}
-				});
-			return false;
-		});
-	
-	
-	});	
-
-
-		
-				
-	});
-	
-	</script>
-
-			
-
-
-
-
-	<?php	
-	echo '<table border="0" cellspading="3" cellspacing="3">
-	<tr>
-	<td width="50"></td>
-	<td>
-
-	<div id="loading'.$ekdnya.'" style="display:none">
-	<img src="'.$sumber.'/img/ajax-loading.gif" width="16" height="16">
 	</div>';
 	?>
 	
@@ -889,6 +995,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'formkom'))
 				
 	exit();
 	}
+
 
 
 ?>
