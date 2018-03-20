@@ -13,6 +13,7 @@ $filenyax = "i_index.php";
 
 
 
+
 //PROSES ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //jika simpan
 if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
@@ -357,6 +358,34 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan2'))
 //jika daftar
 if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar2'))
 	{
+	?>		
+		
+	<script language='javascript'>
+	//membuat document jquery
+	$(document).ready(function(){
+
+	$("#linknya").on('click', function(){
+
+				
+		$.ajax({
+			url: "<?php echo $filenyax;?>?aksi=daftarlama",
+			type:$(this).attr("method"),
+			data:$(this).serialize(),
+			success:function(data){			
+			    
+			    $("#idaftar").append(data);
+				
+				}
+			});
+		return false;
+		})
+			
+	});
+	
+	</script>
+
+			
+	<?php		
 	//daftar
 	$tablenya = "user_status$kd6_session";
 	$qku = mysql_query("SELECT * FROM $tablenya ".
@@ -390,27 +419,6 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar2'))
 
 
 			$("#idaftarkom<?php echo $ku_kd;?>").load("<?php echo $filenyax;?>?aksi=daftarkom&kdnya=<?php echo $ku_kd;?>");			
-
-
-
-			$("#linknya").on('click', function(){
-
-						
-				$.ajax({
-					url: "<?php echo $filenyax;?>?aksi=daftarlama",
-					type:$(this).attr("method"),
-					data:$(this).serialize(),
-					success:function(data){			
-					    
-					    $("#idaftar").append(data);
-						
-						}
-					});
-				return false;
-			})
-	
-
-
 					
 			});
 			
@@ -517,16 +525,49 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftar2'))
 //jika daftar lama
 if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarlama'))
 	{
+	?>		
+		
+	<script language='javascript'>
+	//membuat document jquery
+	$(document).ready(function(){
+
+	$("#linknya").on('click', function(){
+
+				
+		$.ajax({
+			url: "<?php echo $filenyax;?>?aksi=daftarlama",
+			type:$(this).attr("method"),
+			data:$(this).serialize(),
+			success:function(data){			
+			    
+			    $("#idaftar").append(data);
+				
+				}
+			});
+		return false;
+		})
+			
+	});
+	
+	</script>
+
+			
+	<?php		
+
 	//nilai page...
-	$pagenya = nosql($_REQUEST['pagenya']);
+	$pagenya = nosql($_SESSION['pageku']);
 	
 	
+
+	/*
 	//awal
 	$nilawal = 5;
 	//$nilakhir = 10 * $pagenya;
-	$nilakhir = 9;
+	$nilakhir = (5 * $pagenya) - 1;
 	
+
 	
+
 	//daftar
 	$tablenya = "user_status$kd6_session";
 	$qku = mysql_query("SELECT * FROM $tablenya ".
@@ -622,7 +663,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarlama'))
 
 			<div id="idaftarkom'.$ku_kd.'"></div>';
 	
-			
+			echo $_SESSION['pageku'];
 			
 			echo '</div>
 			</div>
@@ -637,15 +678,35 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarlama'))
 		
 		
 		
-			
-			
+		
 		echo '<br>
-		<br>';
-		
-		
-		exit();
+		<br>
 		}	
+*/
+		
+		
+		
 	
+	//bikin session page
+	//jika null, page 1
+	if (empty($_SESSION['pageku']))
+		{
+		$_SESSION['pageku'] = 1;
+		}
+
+	else
+		{
+		$_SESSION['pageku'] = $pagenya + 1;
+		}
+	
+
+
+	echo $_SESSION['pageku'];
+
+	echo '[<a href="#" id="linknya">TAMPILKAN STATUS LAMA</a>]...';
+		
+
+		
 	exit();
 	}
 
