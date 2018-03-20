@@ -61,7 +61,7 @@ require("../../inc/koneksi.php");
         <div class="container">
 
             <?php
-            include "config.php";
+            //include "config.php";
             $rowperpage = 3;
 
 

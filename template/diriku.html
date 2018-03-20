@@ -53,8 +53,8 @@ $(document).ready(function() {
 	
 
 
-$("#itulis").load("{sumber}/diriku/i_index.php?aksi=form");
-$("#idaftar").load("{sumber}/diriku/i_index.php?aksi=daftar");
+$("#itulis").load("{sumber}/diriku/i_status_loadmore.php?aksi=form");
+
 
 
 
@@ -64,11 +64,8 @@ $("#idaftar").load("{sumber}/diriku/i_index.php?aksi=daftar");
 
 
 
-
-
-
-
 <style>
+	
 
 #footer 
 	{
@@ -81,8 +78,6 @@ $("#idaftar").load("{sumber}/diriku/i_index.php?aksi=daftar");
 
 
 
-
-<style>
 body {margin:0;}
 
 .topnav {
@@ -136,9 +131,6 @@ body {margin:0;}
   }
 
 }
-</style>
-
-
 </style>
 
 
@@ -239,6 +231,9 @@ body {margin:0;}
 		</td>
 
 		<td width="50%">
+
+
+		
 			
           <div class="panel panel-default text-left">
             <div class="panel-body">
@@ -249,10 +244,9 @@ body {margin:0;}
 				<img src="{sumber}/img/ajax-loading.gif" width="16" height="16">
 				</div>
 				
-				<div id="idaftar">
-				<img src="{sumber}/img/ajax-loading.gif" width="16" height="16">
-				</div>
 				
+				{daftarstatus}
+
 
             </div>
           </div>
