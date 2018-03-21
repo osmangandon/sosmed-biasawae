@@ -557,7 +557,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'ikutkomen'))
 //load more
 if ((isset($_GET['aksi']) && $_GET['aksi'] == 'loadmore'))
 	{
-	
+	//ambil nilai...
 	$row = $_POST['row'];
 	$rowperpage = 3;
 	
@@ -667,12 +667,11 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'loadmore'))
 		</div>
 		</div>
 		</form>
-	
-		
 		
 		</div>'; 
 		}
 	while ($row = mysql_fetch_assoc($query));
+
 	
 	$html = ob_get_contents();
 	ob_end_clean();

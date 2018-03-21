@@ -54,7 +54,7 @@ $(document).ready(function() {
 
 
 $("#itulis").load("{sumber}/diriku/i_status_loadmore.php?aksi=form");
-
+$("#irssnews").load("{sumber}/diriku/i_rssnews.php?aksi=daftar");
 
 
 
@@ -257,7 +257,7 @@ body {margin:0;}
 		&nbsp;
 		</td>
     
-	<td width="25%">
+	<td width="25%" align="right">
 				
       <div class="thumbnail">
 			<p>
@@ -265,6 +265,11 @@ body {margin:0;}
 			</p>
 
       </div>      
+
+
+      <div class="thumbnail">
+			<div id="irssnews"></div>
+  	</div>
 
 	</td>
 	</tr>
