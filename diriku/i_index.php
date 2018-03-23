@@ -97,8 +97,10 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'awalnya'))
 			</td>
 			
 			<td>
+			<a href="'.$ku_urlnya.'" target="_blank">
 			<h3>'.$ku_urlnya_judul.'</h3>
 			<p><i>'.$ku_urlnya_deskripsi.'</i></p>
+			</a>
 			</td>
 			</tr>
 			</table>

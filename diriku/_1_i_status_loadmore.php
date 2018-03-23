@@ -247,10 +247,8 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
 		</td>
 		
 		<td>
-		<a href="'.$ku_urlnya.'" target="_blank">
 		<h3>'.$ku_urlnya_judul.'</h3>
 		<p><i>'.$ku_urlnya_deskripsi.'</i></p>
-		</a>
 		</td>
 		</tr>
 		</table>
@@ -643,10 +641,8 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'loadmore'))
 			</td>
 			
 			<td>
-			<a href="'.$ku_urlnya.'" target="_blank">
 			<h3>'.$ku_urlnya_judul.'</h3>
 			<p><i>'.$ku_urlnya_deskripsi.'</i></p>
-			</a>
 			</td>
 			</tr>
 			</table>
@@ -874,7 +870,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'formkom'))
 	
 	<?php
 	echo '<p>
-	<input name="e_kom'.$ekdnya.'" id="e_kom'.$ekdnya.'" type="text" size="30" value="" />
+	<textarea name="e_kom'.$ekdnya.'" id="e_kom'.$ekdnya.'" rows="3" cols="30"></textarea>
 	<br>
 
 	<input name="btnKOM'.$ekdnya.'" id="btnKOM'.$ekdnya.'" type="submit" class="btn btn-danger" value="KIRIM >>">
