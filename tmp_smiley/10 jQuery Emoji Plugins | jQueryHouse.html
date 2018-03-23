@@ -1,0 +1,1232 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+
+<title>10 jQuery Emoji Plugins  | jQueryHouse</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--[if IE 8]>
+    <link rel='stylesheet' href='https://s25005.pcdn.co/wp-content/themes/jquery-house/css/ie8.css' type='text/css' media='all' />
+    <![endif]-->
+<!--[if IE 9]>
+    <link rel='stylesheet' href='https://s25005.pcdn.co/wp-content/themes/jquery-house/css/ie9.css' type='text/css' media='all' />
+    <![endif]-->
+
+<!--[if IE]> <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="jQueryHouse RSS Feed" href="https://jqueryhouse.com/feed/" />
+<link rel="pingback" href="https://jqueryhouse.com/xmlrpc.php" />
+<link rel="shortcut icon" type="image/png" href="https://s25005.pcdn.co/wp-content/uploads/2015/07/favicon.ico" />
+
+<style type="text/css">h3.blog-title, h3.sidebar1-title  { background: #3b3b3b !important; color: #FFFFFF !important;}h3.sidebar2-title-orange, h3.jobs-title { background: #e76b33 !important; color: #FFFFFF !important;}h3.sidebar2-title-black  { background: #3b3b3b !important; color: #FFFFFF !important;}h3.sidebar1-title-gold   { background: #ffd62c !important; color: #FFFFFF !important;}.footer-content, .top-header { background: #3b3b3b !important;}.entry a { color: #0099cc !important;}#back-top span { background-color: #0099cc !important;}.social-stats li a > div.nr { color: #0099cc !important;}.post-date, .wp-pagenavi a:hover, .list1 li a:hover, .list2 li a:hover, .wp-pagenavi span.current, ul.tags li a:hover, .comment li span.comment-author, .comment li span.comment-author a, .jquerycssmenu ul li.current-menu-item, .jquerycssmenu ul li:hover, .site-stats li.allposts a:hover { background: #0099cc !important;}#commentform #submitcomm { background-color: #0099cc !important; border: 1px solid #0099cc !important; text-shadow: 0 -1px 0 #0099cc !important;}html body { background: #f6f5f2 !important;}div.textwidget {
+  padding: 0 5px!important;
+  margin: 20px auto;
+}</style>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+
+<meta name="description" content="In this post, find a compiled list of 10 jQuery based emoji plugins to convert text into emoji characters." />
+<meta name="keywords" content="jquery,emoji,emoticons,emojis,plugins" />
+<link rel="canonical" href="https://jqueryhouse.com/10-jquery-emoji-plugins/" />
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="jQueryHouse &raquo; Feed" href="https://jqueryhouse.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jQueryHouse &raquo; Comments Feed" href="https://jqueryhouse.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="jQueryHouse &raquo; 10 jQuery Emoji Plugins Comments Feed" href="https://jqueryhouse.com/10-jquery-emoji-plugins/feed/" />
+<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s25005.pcdn.co\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.2"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='taqyeem-style-css' href='https://s25005.pcdn.co/wp-content/plugins/mogoze-reviews/style.css?ver=4.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='anthemes_shortcode_styles-css' href='https://s25005.pcdn.co/wp-content/plugins/anthemes-shortcodes/includes/css/anthemes-shortcodes.css?ver=4.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='Montserrat-css' href='https://fonts.googleapis.com/css?family=Montserrat%3A400&#038;ver=4.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='Lato-css' href='https://fonts.googleapis.com/css?family=Lato%3A100%2C100italic%2C300%2C300italic%2C400%2C400italic%2C700%2C700italic%2C900%2C900italic&#038;ver=4.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='Droid+Sans+Mono-css' href='https://fonts.googleapis.com/css?family=Droid+Sans+Mono%3Aregular&#038;ver=4.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='Anonymous+Pro-css' href='https://fonts.googleapis.com/css?family=Anonymous+Pro%3Aregular%2Citalic%2Cbold%2Cbolditalic&#038;ver=4.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='Arvo-css' href='https://fonts.googleapis.com/css?family=Arvo%3Aregular%2Citalic%2Cbold%2Cbolditalic&#038;ver=4.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='style-css' href='https://s25005.pcdn.co/wp-content/themes/jquery-house/style.css?ver=4.8.4b' type='text/css' media='all' />
+<link rel='stylesheet' id='default-css' href='https://s25005.pcdn.co/wp-content/themes/jquery-house/css/colors/default.css?ver=4.9.2' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-css' href='https://s25005.pcdn.co/wp-content/themes/jquery-house/css/responsive.css?ver=4.8.4g' type='text/css' media='all' />
+<link rel='stylesheet' id='fonts-css' href='https://fonts.googleapis.com/css?family=Droid+Sans%3A400%2C700%7CSanchez&#038;ver=4.9.2' type='text/css' media='all' />
+<script>
+                if (document.location.protocol != "https:") {
+                    document.location = document.URL.replace(/^http:/i, "https:");
+                }
+            </script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-content/plugins/mogoze-reviews/js/tie.js?ver=4.9.2'></script>
+<link rel='https://api.w.org/' href='https://jqueryhouse.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://jqueryhouse.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s25005.pcdn.co/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 4.9.2" />
+<link rel='shortlink' href='https://jqueryhouse.com/?p=2418' />
+<link rel="alternate" type="application/json+oembed" href="https://jqueryhouse.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjqueryhouse.com%2F10-jquery-emoji-plugins%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://jqueryhouse.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fjqueryhouse.com%2F10-jquery-emoji-plugins%2F&#038;format=xml" />
+<script type='text/javascript'>
+/* <![CDATA[ */
+var taqyeem = {"ajaxurl":"https://jqueryhouse.com/wp-admin/admin-ajax.php" , "your_rating":"Your Rating:"};
+/* ]]> */
+</script>
+<style type="text/css" media="screen"> 
+.review-summary a:hover {
+	color: #00b6d6;	text-decoration: overline;}
+
+#review-box h2.review-box-header{
+	font-family: 'Montserrat';
+	font-size : 18px;
+	font-weight: 900;
+	font-style: normal;
+}
+
+#review-box .review-item h5,	#review-box.review-percentage .review-item h5{
+	font-family: 'Lato';
+	font-size : 15px;
+	font-weight: 500;
+	font-style: normal;
+}
+
+#review-box .review-short-summary, #review-box .review-short-summary p{
+	font-family: 'Droid Sans Mono';
+	font-size : 18px;
+	font-weight: 300;
+	font-style: normal;
+}
+
+#review-box .review-final-score h3{
+	font-family: 'Anonymous Pro';
+	font-size : 18px;
+	font-weight: 800;
+	font-style: normal;
+}
+
+#review-box .review-final-score h4{
+	font-family: 'Arvo';
+	font-size : 16px;
+	font-weight: 700;
+	font-style: normal;
+}
+
+.user-rate-wrap, #review-box strong{
+	font-family: 'Montserrat';
+	font-size : 17px;
+	font-weight: 900;
+	font-style: normal;
+}
+
+</style>
+<link rel='stylesheet' id='daves-wordpress-live-search-css' href='https://s25005.pcdn.co/wp-content/plugins/daves-wordpress-live-search/css/daves-wordpress-live-search_default_blue.css?ver=4.9.2' type='text/css' media='all' />
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+<style>button#responsive-menu-button,
+#responsive-menu-container {
+    display: none;
+    -webkit-text-size-adjust: 100%;
+}
+
+@media screen and (max-width: 800px) {
+
+    #responsive-menu-container {
+        display: block;
+    }
+
+    #responsive-menu-container {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 99998;
+        padding-bottom: 5px;
+        margin-bottom: -5px;
+        outline: 1px solid transparent;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #responsive-menu-container .responsive-menu-search-box {
+        width: 100%;
+        padding: 0 2%;
+        border-radius: 2px;
+        height: 50px;
+        -webkit-appearance: none;
+    }
+
+    #responsive-menu-container.push-left,
+    #responsive-menu-container.slide-left {
+        transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+    }
+
+    .responsive-menu-open #responsive-menu-container.push-left,
+    .responsive-menu-open #responsive-menu-container.slide-left {
+        transform: translateX(0);
+        -ms-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+    }
+
+    #responsive-menu-container.push-top,
+    #responsive-menu-container.slide-top {
+        transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+    }
+
+    .responsive-menu-open #responsive-menu-container.push-top,
+    .responsive-menu-open #responsive-menu-container.slide-top {
+        transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+    }
+
+    #responsive-menu-container.push-right,
+    #responsive-menu-container.slide-right {
+        transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+    }
+
+    .responsive-menu-open #responsive-menu-container.push-right,
+    .responsive-menu-open #responsive-menu-container.slide-right {
+        transform: translateX(0);
+        -ms-transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+    }
+
+    #responsive-menu-container.push-bottom,
+    #responsive-menu-container.slide-bottom {
+        transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        -moz-transform: translateY(100%);
+    }
+
+    .responsive-menu-open #responsive-menu-container.push-bottom,
+    .responsive-menu-open #responsive-menu-container.slide-bottom {
+        transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+    }
+
+    #responsive-menu-container,
+    #responsive-menu-container:before,
+    #responsive-menu-container:after,
+    #responsive-menu-container *,
+    #responsive-menu-container *:before,
+    #responsive-menu-container *:after {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+    }
+
+    #responsive-menu-container #responsive-menu-search-box,
+    #responsive-menu-container #responsive-menu-additional-content,
+    #responsive-menu-container #responsive-menu-title {
+        padding: 25px 5%;
+    }
+
+    #responsive-menu-container #responsive-menu,
+    #responsive-menu-container #responsive-menu ul {
+        width: 100%;
+    }
+    #responsive-menu-container #responsive-menu ul.responsive-menu-submenu {
+        display: none;
+    }
+
+    #responsive-menu-container #responsive-menu ul.responsive-menu-submenu.responsive-menu-submenu-open {
+         display: block;
+    }
+
+    #responsive-menu-container #responsive-menu ul.responsive-menu-submenu-depth-1 a.responsive-menu-item-link {
+        padding-left: 10%;
+    }
+
+    #responsive-menu-container #responsive-menu ul.responsive-menu-submenu-depth-2 a.responsive-menu-item-link {
+        padding-left: 15%;
+    }
+
+    #responsive-menu-container #responsive-menu ul.responsive-menu-submenu-depth-3 a.responsive-menu-item-link {
+        padding-left: 20%;
+    }
+
+    #responsive-menu-container #responsive-menu ul.responsive-menu-submenu-depth-4 a.responsive-menu-item-link {
+        padding-left: 25%;
+    }
+
+    #responsive-menu-container #responsive-menu ul.responsive-menu-submenu-depth-5 a.responsive-menu-item-link {
+        padding-left: 30%;
+    }
+
+    #responsive-menu-container li.responsive-menu-item {
+        width: 100%;
+        list-style: none;
+    }
+
+    #responsive-menu-container li.responsive-menu-item a {
+        width: 100%;
+        display: block;
+        text-decoration: none;
+        padding: 0 5%;
+        position: relative;
+    }
+
+    #responsive-menu-container li.responsive-menu-item a .fa {
+        margin-right: 15px;
+    }
+
+    #responsive-menu-container li.responsive-menu-item a .responsive-menu-subarrow {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    #responsive-menu-container li.responsive-menu-item a .responsive-menu-subarrow  .fa {
+        margin-right: 0;
+    }
+
+    button#responsive-menu-button .responsive-menu-button-icon-inactive {
+        display: none;
+    }
+
+    button#responsive-menu-button {
+        z-index: 99999;
+        display: none;
+        overflow: hidden;
+        outline: none;
+    }
+
+    button#responsive-menu-button img {
+        max-width: 100%;
+    }
+
+    .responsive-menu-label {
+        display: inline-block;
+        font-weight: 600;
+        margin: 0 5px;
+        vertical-align: middle;
+    }
+
+    .responsive-menu-label .responsive-menu-button-text-open {
+        display: none;
+    }
+
+    .responsive-menu-accessible {
+        display: inline-block;
+    }
+
+    .responsive-menu-accessible .responsive-menu-box {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .responsive-menu-label.responsive-menu-label-top,
+    .responsive-menu-label.responsive-menu-label-bottom
+    {
+        display: block;
+        margin: 0 auto;
+    }
+
+    button#responsive-menu-button {
+        padding: 0 0;
+        display: inline-block;
+        cursor: pointer;
+        transition-property: opacity, filter;
+        transition-duration: 0.15s;
+        transition-timing-function: linear;
+        font: inherit;
+        color: inherit;
+        text-transform: none;
+        background-color: transparent;
+        border: 0;
+        margin: 0;
+        overflow: visible;
+    }
+
+    .responsive-menu-box {
+        width: 25px;
+        height: 19px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .responsive-menu-inner {
+        display: block;
+        top: 50%;
+        margin-top: -1.5px;
+    }
+
+    .responsive-menu-inner,
+    .responsive-menu-inner::before,
+    .responsive-menu-inner::after {
+         width: 25px;
+         height: 3px;
+         background-color: #ffffff;
+         border-radius: 4px;
+         position: absolute;
+         transition-property: transform;
+         transition-duration: 0.15s;
+         transition-timing-function: ease;
+    }
+
+    .responsive-menu-open .responsive-menu-inner,
+    .responsive-menu-open .responsive-menu-inner::before,
+    .responsive-menu-open .responsive-menu-inner::after {
+        background-color: #ffffff;
+    }
+
+    button#responsive-menu-button:hover .responsive-menu-inner,
+    button#responsive-menu-button:hover .responsive-menu-inner::before,
+    button#responsive-menu-button:hover .responsive-menu-inner::after,
+    button#responsive-menu-button:hover .responsive-menu-open .responsive-menu-inner,
+    button#responsive-menu-button:hover .responsive-menu-open .responsive-menu-inner::before,
+    button#responsive-menu-button:hover .responsive-menu-open .responsive-menu-inner::after,
+    button#responsive-menu-button:focus .responsive-menu-inner,
+    button#responsive-menu-button:focus .responsive-menu-inner::before,
+    button#responsive-menu-button:focus .responsive-menu-inner::after,
+    button#responsive-menu-button:focus .responsive-menu-open .responsive-menu-inner,
+    button#responsive-menu-button:focus .responsive-menu-open .responsive-menu-inner::before,
+    button#responsive-menu-button:focus .responsive-menu-open .responsive-menu-inner::after {
+        background-color: #ffffff;
+    }
+
+    .responsive-menu-inner::before,
+    .responsive-menu-inner::after {
+         content: "";
+         display: block;
+    }
+
+    .responsive-menu-inner::before {
+         top: -8px;
+    }
+
+    .responsive-menu-inner::after {
+         bottom: -8px;
+    }
+
+            .responsive-menu-boring .responsive-menu-inner,
+.responsive-menu-boring .responsive-menu-inner::before,
+.responsive-menu-boring .responsive-menu-inner::after {
+    transition-property: none;
+}
+
+.responsive-menu-boring.is-active .responsive-menu-inner {
+    transform: rotate(45deg);
+}
+
+.responsive-menu-boring.is-active .responsive-menu-inner::before {
+    top: 0;
+    opacity: 0;
+}
+
+.responsive-menu-boring.is-active .responsive-menu-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+}    
+    button#responsive-menu-button {
+        width: 55px;
+        height: 55px;
+        position: fixed;
+        top: 0px;
+        right: 5%;
+                    background: #000000
+            }
+
+            .responsive-menu-open button#responsive-menu-button {
+            background: #000000
+        }
+    
+            .responsive-menu-open button#responsive-menu-button:hover,
+        .responsive-menu-open button#responsive-menu-button:focus,
+        button#responsive-menu-button:hover,
+        button#responsive-menu-button:focus {
+            background: #000000
+        }
+    
+    button#responsive-menu-button .responsive-menu-box {
+        color: #ffffff;
+    }
+
+    .responsive-menu-open button#responsive-menu-button .responsive-menu-box {
+        color: #ffffff;
+    }
+
+    .responsive-menu-label {
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 13px;
+            }
+
+    button#responsive-menu-button {
+        display: inline-block;
+        transition: transform 0.5s, background-color 0.5s;
+    }
+
+    
+    
+    #responsive-menu-container {
+        width: 75%;
+        left: 0;
+        transition: transform 0.5s;
+        text-align: left;
+                                            background: #212121;
+            }
+
+    #responsive-menu-container #responsive-menu-wrapper {
+        background: #212121;
+    }
+
+    #responsive-menu-container #responsive-menu-additional-content {
+        color: #ffffff;
+    }
+
+    #responsive-menu-container .responsive-menu-search-box {
+        background: #ffffff;
+        border: 2px solid #dadada;
+        color: #333333;
+    }
+
+    #responsive-menu-container .responsive-menu-search-box:-ms-input-placeholder {
+        color: #c7c7cd;
+    }
+
+    #responsive-menu-container .responsive-menu-search-box::-webkit-input-placeholder {
+        color: #c7c7cd;
+    }
+
+    #responsive-menu-container .responsive-menu-search-box:-moz-placeholder {
+        color: #c7c7cd;
+        opacity: 1;
+    }
+
+    #responsive-menu-container .responsive-menu-search-box::-moz-placeholder {
+        color: #c7c7cd;
+        opacity: 1;
+    }
+
+    #responsive-menu-container .responsive-menu-item-link,
+    #responsive-menu-container #responsive-menu-title,
+    #responsive-menu-container .responsive-menu-subarrow {
+        transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+    }
+
+    #responsive-menu-container #responsive-menu-title {
+        background-color: #212121;
+        color: #ffffff;
+        font-size: 13px;
+    }
+
+    #responsive-menu-container #responsive-menu-title a {
+        color: #ffffff;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    #responsive-menu-container #responsive-menu-title a:hover {
+        color: #ffffff;
+    }
+
+    #responsive-menu-container #responsive-menu-title:hover {
+        background-color: #212121;
+        color: #ffffff;
+    }
+
+    #responsive-menu-container #responsive-menu-title:hover a {
+        color: #ffffff;
+    }
+
+    #responsive-menu-container #responsive-menu-title #responsive-menu-title-image {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 15px;
+    }
+
+    #responsive-menu-container #responsive-menu > li.responsive-menu-item:first-child > a {
+        border-top: 1px solid #212121;
+    }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-item .responsive-menu-item-link {
+        font-size: 13px;
+    }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-item a {
+        line-height: 40px;
+        border-bottom: 1px solid #212121;
+        color: #ffffff;
+        background-color: #212121;
+            }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-item a:hover {
+        color: #ffffff;
+        background-color: #3f3f3f;
+        border-color: #212121;
+    }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-item a:hover .responsive-menu-subarrow {
+        color: #ffffff;
+        border-color: #3f3f3f;
+        background-color: #3f3f3f;
+    }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-item a:hover .responsive-menu-subarrow.responsive-menu-subarrow-active {
+        color: #ffffff;
+        border-color: #3f3f3f;
+        background-color: #3f3f3f;
+    }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-item a .responsive-menu-subarrow {
+        right: 0;
+        height: 40px;
+        line-height: 40px;
+        width: 40px;
+        color: #ffffff;
+        border-left: 1px solid #212121;
+        background-color: #212121;
+    }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-item a .responsive-menu-subarrow.responsive-menu-subarrow-active {
+        color: #ffffff;
+        border-color: #212121;
+        background-color: #212121;
+    }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-item a .responsive-menu-subarrow.responsive-menu-subarrow-active:hover {
+        color: #ffffff;
+        border-color: #3f3f3f;
+        background-color: #3f3f3f;
+    }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-item a .responsive-menu-subarrow:hover {
+        color: #ffffff;
+        border-color: #3f3f3f;
+        background-color: #3f3f3f;
+    }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-current-item > .responsive-menu-item-link {
+        background-color: #212121;
+        color: #ffffff;
+        border-color: #212121;
+    }
+
+    #responsive-menu-container #responsive-menu li.responsive-menu-current-item > .responsive-menu-item-link:hover {
+        background-color: #3f3f3f;
+        color: #ffffff;
+        border-color: #3f3f3f;
+    }
+
+    
+            #myjquerymenu {
+            display: none !important;
+        }
+    }</style><script>jQuery(document).ready(function($) {
+
+    var ResponsiveMenu = {
+        trigger: '#responsive-menu-button',
+        animationSpeed: 500,
+        breakpoint: 800,
+        pushButton: 'off',
+        animationType: 'slide',
+        animationSide: 'left',
+        pageWrapper: '',
+        isOpen: false,
+        triggerTypes: 'click',
+        activeClass: 'is-active',
+        container: '#responsive-menu-container',
+        openClass: 'responsive-menu-open',
+        accordion: 'off',
+        activeArrow: '▲',
+        inactiveArrow: '▼',
+        wrapper: '#responsive-menu-wrapper',
+        closeOnBodyClick: 'off',
+        closeOnLinkClick: 'off',
+        itemTriggerSubMenu: 'off',
+        linkElement: '.responsive-menu-item-link',
+        subMenuTransitionTime: 200,
+        openMenu: function() {
+            $(this.trigger).addClass(this.activeClass);
+            $('html').addClass(this.openClass);
+            $('.responsive-menu-button-icon-active').hide();
+            $('.responsive-menu-button-icon-inactive').show();
+            this.setButtonTextOpen();
+            this.setWrapperTranslate();
+            this.isOpen = true;
+        },
+        closeMenu: function() {
+            $(this.trigger).removeClass(this.activeClass);
+            $('html').removeClass(this.openClass);
+            $('.responsive-menu-button-icon-inactive').hide();
+            $('.responsive-menu-button-icon-active').show();
+            this.setButtonText();
+            this.clearWrapperTranslate();
+            this.isOpen = false;
+        },
+        setButtonText: function() {
+            if($('.responsive-menu-button-text-open').length > 0 && $('.responsive-menu-button-text').length > 0) {
+                $('.responsive-menu-button-text-open').hide();
+                $('.responsive-menu-button-text').show();
+            }
+        },
+        setButtonTextOpen: function() {
+            if($('.responsive-menu-button-text').length > 0 && $('.responsive-menu-button-text-open').length > 0) {
+                $('.responsive-menu-button-text').hide();
+                $('.responsive-menu-button-text-open').show();
+            }
+        },
+        triggerMenu: function() {
+            this.isOpen ? this.closeMenu() : this.openMenu();
+        },
+        triggerSubArrow: function(subarrow) {
+            var sub_menu = $(subarrow).parent().siblings('.responsive-menu-submenu');
+            var self = this;
+            if(this.accordion == 'on') {
+                /* Get Top Most Parent and the siblings */
+                var top_siblings = sub_menu.parents('.responsive-menu-item-has-children').last().siblings('.responsive-menu-item-has-children');
+                var first_siblings = sub_menu.parents('.responsive-menu-item-has-children').first().siblings('.responsive-menu-item-has-children');
+                /* Close up just the top level parents to key the rest as it was */
+                top_siblings.children('.responsive-menu-submenu').slideUp(self.subMenuTransitionTime, 'linear').removeClass('responsive-menu-submenu-open');
+                /* Set each parent arrow to inactive */
+                top_siblings.each(function() {
+                    $(this).find('.responsive-menu-subarrow').first().html(self.inactiveArrow);
+                    $(this).find('.responsive-menu-subarrow').first().removeClass('responsive-menu-subarrow-active');
+                });
+                /* Now Repeat for the current item siblings */
+                first_siblings.children('.responsive-menu-submenu').slideUp(self.subMenuTransitionTime, 'linear').removeClass('responsive-menu-submenu-open');
+                first_siblings.each(function() {
+                    $(this).find('.responsive-menu-subarrow').first().html(self.inactiveArrow);
+                    $(this).find('.responsive-menu-subarrow').first().removeClass('responsive-menu-subarrow-active');
+                });
+            }
+            if(sub_menu.hasClass('responsive-menu-submenu-open')) {
+                sub_menu.slideUp(self.subMenuTransitionTime, 'linear').removeClass('responsive-menu-submenu-open');
+                $(subarrow).html(this.inactiveArrow);
+                $(subarrow).removeClass('responsive-menu-subarrow-active');
+            } else {
+                sub_menu.slideDown(self.subMenuTransitionTime, 'linear').addClass('responsive-menu-submenu-open');
+                $(subarrow).html(this.activeArrow);
+                $(subarrow).addClass('responsive-menu-subarrow-active');
+            }
+        },
+        menuHeight: function() {
+            return $(this.container).height();
+        },
+        menuWidth: function() {
+            return $(this.container).width();
+        },
+        wrapperHeight: function() {
+            return $(this.wrapper).height();
+        },
+        setWrapperTranslate: function() {
+            switch(this.animationSide) {
+                case 'left':
+                    translate = 'translateX(' + this.menuWidth() + 'px)'; break;
+                case 'right':
+                    translate = 'translateX(-' + this.menuWidth() + 'px)'; break;
+                case 'top':
+                    translate = 'translateY(' + this.wrapperHeight() + 'px)'; break;
+                case 'bottom':
+                    translate = 'translateY(-' + this.menuHeight() + 'px)'; break;
+            }
+            if(this.animationType == 'push') {
+                $(this.pageWrapper).css({'transform':translate});
+                $('html, body').css('overflow-x', 'hidden');
+            }
+            if(this.pushButton == 'on') {
+                $('#responsive-menu-button').css({'transform':translate});
+            }
+        },
+        clearWrapperTranslate: function() {
+            var self = this;
+            if(this.animationType == 'push') {
+                $(this.pageWrapper).css({'transform':''});
+                setTimeout(function() {
+                    $('html, body').css('overflow-x', '');
+                }, self.animationSpeed);
+            }
+            if(this.pushButton == 'on') {
+                $('#responsive-menu-button').css({'transform':''});
+            }
+        },
+        init: function() {
+            var self = this;
+            $(this.trigger).on(this.triggerTypes, function(e){
+                e.stopPropagation();
+                self.triggerMenu();
+            });
+            $(this.trigger).mouseup(function(){
+                $(self.trigger).blur();
+            });
+            $('.responsive-menu-subarrow').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                self.triggerSubArrow(this);
+            });
+            $(window).resize(function() {
+                if($(window).width() > self.breakpoint) {
+                    if(self.isOpen){
+                        self.closeMenu();
+                    }
+                } else {
+                    if($('.responsive-menu-open').length>0){
+                        self.setWrapperTranslate();
+                    }
+                }
+            });
+            if(this.closeOnLinkClick == 'on') {
+                $(this.linkElement).on('click', function(e) {
+                    e.preventDefault();
+                    /* Fix for when close menu on parent clicks is on */
+                    if(self.itemTriggerSubMenu == 'on' && $(this).is('.responsive-menu-item-has-children > ' + self.linkElement)) {
+                        return;
+                    }
+                    old_href = $(this).attr('href');
+                    old_target = typeof $(this).attr('target') == 'undefined' ? '_self' : $(this).attr('target');
+                    if(self.isOpen) {
+                        if($(e.target).closest('.responsive-menu-subarrow').length) {
+                            return;
+                        }
+                        self.closeMenu();
+                        setTimeout(function() {
+                            window.open(old_href, old_target);
+                        }, self.animationSpeed);
+                    }
+                });
+            }
+            if(this.closeOnBodyClick == 'on') {
+                $(document).on('click', 'body', function(e) {
+                    if(self.isOpen) {
+                        if($(e.target).closest('#responsive-menu-container').length || $(e.target).closest('#responsive-menu-button').length) {
+                            return;
+                        }
+                    }
+                    self.closeMenu();
+                });
+            }
+            if(this.itemTriggerSubMenu == 'on') {
+                $('.responsive-menu-item-has-children > ' + this.linkElement).on('click', function(e) {
+                    e.preventDefault();
+                    self.triggerSubArrow($(this).children('.responsive-menu-subarrow').first());
+                });
+            }
+        }
+    };
+    ResponsiveMenu.init();
+});</script>
+<link type='text/css' href='https://s25005.pcdn.co/wp-content/themes/jquery-house/custom.css?xo' />
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+	var width = window.outerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	if (width < 768) {
+	    googletag.defineSlot('/21552082/JQH_Top_Content', [336, 280], 'div-gpt-ad-1512068371103-0').addService(googletag.pubads());
+	    googletag.defineSlot('/21552082/JQH_Mid_Content', [336, 280], 'div-gpt-ad-1512068371103-1').addService(googletag.pubads());
+	    googletag.defineSlot('/21552082/JQH_Header', [320, 100], 'div-gpt-ad-1512068371103-3').addService(googletag.pubads());
+	} else if (width < 1000) {
+	    googletag.defineSlot('/21552082/JQH_Top_Content', [336, 280], 'div-gpt-ad-1512068371103-0').addService(googletag.pubads());
+	    googletag.defineSlot('/21552082/JQH_Mid_Content', [336, 280], 'div-gpt-ad-1512068371103-1').addService(googletag.pubads());
+	    googletag.defineSlot('/21552082/JQH_Header', [728, 90], 'div-gpt-ad-1512068371103-3').addService(googletag.pubads());
+	} else {
+	    googletag.defineSlot('/21552082/JQH_Top_Content', [336, 280], 'div-gpt-ad-1512068371103-0').addService(googletag.pubads());
+	    googletag.defineSlot('/21552082/JQH_Mid_Content', [336, 280], 'div-gpt-ad-1512068371103-1').addService(googletag.pubads());
+	    googletag.defineSlot('/21552082/JQH_Sidebar_300x600', [300, 600], 'div-gpt-ad-1512068371103-2').addService(googletag.pubads());
+	    googletag.defineSlot('/21552082/JQH_Header', [728, 90], 'div-gpt-ad-1512068371103-3').addService(googletag.pubads());
+	}
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+  });
+</script>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({article:'auto'});
+  !function (e, f, u, i) {
+    if (!document.getElementById(i)){
+      e.async = 1;
+      e.src = u;
+      e.id = i;
+      f.parentNode.insertBefore(e, f);
+    }
+  }(document.createElement('script'),
+  document.getElementsByTagName('script')[0],
+  '//cdn.taboola.com/libtrc/sureswift-jqueryhouse/loader.js',
+  'tb_loader_script');
+  if(window.performance && typeof window.performance.mark == 'function')
+    {window.performance.mark('tbl_ic');}
+</script>
+<style>
+#right_bottom_ad {
+	position: fixed;
+	right: -325px;
+	bottom: 0;
+z-index: 1000;
+	width: 320px;
+	height: 270px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+}
+#right_bottom_ad.slide-in {
+	right: 0px !important;
+}
+#right_bottom_ad_close_box {
+	position: absolute;
+	top: 0px;
+	right: 5px;
+margin-top: -30px;
+background: #fff;
+padding: 0px 4px;
+}
+</style>
+</head>
+<body data-rsssl=1 class="post-template-default single single-post postid-2418 single-format-standard responsive-menu-slide-left">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67879140-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+$(window).scroll(function(){
+  if($(this).scrollTop() >=100){
+    $(".banner728").addClass('banner-fixed');
+  };
+});
+
+$(window).scroll(function(){
+  if($(this).scrollTop() >=1000){
+    $(".banner728").removeClass('banner-fixed');
+    $(".banner728").addClass('banner-not-fixed');
+  };
+});
+});
+
+</script>
+
+<header>
+<div class="header-container">
+<div class="top-header">
+<a href="https://jqueryhouse.com/"><img class="logo" src="https://s25005.pcdn.co/wp-content/uploads/2015/02/JQueryHouse-Logo1.png" alt="jQueryHouse" /></a>
+
+<nav id="myjquerymenu" class="jquerycssmenu">
+<ul><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-7"><a href="https://jqueryhouse.com/">Home</a></li>
+<li id="menu-item-284" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-284"><a href="https://jqueryhouse.com/category/jquery/">JQuery</a>
+<ul class="sub-menu">
+<li id="menu-item-292" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-292"><a href="https://jqueryhouse.com/category/Mobile">Mobile</a></li>
+<li id="menu-item-287" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-287"><a href="https://jqueryhouse.com/category/plugins/">Plugins</a></li>
+</ul>
+</li>
+<li id="menu-item-286" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-286"><a href="https://jqueryhouse.com/category/javascript/">Javascript</a></li>
+<li id="menu-item-293" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-293"><a href="https://jqueryhouse.com/category/resources/">Resources</a>
+<ul class="sub-menu">
+<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18"><a title="Mobile" href="https://jqueryhouse.com/category/stock-photo/">Mobile</a></li>
+<li id="menu-item-294" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-294"><a href="https://jqueryhouse.com/category/mootools/">Mootools</a></li>
+<li id="menu-item-295" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-295"><a href="https://jqueryhouse.com/category/tuts/">Tutorials</a></li>
+</ul>
+</li>
+<li id="menu-item-285" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-285"><a href="https://jqueryhouse.com/category/gallery/">Gallery</a></li>
+<li id="menu-item-209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-209"><a href="https://jqueryhouse.com/contact-us/">Contact</a></li>
+</ul> </nav>
+
+<form id="searchform2" method="get" action="https://jqueryhouse.com/">
+<input placeholder="Search ..." type="text" name="s" id="s" />
+<input type="submit" value="Search" class="buttonicon" />
+</form> </div>
+</div>
+</header>
+
+<div id='top-ad-container'>
+<div id='div-gpt-ad-1512068371103-3' style='margin: 1em auto; max-width: 720px;'>
+<script>
+		googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512068371103-3'); });
+		</script>
+</div>
+</div>
+
+<section class="wrap">
+<div class="wrap-flex">
+
+<div class="content">
+<h3 class="blog-title">LATEST #JQUERY NEWS</h3>
+<article>
+<div class="post-2418 post type-post status-publish format-standard has-post-thumbnail hentry category-jquery" id="post-2418">
+<img width="638" height="551" src="https://s25005.pcdn.co/wp-content/uploads/FaceMocion1.png" class="thumbnail_image wp-post-image" alt="" title="" srcset="https://s25005.pcdn.co/wp-content/uploads/FaceMocion1.png 638w, https://s25005.pcdn.co/wp-content/uploads/FaceMocion1-300x259.png 300w" sizes="(max-width: 638px) 100vw, 638px" />
+<div class="article-container">
+<div class="article-content">
+<div class="article-category"><span class="author-single-name"><a href="https://jqueryhouse.com/author/admin/" title="Posts by Admin" rel="author">Admin</a></span> &middot; <a href="https://jqueryhouse.com/category/jquery/" rel="category tag">JQuery</a></div>
+<div class="rating">
+</div><div class="clear"></div>
+<div class="article-image"></div>
+<div class="post-date">
+<span class="month">Sep</span>
+<span class="day">06</span>
+</div>
+<h1 class="article-title">10 jQuery Emoji Plugins</h1>
+<div class="entry"><br />
+
+<div id='div-gpt-ad-1512068371103-0' style='height:280px; width:336px; float: left; margin-right: 1em;'>
+<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512068371103-0'); });
+				</script>
+</div>
+<p>In this post, find a compiled list of 10 jQuery based emoji plugins to convert text into emoji characters. These plugins can be attached HTML elements like textarea or div with minimal efforts. These plugins can be used to display emoji and for getting feedback.</p>
+<p>1. <a href="https://github.com/rodrigopolo/jqueryemoji" target="_blank">jQuery Emoji</a></p>
+<p><a href="https://github.com/rodrigopolo/jqueryemoji"><img class=" wp-image-2419 aligncenter" src="https://s25005.pcdn.co/wp-content/uploads/jQueryEmoji.png" alt="jQueryEmoji" width="651" height="504" srcset="https://s25005.pcdn.co/wp-content/uploads/jQueryEmoji.png 711w, https://s25005.pcdn.co/wp-content/uploads/jQueryEmoji-300x232.png 300w, https://s25005.pcdn.co/wp-content/uploads/jQueryEmoji-658x510.png 658w" sizes="(max-width: 651px) 100vw, 651px" /></a></p>
+<p class="p1"><span class="s1">jQueryEmoji is a small, simple, scalable and fast jQuery emoji parser plugin which converts emoji characters within your text into corresponding icons using a regular expression that contains all the existent emoji’s available on the latest iOS and macOS.</span></p>
+<p class="p1">2. <a href="https://github.com/mervick/emojionearea" target="_blank">EmojiOne Area</a></p>
+<p class="p1"><a href="https://github.com/mervick/emojionearea"><img class=" wp-image-2420 aligncenter" src="https://s25005.pcdn.co/wp-content/uploads/EmojiOne-AreaEmojiOneArea.png" alt="EmojiOne AreaEmojiOneArea" width="650" height="309" srcset="https://s25005.pcdn.co/wp-content/uploads/EmojiOne-AreaEmojiOneArea.png 744w, https://s25005.pcdn.co/wp-content/uploads/EmojiOne-AreaEmojiOneArea-300x143.png 300w, https://s25005.pcdn.co/wp-content/uploads/EmojiOne-AreaEmojiOneArea-658x313.png 658w" sizes="(max-width: 650px) 100vw, 650px" /></a></p>
+<p class="p1"><span class="s1">EmojiOne Area is a small jQuery plugin that allows you to transform any HTML element into simple WYSIWYG editor with ability to use EmojiOne icons. The end result is a secure text/plain in which the image icons will be replaced with their Unicode analogues.</span></p>
+<p class="p1">3. <a href="http://franverona.com/jemoji" target="_blank">jEmoji</a></p>
+<p class="p1"><a href="http://franverona.com/jemoji"><img class=" wp-image-2421 aligncenter" src="https://s25005.pcdn.co/wp-content/uploads/jEmoji.png" alt="jEmoji" width="649" height="503" srcset="https://s25005.pcdn.co/wp-content/uploads/jEmoji.png 711w, https://s25005.pcdn.co/wp-content/uploads/jEmoji-300x232.png 300w, https://s25005.pcdn.co/wp-content/uploads/jEmoji-658x510.png 658w" sizes="(max-width: 649px) 100vw, 649px" /></a></p>
+<p class="p1"><span class="s1">jEmoji is a plugin which provides you a simple way to let your users type emoji’s in your inputs. A lot of social applications like Twitter, Slack or Facebook integrate them, and now there is no reason for you to do the same.</span></p>
+<p class="p1">4. <a href="https://github.com/OneSignal/emoji-picker" target="_blank">Emoji Picker</a></p>
+<p class="p1"><a href="https://github.com/OneSignal/emoji-picker"><img class=" wp-image-2422 aligncenter" src="https://s25005.pcdn.co/wp-content/uploads/Emoji-Picker.png" alt="Emoji Picker" width="651" height="299" srcset="https://s25005.pcdn.co/wp-content/uploads/Emoji-Picker.png 725w, https://s25005.pcdn.co/wp-content/uploads/Emoji-Picker-300x138.png 300w, https://s25005.pcdn.co/wp-content/uploads/Emoji-Picker-658x302.png 658w" sizes="(max-width: 651px) 100vw, 651px" /></a></p>
+<p class="p1"><span class="s1">Emoji Picker allows you to add a slick emoji selector to input fields and textareas on your website.</span></p>
+<p class="p1">5. <a href="https://github.com/eshengsky/jQuery-emoji" target="_blank">jQuery-emoji</a></p>
+<p class="p1"><a href="https://github.com/eshengsky/jQuery-emoji"><img class=" wp-image-2423 aligncenter" src="https://s25005.pcdn.co/wp-content/uploads/jQuery-emoji.png" alt="jQuery-emoji" width="650" height="504" srcset="https://s25005.pcdn.co/wp-content/uploads/jQuery-emoji.png 711w, https://s25005.pcdn.co/wp-content/uploads/jQuery-emoji-300x232.png 300w, https://s25005.pcdn.co/wp-content/uploads/jQuery-emoji-658x510.png 658w" sizes="(max-width: 650px) 100vw, 650px" /></a></p>
+<p class="p1"><span class="s1">jQuery-emoji is a jQuery plugin which allow textarea or editable div has ability to insert emoji.</span></p>
+<p class="p1">6. <a href="https://github.com/oscaruhp/FaceMocion" target="_blank">FaceMocion</a></p>
+<p class="p1"><a href="https://github.com/oscaruhp/FaceMocion"><img class="size-full wp-image-2424 aligncenter" src="https://s25005.pcdn.co/wp-content/uploads/FaceMocion1.png" alt="FaceMocion" width="638" height="551" srcset="https://s25005.pcdn.co/wp-content/uploads/FaceMocion1.png 638w, https://s25005.pcdn.co/wp-content/uploads/FaceMocion1-300x259.png 300w" sizes="(max-width: 638px) 100vw, 638px" /></a></p>
+<p class="p1"><span class="s1">FaceMocion is a lightweight (2kb) jQuery plugin that converts an input field into an emoji picker using new Facebook emoticons. It uses PNG sprites magic for making emoji.</span></p>
+<p class="p1">7. <a href="https://github.com/ashleighy/emoji.js" target="_blank">Emoji.js</a></p>
+<p class="p1"><a href="https://github.com/ashleighy/emoji.js"><img class="size-full wp-image-2425 aligncenter" src="https://s25005.pcdn.co/wp-content/uploads/Emoji.js.png" alt="Emoji.js" width="638" height="551" srcset="https://s25005.pcdn.co/wp-content/uploads/Emoji.js.png 638w, https://s25005.pcdn.co/wp-content/uploads/Emoji.js-300x259.png 300w" sizes="(max-width: 638px) 100vw, 638px" /></a></p>
+<p class="p1"><span class="s1">Emoji.js is a plugin to convert your typing to colorful Twitter emoji to use on your website or projects.</span></p>
+<p class="p1">8. <a href="https://github.com/wedgies/jquery-emoji-picker" target="_blank">jQuery Emoji Picker</a></p>
+<p class="p1"><a href="https://github.com/wedgies/jquery-emoji-picker"><img class="size-full wp-image-2426 aligncenter" src="https://s25005.pcdn.co/wp-content/uploads/jQuery-Emoji-Picker.png" alt="jQuery Emoji Picker" width="638" height="551" srcset="https://s25005.pcdn.co/wp-content/uploads/jQuery-Emoji-Picker.png 638w, https://s25005.pcdn.co/wp-content/uploads/jQuery-Emoji-Picker-300x259.png 300w" sizes="(max-width: 638px) 100vw, 638px" /></a></p>
+<p class="p1"><span class="s1">This jQuery Plugin allows you to add support for Emojis to any text input on your web app. With this plugin, your desktop users can enjoy the same great Emoji support your mobile users already have.</span></p>
+<p class="p1">9. <a href="https://github.com/gellerby/jquery-emoji-ratings" target="_blank">jQuery Emoji Ratings</a></p>
+<p class="p1"><a href="https://github.com/gellerby/jquery-emoji-ratings"><img class="size-full wp-image-2427 aligncenter" src="https://s25005.pcdn.co/wp-content/uploads/jQuery-Emoji-Ratings.png" alt="jQuery Emoji Ratings" width="541" height="618" srcset="https://s25005.pcdn.co/wp-content/uploads/jQuery-Emoji-Ratings.png 541w, https://s25005.pcdn.co/wp-content/uploads/jQuery-Emoji-Ratings-263x300.png 263w" sizes="(max-width: 541px) 100vw, 541px" /></a></p>
+<p class="p1"><span class="s1">Emoji Ratings is a simple, lightweight jQuery star rating plugin that uses emoji unicode characters for rating symbols.</span></p>
+<p class="p1">10. <a href="https://github.com/ritz078/embed.js" target="_blank">Embed.js</a></p>
+<p class="p1"><a href="https://github.com/ritz078/embed.js"><img class=" wp-image-2428 aligncenter" src="https://s25005.pcdn.co/wp-content/uploads/Embed.gif" alt="Embed" width="650" height="374" /></a></p>
+<p class="p1"><span class="s1">Embed.js is a JavaScript plugin which can be used with jQuery. It analyses the string and automatically embeds the supported emojis, media, maps, tweets, code and services.</span></p>
+<div class="clear"></div>
+<div class="single-share">
+<div class="sleft">
+<div class="g-plusone" data-size="medium"></div>
+<script type="text/javascript">(function(){var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.type="text/javascript";a.async=true;a.src="https://apis.google.com/js/plusone.js";b.parentNode.insertBefore(a,b)})();</script>
+</div>
+<div class="sleft">
+ <a href='https://twitter.com/share' class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+<div class="sleft">
+<div class="fb-like" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false" data-font="arial"></div>
+<script type="text/javascript">(function(e,a,f){var c=undefined,b=e.getElementsByTagName(a)[0];if(e.getElementById(f)){return}c=e.createElement(a);c.id=f;c.src="//connect.facebook.net/en_US/all.js#xfbml=1";b.parentNode.insertBefore(c,b)}(document,"script","facebook-jssdk"));</script>
+</div>
+</div>
+</div>
+</div>
+<div class="clear"></div>
+<div id="mid-content-ad-wrapper" style="width: 100%; height: 320px; margin-bottom: 2em 0;">
+
+<div id='div-gpt-ad-1512068371103-1' style='height:280px; width:336px; margin: 0 auto;'>
+<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512068371103-1'); });
+				</script>
+</div>
+</div>
+<div id="taboola-below-article-thumbnails"></div>
+<div class="fb-comments" data-href="https://jqueryhouse.com/10-jquery-emoji-plugins/" data-numposts="5" data-width="100%"></div>
+</div>
+</div>
+</article>
+<script type="text/javascript">
+	  window._taboola = window._taboola || [];
+	  _taboola.push({
+	    mode: 'thumbnails-a',
+	    container: 'taboola-below-article-thumbnails',
+	    placement: 'Below Article Thumbnails',
+	    target_type: 'mix'
+	  });
+	</script>
+</div>
+
+<aside class="sidebar1">
+<div class="widget widget_anthemes_hotposts"><h3 class="sidebar3-title">Whats Hot Off the Press </h3><div class="clear"></div>
+<ul class="article_list">
+<li><a href="https://jqueryhouse.com/jquery-grid-plugins/">
+<img width="80" height="80" src="https://s25005.pcdn.co/wp-content/uploads/2014/10/dylay-80x80.jpeg" class="attachment-thumbnail-widget-small size-thumbnail-widget-small wp-post-image" alt="" srcset="https://s25005.pcdn.co/wp-content/uploads/2014/10/dylay-80x80.jpeg 80w, https://s25005.pcdn.co/wp-content/uploads/2014/10/dylay-150x150.jpeg 150w, https://s25005.pcdn.co/wp-content/uploads/2014/10/dylay-200x200.jpeg 200w" sizes="(max-width: 80px) 100vw, 80px" /> </a>
+<h3><a href="https://jqueryhouse.com/jquery-grid-plugins/">40 Best jQuery Grid Plugins</a></h3>
+<div class="views">985988 Views</div> <div class="rating">
+</div>
+</li>
+<li><a href="https://jqueryhouse.com/best-jquery-image-gallery-plugins/">
+<img width="80" height="80" src="https://s25005.pcdn.co/wp-content/uploads/2015/01/balanced-gallery-80x80.jpeg" class="attachment-thumbnail-widget-small size-thumbnail-widget-small wp-post-image" alt="" srcset="https://s25005.pcdn.co/wp-content/uploads/2015/01/balanced-gallery-80x80.jpeg 80w, https://s25005.pcdn.co/wp-content/uploads/2015/01/balanced-gallery-150x150.jpeg 150w, https://s25005.pcdn.co/wp-content/uploads/2015/01/balanced-gallery-200x200.jpeg 200w" sizes="(max-width: 80px) 100vw, 80px" /> </a>
+<h3><a href="https://jqueryhouse.com/best-jquery-image-gallery-plugins/">30 Best jQuery Image Gallery Plugins</a></h3>
+<div class="views">786773 Views</div> <div class="rating">
+</div>
+</li>
+<li><a href="https://jqueryhouse.com/best-jquery-notification-plugins/">
+<img width="80" height="80" src="https://s25005.pcdn.co/wp-content/uploads/2014/11/notify-better-80x80.jpeg" class="attachment-thumbnail-widget-small size-thumbnail-widget-small wp-post-image" alt="" srcset="https://s25005.pcdn.co/wp-content/uploads/2014/11/notify-better-80x80.jpeg 80w, https://s25005.pcdn.co/wp-content/uploads/2014/11/notify-better-150x150.jpeg 150w, https://s25005.pcdn.co/wp-content/uploads/2014/11/notify-better-200x200.jpeg 200w" sizes="(max-width: 80px) 100vw, 80px" /> </a>
+<h3><a href="https://jqueryhouse.com/best-jquery-notification-plugins/">25 Best jQuery Notification plugins</a></h3>
+<div class="views">658715 Views</div> <div class="rating">
+</div>
+</li>
+<li><a href="https://jqueryhouse.com/20-best-jquery-flipbook-plugins/">
+<img width="80" height="80" src="https://s25005.pcdn.co/wp-content/uploads/2015/09/Diamond-FlipBook-jpeg-80x80.jpeg" class="attachment-thumbnail-widget-small size-thumbnail-widget-small wp-post-image" alt="" srcset="https://s25005.pcdn.co/wp-content/uploads/2015/09/Diamond-FlipBook-jpeg-80x80.jpeg 80w, https://s25005.pcdn.co/wp-content/uploads/2015/09/Diamond-FlipBook-jpeg-150x150.jpeg 150w, https://s25005.pcdn.co/wp-content/uploads/2015/09/Diamond-FlipBook-jpeg-200x200.jpeg 200w" sizes="(max-width: 80px) 100vw, 80px" /> </a>
+<h3><a href="https://jqueryhouse.com/20-best-jquery-flipbook-plugins/">20 Best jQuery Flipbook Plugins</a></h3>
+<div class="views">567874 Views</div> <div class="rating">
+</div>
+</li>
+</ul>
+</div>
+<div class="widget_text widget widget_custom_html"><h3 class="sidebar3-title">Advertisement</h3><div class="clear"></div><div class="textwidget custom-html-widget"><div id='div-gpt-ad-1512068371103-2'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1512068371103-2'); });
+</script>
+</div>
+</div></div> <div class="widget widget_recent_entries"> <h3 class="sidebar3-title">Recent Articles</h3><div class="clear"></div> <ul>
+<li>
+<a href="https://jqueryhouse.com/7-responsive-jquery-dropdown-menu-plugins/">7 Responsive jQuery Dropdown Menu Plugins</a>
+</li>
+<li>
+<a href="https://jqueryhouse.com/20-stylish-modern-jquery-tooltip-plugins/">20 Stylish and Modern jQuery Tooltip Plugins</a>
+</li>
+<li>
+<a href="https://jqueryhouse.com/15-jquery-plugins-responsive-website/">15 Newest jQuery plugins for responsive website</a>
+</li>
+<li>
+<a href="https://jqueryhouse.com/how-to-use-redux-with-jquery/">How to use Redux with jQuery</a>
+</li>
+<li>
+<a href="https://jqueryhouse.com/fade-html-table-row-on-hover-using-jquery/">Fade HTML Table Row on Hover Using jQuery</a>
+</li>
+</ul>
+</div> 
+
+
+
+</aside> 
+
+
+<div class="clear"></div>
+</div>
+</section>
+<main id="main">
+<div class="ft-single wrapper clearfix">
+<div id="content-wrap">
+<div id="content" role="main" class="single">
+<div class="ft-ctbox clearfix">
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<footer>
+<div class="footer-content">
+<div class="company">
+<h4>JQuery House</h4>
+We cover the latest trending news on topics like #JQuery and Web Development. Make us your #1 Stop to get the latest info on what the latest scoop is on the Web. </div>
+<div class="twitter-box">
+<img src="https://s25005.pcdn.co/wp-content/themes/jquery-house/images/twitter-footer.png" alt="twitter image" />
+<div class="ftext">
+<h4><a target="_blank" href="https://twitter.com/jQueryHouse">Follow us on Twitter</a></h4>
+Find out what the latest news is on #JQUERY & #WEB #DEVELOPMENT right now on Twitter.
+Give us a follow to know more! </div>
+</div>
+<div class="facebook-box">
+<img src="https://s25005.pcdn.co/wp-content/themes/jquery-house/images/facebook-footer.png" alt="twitter image" />
+<div class="ftext">
+<h4><a target="_blank" href="https://www.facebook.com/jqueryhouse">Be Our Fan on Facebook</a></h4>
+We cover the latest on whats happening on topics like JQuery and Web development on Facebook.
+Like us and be our fan on Facebook. </div>
+</div>
+<ul class="site-stats">
+<li class="allposts"><a href="#"> <div class="nr">153</div> <div class="tx">Blog Stuff</div> </a></li>
+<li class="alljobs"><a href="#"> <div class="nr">0</div> <div class="tx">All Jobs</div> </a></li> <li class="text">JQueryHouse Stats and Counting!</li>
+</ul>
+<div class="clear"></div>
+</div>
+<div class="footer-bottom">
+<div class="copyright">
+<a href="/jqueryhouse-privacy-statement/">Privacy Policy</a>
+Copyright 2014 JQueryHouse - Co. Powered By <a href="https://wordpress.org" target="_blank" title="Wordpress & JQueryHouse">AWSUMNESS</a>
+</div>
+<nav class="menu-mogoze-footer-container"><ul id="menu-mogoze-footer" class="footer-menu"><li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-20"><a href="https://jqueryhouse.com/">Home</a></li>
+<li id="menu-item-21" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21"><a href="https://jqueryhouse.com/jobs-home/">Jobs</a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-146"><a href="https://jqueryhouse.com/sample-page/">About</a></li>
+<li id="menu-item-147" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-147"><a href="https://jqueryhouse.com/contact-us/">Send Us Your Inquiries</a></li>
+</ul></nav>
+</div>
+</footer>
+<p id="back-top" style="display: block;"><a href="#top"><span></span></a></p>
+
+<button id="responsive-menu-button" class="responsive-menu-button responsive-menu-boring
+         responsive-menu-accessible" type="button" aria-label="Menu">
+<span class="responsive-menu-box">
+<span class="responsive-menu-inner"></span>
+</span>
+</button><div id="responsive-menu-container" class="slide-left">
+<div id="responsive-menu-wrapper">
+<ul id="responsive-menu" class=""><li id="responsive-menu-item-7" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-home responsive-menu-item"><a href="https://jqueryhouse.com/" class="responsive-menu-item-link">Home</a></li><li id="responsive-menu-item-284" class=" menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children responsive-menu-item responsive-menu-item-current-parent responsive-menu-item-has-children"><a href="https://jqueryhouse.com/category/jquery/" class="responsive-menu-item-link">JQuery<div class="responsive-menu-subarrow">▼</div></a><ul class='responsive-menu-submenu responsive-menu-submenu-depth-1'><li id="responsive-menu-item-292" class=" menu-item menu-item-type-custom menu-item-object-custom responsive-menu-item"><a href="https://jqueryhouse.com/category/Mobile" class="responsive-menu-item-link">Mobile</a></li><li id="responsive-menu-item-287" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://jqueryhouse.com/category/plugins/" class="responsive-menu-item-link">Plugins</a></li></ul></li><li id="responsive-menu-item-286" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://jqueryhouse.com/category/javascript/" class="responsive-menu-item-link">Javascript</a></li><li id="responsive-menu-item-293" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children responsive-menu-item responsive-menu-item-has-children"><a href="https://jqueryhouse.com/category/resources/" class="responsive-menu-item-link">Resources<div class="responsive-menu-subarrow">▼</div></a><ul class='responsive-menu-submenu responsive-menu-submenu-depth-1'><li id="responsive-menu-item-18" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a title="Mobile" href="https://jqueryhouse.com/category/stock-photo/" class="responsive-menu-item-link">Mobile</a></li><li id="responsive-menu-item-294" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://jqueryhouse.com/category/mootools/" class="responsive-menu-item-link">Mootools</a></li><li id="responsive-menu-item-295" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://jqueryhouse.com/category/tuts/" class="responsive-menu-item-link">Tutorials</a></li></ul></li><li id="responsive-menu-item-285" class=" menu-item menu-item-type-taxonomy menu-item-object-category responsive-menu-item"><a href="https://jqueryhouse.com/category/gallery/" class="responsive-menu-item-link">Gallery</a></li><li id="responsive-menu-item-209" class=" menu-item menu-item-type-post_type menu-item-object-page responsive-menu-item"><a href="https://jqueryhouse.com/contact-us/" class="responsive-menu-item-link">Contact</a></li></ul> <div id="responsive-menu-search-box">
+<form action="https://jqueryhouse.com" class="responsive-menu-search-form" role="search">
+<input type="search" name="s" placeholder="Search" class="responsive-menu-search-box">
+</form>
+</div> <div id="responsive-menu-additional-content"></div> </div>
+</div>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var DavesWordPressLiveSearchConfig = {"resultsDirection":"down","showThumbs":"true","showExcerpt":"false","showMoreResultsLink":"true","minCharsToSearch":"1","xOffset":"0","yOffset":"0","blogURL":"https:\/\/jqueryhouse.com","ajaxURL":"https:\/\/jqueryhouse.com\/wp-admin\/admin-ajax.php","viewMoreText":"View more results","outdatedJQuery":"Dave's WordPress Live Search requires jQuery 1.2.6 or higher. WordPress ships with current jQuery versions. But if you are seeing this message, it's likely that another plugin is including an earlier version.","resultTemplate":"<ul id=\"dwls_search_results\" class=\"search_results dwls_search_results\">\n<input type=\"hidden\" name=\"query\" value=\"<%- resultsSearchTerm %>\" \/>\n<% _.each(searchResults, function(searchResult, index, list) { %>\n        <%\n        \/\/ Thumbnails\n        if(DavesWordPressLiveSearchConfig.showThumbs == \"true\" && searchResult.attachment_thumbnail) {\n                liClass = \"post_with_thumb\";\n        }\n        else {\n                liClass = \"\";\n        }\n        %>\n        <li class=\"daves-wordpress-live-search_result <%- liClass %> '\">\n        <% if(DavesWordPressLiveSearchConfig.showThumbs == \"true\" && searchResult.attachment_thumbnail) { %>\n                <img src=\"<%= searchResult.attachment_thumbnail %>\" class=\"post_thumb\" \/>\n        <% } %>\n\n        <a href=\"<%= searchResult.permalink %>\" class=\"daves-wordpress-live-search_title\"><%= searchResult.post_title %><\/a>\n\n        <% if(searchResult.post_price !== undefined) { %>\n                <p class=\"price\"><%- searchResult.post_price %><\/p>\n        <% } %>\n\n        <% if(DavesWordPressLiveSearchConfig.showExcerpt == \"true\" && searchResult.post_excerpt) { %>\n                <p class=\"excerpt clearfix\"><%= searchResult.post_excerpt %><\/p>\n        <% } %>\n\n        <% if(e.displayPostMeta) { %>\n                <p class=\"meta clearfix daves-wordpress-live-search_author\" id=\"daves-wordpress-live-search_author\">Posted by <%- searchResult.post_author_nicename %><\/p><p id=\"daves-wordpress-live-search_date\" class=\"meta clearfix daves-wordpress-live-search_date\"><%- searchResult.post_date %><\/p>\n        <% } %>\n        <div class=\"clearfix\"><\/div><\/li>\n<% }); %>\n\n<% if(searchResults[0].show_more !== undefined && searchResults[0].show_more && DavesWordPressLiveSearchConfig.showMoreResultsLink == \"true\") { %>\n        <div class=\"clearfix search_footer\"><a href=\"<%= DavesWordPressLiveSearchConfig.blogURL %>\/?s=<%-  resultsSearchTerm %>\"><%- DavesWordPressLiveSearchConfig.viewMoreText %><\/a><\/div>\n<% } %>\n\n<\/ul>"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-content/plugins/daves-wordpress-live-search/js/daves-wordpress-live-search.min.js?ver=4.9.2'></script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-content/plugins/daves-wordpress-live-search/js/excanvas.compiled.js?ver=4.9.2'></script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-content/plugins/daves-wordpress-live-search/js/spinners.min.js?ver=4.9.2'></script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-content/themes/jquery-house/js/jquery.mobilemenu.js?ver=4.9.2'></script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-content/themes/jquery-house/js/custom.menu.js?ver=4.9.2'></script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-content/themes/jquery-house/js/custom.js?ver=4.9.2'></script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-includes/js/comment-reply.min.js?ver=4.9.2'></script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-content/plugins/q2w3-fixed-widget/js/q2w3-fixed-widget.min.js?ver=5.1.4'></script>
+<script type='text/javascript' src='https://s25005.pcdn.co/wp-includes/js/wp-embed.min.js?ver=4.9.2'></script>
+<script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"267e0eb6b8","applicationID":"113621065","transactionName":"NQFQZktQXkICV0FdWwxLc1FNWF9fTEdcWlMOAQ==","queueTime":0,"applicationTime":322,"atts":"GUZTEANKTUw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

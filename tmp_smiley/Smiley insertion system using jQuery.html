@@ -1,0 +1,528 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+<head>
+	<title>Smiley insertion system using jQuery</title>
+	<meta name="description" content="How to replace smiley BBCode by emoticons in a textarea with jQuery" />
+	<meta name="keywords" content="smiley, emoticons, jquery" />	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://www.tipocode.com/favicon.ico" />
+	<link rel="shortcut icon" href="http://www.tipocode.com/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="http://www.tipocode.com/css/style.css" type="text/css">
+	<script type="text/javascript" src="http://www.tipocode.com/jquery/jquery-1.10.1.min.js"></script>
+	
+	<!-- Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5432022f7ecd8bfc" async></script>
+	
+	<link href="https://plus.google.com/+TipocodeWeb" rel="publisher" />
+	
+		<!-- Twitter Cards -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:creator" content="@TipoCodeWeb">
+	<meta name="twitter:site" content="@TipoCodeWeb">
+	<meta name="twitter:url" content="http://www.tipocode.com/jquery/smiley-insertion-system-using-jquery/">
+	<meta name="twitter:title" content="Smiley insertion system using jQuery">
+	<meta name="twitter:description" content="How to replace smiley BBCode by emoticons in a textarea with jQuery">
+		<!-- Specify thumbnail -->
+	<meta name="thumbnail" content="http://www.tipocode.com/images/scripts-images/smiley-insertion-system-using-jquery.jpg" />
+	<!-- / Specify thumbnail -->
+	<meta name="twitter:image:src" content="http://www.tipocode.com/images/scripts-images/smiley-insertion-system-using-jquery.jpg">
+		<!-- / Twitter Cards -->
+		
+	<!-- Open Graph -->
+	<meta property="og:site_name" content="TipoCode"/>
+	<meta property="og:title" content="Smiley insertion system using jQuery"/>
+	<meta property="og:description" content="How to replace smiley BBCode by emoticons in a textarea with jQuery" />
+	<meta property="og:url" content="http://www.tipocode.com/jquery/smiley-insertion-system-using-jquery/"/>
+	<meta property="og:image" content="http://www.tipocode.com/design/tipocode-logo.png"/>
+		<meta property="og:type" content="article"/>
+		<!-- / Open Graph -->
+	
+		
+	<script type="text/javascript">
+	var addthis_share = addthis_share || {}
+	addthis_share = {
+		passthrough : {
+			twitter: {
+				via: "TipoCodeWeb"
+			}
+		}
+	}
+	</script>
+	
+</head>
+
+<body itemscope itemtype="http://schema.org/Article">
+	
+	<p id="back-to-top"><a href="#top"><span></span>Top</a></p>
+	
+	<!--for FB login-->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en/all.js#xfbml=1&appId=1521659114714735";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!--and for FB login-->
+	
+	<div id="header-wrap">
+	
+		<div id="header">
+			<div id="logo">
+				<a href="http://www.tipocode.com/"><img src="http://www.tipocode.com/design/tipocode-logo.png" alt="TipoCode" title="TipoCode" /></a>				
+			</div>
+			<div id="fb_connect">
+									<div class="connect_with_fb"><a href="#" id="LoginFB" onclick="return false;"></a></div>
+							</div>
+			<div id="login_page">
+				<div class="login_create_account"><a href="/log-in"></a></div>			</div>
+			<div id="navbar">
+				<ul id="navigation">
+					<li><a href="http://www.tipocode.com/">Home</a></li>
+					<li><a href="/link-directory">Link Directory</a></li>
+					<li class="menuSelectedCell"><a href="/jquery">jQuery</a></li>
+					<li><a href="/php">PHP</a></li>
+					<li><a href="/html">HTML</a></li>
+					<li><a href="/css">CSS</a></li>
+					<li><a href="/database">Database</a></li>
+					<li><a href="/page/contact">Contact</a></li>
+					
+				</ul>
+			</div>
+			
+		</div>
+	
+	</div>
+<div id="content">
+	<div id="left_column">
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- TipoCode_left_side_250 -->
+<ins class="adsbygoogle"
+	 style="display:inline-block;width:250px;height:250px"
+	 data-ad-client="ca-pub-7825964046381365"
+	 data-ad-slot="7551334121"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div class="feed_frame">
+<b>Follow me</b> and receive all the latest free scripts:<br />
+<p align="center"><a href="http://feeds.feedburner.com/tipocode" rel="nofollow" target="_blank"><img src="http://feeds.feedburner.com/~fc/tipocode?bg=f78b02&amp;fg=25221e&amp;anim=0" height="26" width="88" style="border:0" alt="" /></a></p>
+
+<p>
+<b>By Email</b>:<br />
+<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="_blank" class="form-inline" role="form">
+	<div class="form-group">
+		<input type="text" class="form-control input-sm" name="email" placeholder="Enter email" /><input type="hidden" value="tipocode" name="uri"/><input type="hidden" name="loc" value="en_US"/>
+	</div>
+	<input type="submit" class="btn btn-success btn-xs" value="Subscribe" />
+</form>
+</p>
+</div>
+
+<div class="left_col_title">Categories</div><table><tr><td class="side_cat_jquery"><a href="/jquery"></a></td><td class="side_cat_symfony-2"><a href="/symfony-2"></a></td></tr><tr><td class="side_table_block side_cat_php"><a href="/php"></a></td><td class="side_cat_css"><a href="/css"></a></td></tr><tr><td class="side_table_block side_cat_html"><a href="/html"></a></td><td class="side_cat_seo"><a href="/seo"></a></td></tr><tr><td class="side_table_block side_cat_database"><a href="/database"></a></td></tr></table><div class="left_col_title">Most Popular Posts</div><ul id="blog_side_links"><li><a href="/html/drag-and-drop-multiple-files-upload-with-html5-jquery-formdata">Drag and Drop Multiple Files Upload with HTML5, jQuery & FormData</a></li><li><a href="/jquery/very-precise-jquery-ajax-star-rating-plugin-tutorial">Very precise jQuery/Ajax Star Rating Plugin Tutorial</a></li><li><a href="/jquery/jquery-editable-grid-system-tutorial">jQuery editable grid system tutorial</a></li><li><a href="/jquery/jquery-comment-system-tutorial">jQuery comment system tutorial</a></li><li><a href="/database/mysql-php-oop-database-connection">MySQL, PHP, OOP database connection</a></li><li><a href="/jquery/ajax-and-jquery-autocomplete-tutorial">Ajax and jQuery autocomplete tutorial</a></li><li><a href="/jquery/jquery-infinite-category-tree-management-system">jQuery infinite category tree management system</a></li></ul><br /><p><img itemprop="image" src="/images/scripts-images/smiley-insertion-system-using-jquery.jpg" alt="Smiley insertion system using jQuery" title="Smiley insertion system using jQuery" width="255" /></p>	</div>
+	<div id="right_column">
+		
+				
+		<div class="link_directory_intro">
+			TipoCode is also a <strong>free human-edited web link directory</strong> called TipoDirectory. Take a moment to <a href="/page/suggesting-a-site-to-the-tipodirectory">suggest a site</a> to improve your <strong>site's SEO</strong> and increase your <strong>Google ranking</strong>.
+		</div>
+		
+		<script>
+		(function() {
+		var cx = '004545483369720406855:cdtssjhkdae';
+		var gcse = document.createElement('script');
+		gcse.type = 'text/javascript';
+		gcse.async = true;
+		gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+		'//www.google.com/cse/cse.js?cx=' + cx;
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(gcse, s);
+		})();
+		</script>
+		<gcse:search></gcse:search>
+
+		
+	<h1 itemprop="name">Smiley insertion system using jQuery</h1><div class="article_copyright">Published October 13, 2014 by <a href="/page/who-i-am" rel="author"><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Simon Laroche</span></span></a>, category <a href="/jquery">jQuery</a></div>		<!-- addthis -->
+		<div class="social_frame"><div class="addthis_native_toolbox"></div></div>
+		<div id="displayContents"></div><p><span class="tag">Smiley</span><span class="tag">Emoticons</span><span class="tag">jQuery</span></p><p class="lead">How to replace BBCode by smilies in a textarea output using jQuery</p>
+
+<h2>Introduction</h2>
+	<p>It's always useful to be able to insert smilies in a <samp>textarea</samp> (for a forum or a comment system for example). Smilies are inserted in a form of BBCode (Bulletin Board Code) like <code>:smiley:</code> in the <samp>textarea</samp>, and the whole string (text + smiley BBCode) is returned with the smilies icons.</p>
+	
+	<p>The unique BBCode you define for each smiley will be replaced by the corresponding image or icon.</p>
+	
+	<p>In this tutorial I choose to place my BBCode between two colons (<samp>::</samp>). Of course you can adapt and choose to use brackets, dash or something else. The whole thing must be <b>unique</b>.</p>
+	
+	<p>Example: <code>:smile:</code> will be replaced by <code>&lt;img src="images/smilies/icon_smile.gif" alt="" /&gt;</code>.</p>
+	
+	<p>Smilies are from PHPBB forum. I placed them in the <mark>images/smilies</mark> folder, you can get them by <mark>clicking right -> save image as</mark> on the icon list below, or by downloading the .zip file <a href="/images/smilies/smilies.zip">here</a>.</p>
+
+
+<h2>Live demo</h2>
+	<p>Write text and add smilies inside the <samp>textarea</samp>.</p>
+	
+	<p id="submitOutput"></p>
+		
+		<form class="form-horizontal" id="myForm">
+			<fieldset>
+			<div class="form-group">
+				<label class="col-md-2 control-label" for="myTextarea">Text</label>
+				<div class="col-md-8">
+					Write text...with smilies:
+					
+					<div class="btn-group">
+					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					<img src="/images/smilies/icon_smile.gif" alt="" /> <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu"><li><a href="#"><table><tr>
+					<td><img src="/images/smilies/icon_smile.gif" id="addSmiley" alt=":smile:" />&nbsp;</td><td><img src="/images/smilies/icon_sad.gif" id="addSmiley" alt=":sad:" />&nbsp;</td><td><img src="/images/smilies/icon_arrow.gif" id="addSmiley" alt=":arrow:" />&nbsp;</td><td><img src="/images/smilies/icon_cool.gif" id="addSmiley" alt=":cool:" />&nbsp;</td><td><img src="/images/smilies/icon_cry.gif" id="addSmiley" alt=":cry:" />&nbsp;</td></tr><tr><td><img src="/images/smilies/icon_grin.gif" id="addSmiley" alt=":grin:" />&nbsp;</td><td><img src="/images/smilies/icon_confused.gif" id="addSmiley" alt=":confused:" />&nbsp;</td><td><img src="/images/smilies/icon_bigeyes.gif" id="addSmiley" alt=":bigeyes:" />&nbsp;</td><td><img src="/images/smilies/icon_evil.gif" id="addSmiley" alt=":evil:" />&nbsp;</td><td><img src="/images/smilies/icon_exclaim.gif" id="addSmiley" alt=":exclaim:" />&nbsp;</td></tr><tr><td><img src="/images/smilies/icon_geek.gif" id="addSmiley" alt=":geek:" />&nbsp;</td><td><img src="/images/smilies/icon_idea.gif" id="addSmiley" alt=":idea:" />&nbsp;</td><td><img src="/images/smilies/icon_lol.gif" id="addSmiley" alt=":lol:" />&nbsp;</td><td><img src="/images/smilies/icon_mad.gif" id="addSmiley" alt=":mad:" />&nbsp;</td><td><img src="/images/smilies/icon_green.gif" id="addSmiley" alt=":green:" />&nbsp;</td></tr><tr><td><img src="/images/smilies/icon_neutral.gif" id="addSmiley" alt=":neutral:" />&nbsp;</td><td><img src="/images/smilies/icon_question.gif" id="addSmiley" alt=":question:" />&nbsp;</td><td><img src="/images/smilies/icon_happy.gif" id="addSmiley" alt=":happy:" />&nbsp;</td><td><img src="/images/smilies/icon_redface.gif" id="addSmiley" alt=":redface:" />&nbsp;</td><td><img src="/images/smilies/icon_rolleyes.gif" id="addSmiley" alt=":rolleyes:" />&nbsp;</td></tr><tr><td><img src="/images/smilies/icon_surprised.gif" id="addSmiley" alt=":surprised:" />&nbsp;</td><td><img src="/images/smilies/icon_devil.gif" id="addSmiley" alt=":devil:" />&nbsp;</td><td><img src="/images/smilies/icon_wink.gif" id="addSmiley" alt=":wink:" />&nbsp;</td>					</tr></table></a></li></ul>
+					</div>
+					
+					
+					
+					<textarea class="form-control" id="myTextarea" name="textarea" rows="6"></textarea>
+					
+					<button type="button" class="btn btn-info btn-xs" id="clear">Clear</button>
+					<button type="button" class="btn btn-success btn-xs" id="submit">Submit</button>
+					
+					<div class="panel panel-default">
+						<div class="panel-heading">Output</div>
+						<div class="panel-body">
+						<p id="output"></p>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			</fieldset>
+		</form>
+		
+<h2>Inserting a text where cursor is</h2>
+	<p>First of all here is a nice code that I used for this tutorial. Actually it's a function. Its goal is to allow us to add a text to a textarea from the current position of the pointer.</p>
+	
+	<p>I didn't write the code, I found it on many internet webpage, if someone wants to claim the copyright, he is welcome <img src="/images/smilies/icon_smile.gif" alt="" />.</p>
+
+<pre class="prettyprint linenums">
+jQuery.fn.extend({
+insertAtCaret: function(myValue) {
+  return this.each(function(i) {
+	if (document.selection) {
+	  //For browsers like Internet Explorer
+	  this.focus();
+	  sel = document.selection.createRange();
+	  sel.text = myValue;
+	  this.focus();
+	}
+	else if (this.selectionStart || this.selectionStart == '0') {
+	  //For browsers like Firefox and Webkit based
+	  var startPos = this.selectionStart;
+	  var endPos = this.selectionEnd;
+	  var scrollTop = this.scrollTop;
+	  this.value = this.value.substring(0, startPos)+myValue+this.value.substring(endPos,this.value.length);
+	  this.focus();
+	  this.selectionStart = startPos + myValue.length;
+	  this.selectionEnd = startPos + myValue.length;
+	  this.scrollTop = scrollTop;
+	} else {
+	  this.value += myValue;
+	  this.focus();
+	}
+  })
+}
+});
+</pre>
+
+	<p>Feel free to use it, the usage is: <code>var position = $("#selector").insertAtCaret(text)</code></p>
+	
+<h2>The HTML / PHP code</h2>
+	<p>Place this code where you want the system appears:</p>
+	
+<pre class="prettyprint linenums">
+&lt;p id="submitOutput"&gt;&lt;/p&gt;
+			
+&lt;form class="form-horizontal" id="myForm"&gt;
+	&lt;fieldset&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label class="col-md-2 control-label" for="myTextarea"&gt;Text&lt;/label&gt;
+		&lt;div class="col-md-8"&gt;
+			Write text...with smilies:
+			
+			&lt;div class="btn-group"&gt;
+			&lt;button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"&gt;
+			&lt;img src="images/smilies/icon_smile.gif" alt="" /&gt; &lt;span class="caret"&gt;&lt;/span&gt;
+			&lt;/button&gt;
+			&lt;ul class="dropdown-menu" role="menu"&gt;&lt;li&gt;&lt;a href="#"&gt;&lt;table&gt;&lt;tr&gt;
+			&lt;?php
+			$smiliesList = array('smile', 'sad', 'arrow', 'cool', 'cry', 'grin', 'confused', 'bigeyes', 'evil', 'exclaim', 'geek', 'idea', 'lol', 'mad', 'green', 'neutral', 'question', 'happy', 'redface', 'rolleyes', 'surprised', 'devil', 'wink');
+			for ($i = 0; $i &lt; count($smiliesList); $i++) {
+				if ($i % 5 == 0 && $i != 0) echo '&lt;/tr&gt;&lt;tr&gt;';
+				echo '&lt;td&gt;&lt;img src="images/smilies/icon_'.$smiliesList[$i].'.gif" id="addSmiley" alt=":'.$smiliesList[$i].':" /&gt;&nbsp;&lt;/td&gt;';
+			}
+			?&gt;
+			&lt;/tr&gt;&lt;/table&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+			&lt;/div&gt;
+			
+			
+			
+			&lt;textarea class="form-control" id="myTextarea" name="textarea" rows="6"&gt;&lt;/textarea&gt;
+			
+			&lt;button type="button" class="btn btn-info btn-xs" id="clear"&gt;Clear&lt;/button&gt;
+			&lt;button type="button" class="btn btn-success btn-xs" id="submit"&gt;Submit&lt;/button&gt;
+			
+			&lt;div class="panel panel-default"&gt;
+				&lt;div class="panel-heading"&gt;Output&lt;/div&gt;
+				&lt;div class="panel-body"&gt;
+				&lt;p id="output"&gt;&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;/fieldset&gt;
+&lt;/form&gt;
+</pre>
+
+	<p>Don't forget to insert Bootstrap external style sheet...</p>
+
+<pre class="prettyprint linenums">
+&lt;link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css"&gt;
+</pre>
+
+<p>...and the external JavaScript files (Bootstrap, jQuery and our JS)...</p>
+
+<pre class="prettyprint linenums">
+&lt;script type="text/javascript" src="jquery/jquery-1.10.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/tuto_smiley_system.js"&gt;&lt;/script&gt;
+</pre>
+
+<h2>JavaScript code</h2>
+	<p>This is the file <mark>js/tuto_smiley_system.js</mark>. I included comments.</p>
+	
+<pre class="prettyprint linenums">
+function textWithSmilies(text) { // Function that change the textarea content in a string including smilies icons
+	// Create 2 array: 1 containing the smiley BBCode, the second containing a part of their file name
+	var findSmiliesShortcuts = [/:smile:/g, /:sad:/g, /:arrow:/g, /:cool:/g, /:cry:/g, /:grin:/g, /:confused:/g, /:bigeyes:/g, /:evil:/g, /:exclaim:/g, /:geek:/g, /:idea:/g, /:lol:/g, /:mad:/g, /:green:/g, /:neutral:/g, /:question:/g, /:happy:/g, /:redface:/g, /:rolleyes:/g, /:surprised:/g, /:devil:/g, /:wink:/g];
+	var replaceSmiliesImg = ['smile', 'sad', 'arrow', 'cool', 'cry', 'grin', 'confused', 'bigeyes', 'evil', 'exclaim', 'geek', 'idea', 'lol', 'mad', 'green', 'neutral', 'question', 'happy', 'redface', 'rolleyes', 'surprised', 'devil', 'wink'];
+	
+	for (i = 0; i &lt; findSmiliesShortcuts.length; i++) {
+		text = text.replace(findSmiliesShortcuts[i], '&lt;img src="/images/smilies/icon_' + replaceSmiliesImg[i] + '.gif" alt="" /&gt;'); // Replace all smilies BBCode by their image
+	}
+	text = text.replace(/\n/g, '&lt;br /&gt;'); // Replace new lines by &lt;br /&gt;
+	return text;
+}
+
+$(function() {
+	// This function allow to insert text or smiley in the textarea where the cursor is
+	jQuery.fn.extend({
+	insertAtCaret: function(myValue) {
+	  return this.each(function(i) {
+		if (document.selection) {
+		  //For browsers like Internet Explorer
+		  this.focus();
+		  sel = document.selection.createRange();
+		  sel.text = myValue;
+		  this.focus();
+		}
+		else if (this.selectionStart || this.selectionStart == '0') {
+		  //For browsers like Firefox and Webkit based
+		  var startPos = this.selectionStart;
+		  var endPos = this.selectionEnd;
+		  var scrollTop = this.scrollTop;
+		  this.value = this.value.substring(0, startPos)+myValue+this.value.substring(endPos,this.value.length);
+		  this.focus();
+		  this.selectionStart = startPos + myValue.length;
+		  this.selectionEnd = startPos + myValue.length;
+		  this.scrollTop = scrollTop;
+		} else {
+		  this.value += myValue;
+		  this.focus();
+		}
+	  })
+	}
+	});
+
+	$('#myTextarea').val(''); // We first empty the textarea
+	
+	$('#myForm #clear').click(function() { // Clear everything when click on the "Clear" button
+		$('#myTextarea').val('');
+		$('#output').text('');
+		$('#submitOutput').text('');
+	});
+	
+	$('#myForm #submit').click(function() { // When click on "Submit" button
+		$('#submitOutput').html('&lt;div class="well well-sm"&gt;' + textWithSmilies($('#myTextarea').val()) + '&lt;/div&gt;'); // Add the textarea content in the &lt;div="submitOutput"&gt; markup
+	});
+
+	$('img#addSmiley').on('click', function() { // When click on a smiley
+		smiley = $(this).attr('alt'); // We take it's attribute alt which contains the unique smiley BBCode choosen
+		$('#myTextarea').insertAtCaret(smiley); // Call the function "insertAtCaret" and insert the smiley BBCode in the textarea where the cursor is
+		
+		var text = textWithSmilies($('#myTextarea').val()); // Call function "textWithSmilies" and change smilies BBCode by their icon
+		$('#output').html(text); // Display in div=output markup
+				
+		return false;
+	});
+	
+	$('#myTextarea').keyup(function(){ // When keyup in the textarea (when you pull up the key)
+		var text = textWithSmilies($(this).val()); // Call function "textWithSmilies" and change smilies BBCode by their icon
+		$('#output').html(text); // Display in div=output markup
+	});
+});
+</pre>
+
+<h2>Conclusion</h2>
+	<p>Now with this lead you are able to create your own wysiwyg editor <img src="/images/smilies/icon_green.gif" alt="" />...something I will do some day if I have time.</p>
+	
+	<p>Please comment below if you need help or if you see something to improve. Happy coding!</p>
+	
+<script type="text/javascript" src="http://www.tipocode.com/js/tuto_smiley_system.js"></script>						<p>
+						<div class="about_the_author">
+							<div>About <b>Simon Laroche</b></div>
+							<div><a href="https://plus.google.com/106146480175587469064" rel="author me" target="_blank" title="See my Google+ profile"><img src="/design/icon-google.png" alt="Simon Laroche on Google+" /></a></div>
+							<div><a href="https://twitter.com/LandoliaPhotos" rel="me" target="_blank" title="See my Twitter account"><img src="/design/icon-twitter.png" alt="Simon Laroche on Twitter" /></a></div>
+							<div><a href="http://www.facebook.com/sim100" rel="me" target="_blank" title="See my Facebook account"><img src="/design/icon-facebook.png" alt="Simon Laroche on Facebook" /></a></div>
+							<div><a href="http://www.pinterest.com/landolia" rel="me" target="_blank" title="See my Pinterest account"><img src="/design/icon-pinterest.png" alt="Simon Laroche on Pinterest" /></a></div>
+							<div><a href="http://www.linkedin.com/in/simonlaroche" rel="me" target="_blank" title="See my LinkedIn account"><img src="/design/icon-linkedin.png" alt="Simon Laroche on LinkedIn" /></a></div>
+							: I am a Coder, Designer, Webmaster and Expert SEO Consulting, I'm also a wise <strong>traveller</strong> and an avid amateur <strong>photographer</strong>. I created the website TipoCode and many others such as <a href="http://www.landolia.com" target="_blank">Landolia: a World of Photos</a>...
+						</div>
+						</p>
+												<p>
+						<div class="about_the_author">
+							If you need help about this script, please leave a comment below. I reply as much as I can depending of my time, you may also get help from others.<br />
+							I also offer a <a href="/page/contact/#paypal"><img src="/design/paypal.png" alt="" /> paid support</a>, if you are in the need to adapt or create a script...
+						</div>
+						</p>
+												
+								<a name="add"></a><h2>Leave a comment</h2>
+								
+								
+								
+								<div class="comments">
+								<form class="form-horizontal" role="form" action="#" method="post">
+									<input type="hidden" id="page_id" value="20"/>
+									<div class="form-group" id="formGroupName"><label class="col-md-2 control-label">Your Name or Pseudo</label><div class="col-md-4"><input type="text" name="com_name" id="com_name" class="form-control" /><span class="help-block"></span></div></div><div class="form-group" id="formGroupEmail"><label class="col-md-2 control-label">Your Email (not displayed)</label><div class="col-md-4"><input type="text" name="com_email" id="com_email" class="form-control" /><span class="help-block"></span></div></div>									
+									<div class="form-group" id="formGroupText">
+									<label class="col-md-2 control-label">Your comment</label>
+									<div class="col-md-10">
+										
+										
+										<button type="button" class="btn btn-default btn-sm" id="embedCode" title="Insert Code Lines">&lt;/&gt;</button>
+										<span class="help-block"></span>
+										<textarea class="form-control" rows="8" id="com_text" name="com_text"></textarea>
+									</div>
+									</div>
+									
+									<p align="center"><input type="submit" class="submit btn btn-primary" value="Submit Comment" /></p>
+								</form>
+								</div>
+								
+								<div id="newComment"></div>
+								
+								<a name="co"></a><h2>Comments (6 comments)</h2><div class="comments"><div class="avatar_large pull-left"><img src="http://www.gravatar.com/avatar.php?gravatar_id=$image" class="imgavatarlarge"></div><b>youssed</b> <small class="text-muted">Posted on February 12, 2017</small><br />thanks</div><div class="comments"><div class="avatar_large pull-left"><img src="http://www.gravatar.com/avatar.php?gravatar_id=$image" class="imgavatarlarge"></div><b>peter</b> <small class="text-muted">Posted on July 19, 2016</small><br />I love it! Thanks for sharing..</div><div class="comments"><div class="avatar_large pull-left"><img src="http://www.gravatar.com/avatar.php?gravatar_id=$image" class="imgavatarlarge"></div><b>karki</b> <small class="text-muted">Posted on June 28, 2016</small><br />it's nice to implement.i really enjoyed to work this.</div><div class="comments"><div class="avatar_large pull-left"><img src="http://www.gravatar.com/avatar.php?gravatar_id=$image" class="imgavatarlarge"></div><b>chand</b> <small class="text-muted">Posted on January 21, 2016</small><br />good deal</div><div class="comments"><div class="avatar_large pull-left"><img src="http://www.gravatar.com/avatar.php?gravatar_id=$image" class="imgavatarlarge"></div><b>Navjyot</b> <small class="text-muted">Posted on April 13, 2015</small><br />Awsome code it worked for me<br />
+</div><div class="comments"><div class="avatar_large pull-left"><img src="http://www.gravatar.com/avatar.php?gravatar_id=$image" class="imgavatarlarge"></div><b>juan perez</b> <small class="text-muted">Posted on October 18, 2014</small><br />I like it</div>				
+								
+								
+								<script type="text/javascript">
+									$("#embedCode").on('click', function () {
+										$('#com_text').val($('#com_text').val()+'<pre>Put your code here</pre>'); 
+										return false;
+									});
+									$('#embedCode').tooltip()
+								</script>
+								
+								
+			</div>
+</div>
+
+	
+		<div id="footer-wrap">
+		
+			<div id="footer">
+				
+				<table><tr>
+					<td>
+						<p><b>About TipoCode</b></p>
+						<p><a href="/page/contact">Contact</a></p>
+						<p><a href="/page/advertising-on-tipocode">Advertise</a></p>
+						<p><a href="/page/who-i-am">Who I am</a></p>
+					</td>
+					<td>
+						<p><b>About TipoDirectory</b></p>
+						<p><a href="/link-directory"><img src="/design/bullet-right-arrow.png" alt="" /> The Link Directory</a></p>
+						<p><a href="/page/suggesting-a-site-to-the-tipodirectory">Suggesting a site</a></p>
+						<p><a href="/page/tipodirectory-submission-rules">Submission rules</a></p>
+						<p><a href="/page/how-to-become-premium">How to become Premium</a></p>
+						<p><a href="/page/adding-tipocode-links-to-your-website">Adding TipoDirectory links</a></p>
+					</td>
+					<td>
+						<p><b>Social</b></p>
+						<p><a href='http://www.1two.org/informatique-et-internet-129-1.html' target='_blank'><img src='http://www.1two.org/favicon.ico' alt='' /> Annuaire Informatique et Internet</a></p>
+						<p><a href='https://www.1annuaire.fr' target='_blank'><img src='https://www.1annuaire.fr/favicon.ico' alt='' /> Annuaire 1annuaire</a></p>
+						<p><a href='https://twitter.com/TipoCodeWeb' target='_blank'><img src='/design/icon-twitter.png' alt='' /> TipoCode on Twitter</a></p>
+						<p><a href='https://www.facebook.com/sim100' target='_blank'><img src='/design/icon-facebook.png' alt='' /> My Facebook profile</a></p>
+						<p><a href='https://plus.google.com/+TipocodeWeb' rel='publisher' target='_blank'><img src='/design/icon-google.png' alt='' /> TipoCode Google+ Page</a></p>
+						<p><a href='http://pinterest.com/landolia' target='_blank'><img src='/design/icon-pinterest.png' alt='' /> Amazing photos</a></p>
+					</td>
+					<td>
+						<p><b>Latest members</b></p>
+						<div class='oneLine'><div class="avatar_small"><img src="http://graph.facebook.com/1993973864008059/picture" class="imgavatarsmall" alt="undefined undefined" title="undefined undefined" /></div></div><div class='oneLine'><div class="avatar_small"><img src="http://graph.facebook.com/183504729043320/picture" class="imgavatarsmall" alt="undefined undefined" title="undefined undefined" /></div></div><div class='oneLine'><div class="avatar_small"><img src="http://graph.facebook.com/370739436734228/picture" class="imgavatarsmall" alt="undefined undefined" title="undefined undefined" /></div></div><div class='oneLine'><div class="avatar_small"><img src="http://graph.facebook.com/10215525169192076/picture" class="imgavatarsmall" alt="undefined undefined" title="undefined undefined" /></div></div><div class='oneLine'><div class="avatar_small"><img src="http://graph.facebook.com/512018612524920/picture" class="imgavatarsmall" alt="undefined undefined" title="undefined undefined" /></div></div>					</td>
+				</tr></table>
+				
+				© 2014 <a href="http://www.tipocode.com">tipocode.com</a>, all rights reserved.
+			</div>	
+			
+		</div>
+
+	
+	<link rel="stylesheet" href="http://www.tipocode.com/bootstrap/css/bootstrap.min.css" type="text/css">
+	
+	
+	<script src="http://www.tipocode.com/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	
+		
+	<script type="text/javascript" src="http://www.tipocode.com/js/facebook.js"></script>
+	
+			<script type="text/javascript" src="http://www.tipocode.com/js/comments.js"></script>
+		<script type="text/javascript" src="http://www.tipocode.com/js/display_contents.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$("#back-to-top").hide();
+		$(function () {
+			$(window).scroll(function(){
+			if ($(window).scrollTop()>100){
+			$("#back-to-top").fadeIn(1500);
+			}
+			else
+			{
+			$("#back-to-top").fadeOut(1500);
+			}
+			});
+			$("#back-to-top").click(function(){
+			$('body,html').animate({scrollTop:0},1000);
+			return false;
+			});
+			});
+			});
+	</script>
+
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-55070054-1', 'auto');
+	ga('send', 'pageview');
+
+	</script>
+	
+</body>
+</html>
