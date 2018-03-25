@@ -47,6 +47,16 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'awalnya'))
 		$ku_urlnya_judul = balikin($row['urlnya_judul']);
 		$ku_urlnya_image = balikin($row['urlnya_image']);
 		$ku_urlnya_deskripsi = balikin($row['urlnya_deskripsi']);
+
+
+		$ku_now = "$tahun-$bulan-$tanggal $jam:$menit:$detik";
+
+		
+		$datetime1 = new DateTime($ku_now);
+		$datetime2 = new DateTime($ku_postdate);
+		$interval = $datetime1->diff($datetime2);
+		$selisihnya = $interval->format('%d')." Hari, ".$interval->format('%h')." Jam, ".$interval->format('%i')." Menit Yang Lalu";
+
 		
 		?>
 		
@@ -78,7 +88,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'awalnya'))
 		<table border="0" cellspading="3" cellspacing="3">
 		<tr>
 		<td>	
-		<h3>'.$ku_status.'</h3>'.$ku_postdate.'';
+		<h3>'.$ku_status.'</h3>[<i>'.$selisihnya.'</i>] ';
 		
 			
 	

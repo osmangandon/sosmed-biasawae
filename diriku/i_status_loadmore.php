@@ -184,8 +184,10 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
 
 
 	//tampilkan status....
-	$tablenya = "user_status$kd6_session";
+	//$tablenya = "user_status$kd6_session";
+	$tablenya = "m_publik_user_status";
 	$qku = mysql_query("SELECT * FROM $tablenya ".
+							"WHERE kd_user = '$kd6_session' ".
 							"ORDER BY postdate DESC");
 	$rku = mysql_fetch_assoc($qku);
 	$tku = mysql_num_rows($qku);
@@ -198,6 +200,22 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
 	$ku_urlnya_judul = balikin($rku['urlnya_judul']);
 	$ku_urlnya_image = balikin($rku['urlnya_image']);
 	$ku_urlnya_deskripsi = balikin($rku['urlnya_deskripsi']);
+
+	$ku_now = "$tahun-$bulan-$tanggal $jam:$menit:$detik";
+
+	
+	$datetime1 = new DateTime($ku_now);
+	$datetime2 = new DateTime($ku2_postdate);
+	$interval = $datetime1->diff($datetime2);
+	$selisihnya = $interval->format('%d')." Hari, ".$interval->format('%h')." Jam, ".$interval->format('%i')." Menit Yang Lalu";
+				
+
+
+	//detail user
+	$qyuk = mysql_query("SELECT * FROM m_publik_user ".
+							"WHERE kd = '$ku_userkd'");
+	$ryuk = mysql_fetch_assoc($qyuk);
+	$yuk_nama = balikin($ryuk['nama']);
 
 	?>
 	
@@ -224,11 +242,11 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan'))
 	<table border="0" cellspading="3" cellspacing="3">
 	<tr>
 	<td>		
-	'.$yukx_nama.'
+	'.$yuk_nama.'
 	<br>
-	'.$ku_postdate.'
+	<h3>'.$ku_status.'</h3>
 	<br>
-	<h3>'.$ku_status.'</h3>';
+	[<i>'.$selisihnya.'</i>]. ';
 	
 	
 	
@@ -370,9 +388,17 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan2'))
 			$ku2_komentar = balikin($rku2['msg']);
 			$ku2_postdate = $rku2['postdate'];
 					
-
+			$ku_now = "$tahun-$bulan-$tanggal $jam:$menit:$detik";
+	
+			
+			$datetime1 = new DateTime($ku_now);
+			$datetime2 = new DateTime($ku2_postdate);
+			$interval = $datetime1->diff($datetime2);
+			$selisihnya = $interval->format('%d')." Hari, ".$interval->format('%h')." Jam, ".$interval->format('%i')." Menit Yang Lalu";
+						
+					
 			//detail user
-			$qyuk = mysql_query("SELECT * FROM m_user ".
+			$qyuk = mysql_query("SELECT * FROM m_publik_user ".
 									"WHERE kd = '$ku2_dari'");
 			$ryuk = mysql_fetch_assoc($qyuk);
 			$yuk_nama = balikin($ryuk['nama']);
@@ -384,7 +410,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'simpan2'))
 			<br>
 			'.$ku2_komentar.'
 			<br>
-			['.$ku2_postdate.']
+			[<i>'.$selisihnya.'</i>]
 			</p>
 			
 			</div>
@@ -471,6 +497,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'form'))
     <script src="../inc/js/jquery.mentions.js"></script>
 
 
+
 	<script>
         $('#e_statusku').mentionsInput({source: 'i_user.php'});
     </script>
@@ -487,8 +514,8 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'form'))
     <div class="panel panel-default">
     <div class="panel-body panel-body-custom">
 
-	<p>
-	<textarea name="e_statusku" id="e_statusku" rows="5" cols="60" placeholder="Status Kamu ya..."></textarea>
+	<p class="lead emoji-picker-container">
+	<textarea name="e_statusku" id="e_statusku" class="form-control textarea-control" rows="5" cols="60" placeholder="Status Kamu ya..."></textarea>
 	</p>
 
 	<img src="'.$sumber.'/img/support.png" width="24" height="24" border="0">	
@@ -510,7 +537,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'form'))
 	<div id="loadingku" style="display:none">
 	<img src="'.$sumber.'/img/ajax-loading.gif" width="16" height="16">
 	</div>';
-	
+
 	exit();
 	}
 
@@ -596,6 +623,13 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'loadmore'))
 		$ku_urlnya_image = balikin($row['urlnya_image']);
 		$ku_urlnya_deskripsi = balikin($row['urlnya_deskripsi']);
 	
+		$ku_now = "$tahun-$bulan-$tanggal $jam:$menit:$detik";
+
+		
+		$datetime1 = new DateTime($ku_now);
+		$datetime2 = new DateTime($ku_postdate);
+		$interval = $datetime1->diff($datetime2);
+		$selisihnya = $interval->format('%d')." Hari, ".$interval->format('%h')." Jam, ".$interval->format('%i')." Menit Yang Lalu";
 	
 		echo '<div id="post_'.$id.'" class="post">';
 	
@@ -624,7 +658,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'loadmore'))
 		<table border="0" cellspading="3" cellspacing="3">
 		<tr>
 		<td>	
-		<h3>'.$ku_status.'</h3>'.$ku_postdate.'';
+		<h3>'.$ku_status.'</h3>[<i>'.$selisihnya.'</i>] ';
 		
 			
 	
@@ -730,7 +764,15 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 			$ku2_komentar = balikin($rku2['msg']);
 			$ku2_postdate = $rku2['postdate'];
 			
-			
+			$ku_now = "$tahun-$bulan-$tanggal $jam:$menit:$detik";
+
+		
+			$datetime1 = new DateTime($ku_now);
+			$datetime2 = new DateTime($ku2_postdate);
+			$interval = $datetime1->diff($datetime2);
+			$selisihnya = $interval->format('%d')." Hari, ".$interval->format('%h')." Jam, ".$interval->format('%i')." Menit Yang Lalu";
+		
+				
 			//jika sama
 			if ($ku2_dari == $kd6_session)
 				{
@@ -739,7 +781,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 			    <p>
 				'.$ku2_komentar.'
 				<br>
-				['.$ku2_postdate.']
+				[<i>'.$selisihnya.'</i>]
 				</p>
 				
 				</div>
@@ -749,7 +791,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 			else
 				{
 				//detail user
-				$qyuk = mysql_query("SELECT * FROM m_user ".
+				$qyuk = mysql_query("SELECT * FROM m_publik_user ".
 										"WHERE kd = '$ku2_dari'");
 				$ryuk = mysql_fetch_assoc($qyuk);
 				$yuk_nama = balikin($ryuk['nama']);
@@ -761,7 +803,7 @@ if ((isset($_GET['aksi']) && $_GET['aksi'] == 'daftarkom'))
 				<br>
 				'.$ku2_komentar.'
 				<br>
-				['.$ku2_postdate.']
+				[<i>'.$selisihnya.'</i>]
 				</p>
 				
 				</div>

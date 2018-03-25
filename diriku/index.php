@@ -100,11 +100,9 @@ ob_start();
 <!-- Custom fonts for this template -->
 <link href="../template/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<!-- Plugin CSS -->
-<link href="../template/vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
-<!-- Custom styles for this template -->
-<link href="../template/css/creative.min.css" rel="stylesheet">
+
+
 
 	        
 <div id="idaftar"></div>
